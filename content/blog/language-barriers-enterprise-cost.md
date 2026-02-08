@@ -27,6 +27,7 @@ Additional research reinforces the scale:
 These are not IT-specific numbers. They reflect the total organizational cost. But IT support is one of the highest-frequency touchpoints where language barriers manifest daily — in every ticket, every interaction, every form field.
 
 **Source:** [Slator 2023 Language Industry Market Report / Intellectyx](https://www.intellectyx.com/multilingual-customer-support-ai-agents-breaking-the-language-barrier/)
+
 **Source:** [Learnship — The Hidden Costs of Language Barriers in Business](https://learnship.com/the-hidden-costs-of-language-barriers-in-business/)
 
 ---
@@ -69,7 +70,9 @@ The scope of this problem is larger than most organizations recognize:
 In any multinational organization, the majority of your portal users are not native English speakers — even if your portal is in English. They're writing tickets in their second or third language, losing precision with every sentence.
 
 **Source:** [Kylian.ai — English Language Statistics](https://www.kylian.ai/blog/en/english-language-statistics)
+
 **Source:** [EC English — Statistics About the English Language](https://ecenglish.com/en/blog/news/70-statistics-about-the-english-language/)
+
 **Source:** [Macati Recruitment — Communication in Multinational Teams / Harvard Business Review](https://macatirecruitment.com/blog/overcoming-language-barriers-effective-communication-in-multinational-teams/)
 
 ---
@@ -88,6 +91,7 @@ Bilingual agents command **5–20% higher salaries** than monolingual counterpar
 Even with multilingual agents, coverage is never complete. A Portuguese speaker may be available on the day shift but not the night shift. A Japanese speaker might cover IT but not HR. Language coverage becomes a scheduling nightmare that grows exponentially with each additional language.
 
 **Source:** [CSA Research / Intercom — Multilingual Support Statistics](https://www.intercom.com/blog/multilingual-support-stats/)
+
 **Source:** [ZipDo — Bilingual Employment Statistics](https://zipdo.co/statistics/bilingual-employment/)
 
 ---
@@ -109,6 +113,7 @@ For IT service management, this translates directly:
 The case studies are compelling. Wargaming saw an **82% increase in CSAT scores** by eliminating language barriers for Chinese, Japanese, and Korean speakers. Logitech achieved a **58-point NPS increase** for translated support conversations.
 
 **Source:** [Bureau Works — Translation Industry Statistics](https://www.bureauworks.com/blog/latest-insights-and-statistics-on-translation-industry-trends)
+
 **Source:** [Unbabel — Impact of Language Operations on CSAT](https://unbabel.com/the-impact-of-language-operations-on-improving-csat-scores-and-other-customer-support-kpis)
 
 ---
@@ -124,6 +129,7 @@ The adoption is early but accelerating:
 - The global language services market is projected to reach **$127 billion by 2032**, growing at 7.6% CAGR
 
 **Source:** [1440.io / Gartner — AI-Powered Translation in 2025](https://www.1440.io/blog/ai-powered-translation-in-2025-4-ways-its-supercharging-enterprise-customer-service/)
+
 **Source:** [Bureau Works — Translation Industry Statistics](https://www.bureauworks.com/blog/latest-insights-and-statistics-on-translation-industry-trends)
 
 ---

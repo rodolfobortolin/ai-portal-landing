@@ -21,6 +21,7 @@ According to BMC's analysis of service desk operations, **23% of tickets get ass
 Manual dispatch systems — where a human reads the ticket and decides where it goes — consistently produce **15–25% misrouting rates**. The reason is straightforward: manual categorization requires perfect knowledge of every queue, every team, and every request type. No human dispatcher maintains that level of precision across thousands of tickets.
 
 **Source:** [BMC — Cost Per Ticket: The Ultimate Service Desk Metric](https://www.bmc.com/blogs/cost-per-ticket/)
+
 **Source:** [Mizo Tech — Why Ticket Misrouting Is Killing Your SLA Compliance](https://mizo.tech/blog/why-ticket-misrouting-is-killing-your-sla-compliance-and-how-to-fix-it/)
 
 ---
@@ -55,6 +56,7 @@ MetricNet's 2024 benchmarking data establishes the baseline:
 A cleanly routed ticket costs $22. A misrouted ticket that bounces twice, involves rework, and escalates can cost **$100–$130 or more** — a **373% increase** over a properly handled ticket.
 
 **Source:** [MetricNet — Service Desk Cost Per Ticket](https://www.metricnet.com/service-desk-cost-per-ticket-motm/)
+
 **Source:** [NetFor — Strategic Business Value of IT Help Desk Support](https://www.netfor.com/2025/04/02/it-help-desk-support-2/)
 
 ### The Annual Math
@@ -123,6 +125,7 @@ The data on AI-assisted ticket routing is compelling:
 - Real implementations have achieved **$1M+ in annual savings** from routing improvements alone
 
 **Source:** [Deloitte — The Ticket to Maximized Uptime](https://www.deloitte.com/global/en/alliances/servicenow/case-studies/ticket-maximized-uptime.html)
+
 **Source:** [Freshworks — How AI Is Unlocking ROI in Customer Service](https://www.freshworks.com/How-AI-is-unlocking-ROI-in-customer-service/)
 
 Gartner predicts that by 2029, **agentic AI will autonomously resolve 80% of common customer service issues** without human intervention. The organizations that start now will have a three-year head start on routing accuracy, data quality, and operational efficiency.

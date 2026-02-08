@@ -43,7 +43,9 @@ Additional data reinforces this pattern:
 For the generation now entering the workforce in the largest numbers, a broken portal isn't a minor inconvenience — it's a reason to disengage entirely.
 
 **Source:** [KnowledgeOwl — Self-Service Support Statistics](https://blog.knowledgeowl.com/blog/posts/self-service-support-statistics/)
+
 **Source:** [Desku — Help Desk Statistics 2025](https://desku.io/stats-hub/help-desk-statistics/)
+
 **Source:** [Gartner / CustomerThink — Gen Z and Millennial Self-Service Expectations](https://customerthink.com/how-organizations-can-adapt-to-meet-gen-z-millennial-self-service-expectations/)
 
 ---
@@ -74,7 +76,9 @@ The data on shadow IT is alarming:
 Every abandoned portal session is a potential shadow IT adoption event. The user needed something, the portal couldn't help, and they found their own solution — outside your security perimeter, outside your compliance framework, and invisible to your metrics.
 
 **Source:** [CIO Magazine — IT Frustration Costs Companies More Than $100 Million a Year (2024)](https://www.cio.com/article/3841636/it-frustration-costs-companies-more-than-100-million-a-year-with-shadow-it-the-only-user-solution.html)
+
 **Source:** [Zluri — Shadow IT Statistics 2025](https://www.zluri.com/blog/shadow-it-statistics-key-facts-to-learn-in-2024)
+
 **Source:** [Auvik — Shadow IT Statistics](https://www.auvik.com/franklyit/blog/shadow-it-stats/)
 
 ---
@@ -93,7 +97,9 @@ Organizations with mature Digital Employee Experience (DEX) programs report **33
 The portal is often the most frequent touchpoint between employees and IT. When that touchpoint fails, it colors the entire perception of IT's value to the organization.
 
 **Source:** [Cerkl — Employee Experience Statistics 2025](https://cerkl.com/blog/employee-experience-statistics/)
+
 **Source:** [Blink — Employee Experience Trends 2025](https://www.joinblink.com/intelligence/employee-experience-in-2024-trends)
+
 **Source:** [FirstUp — Digital Employee Experience Report 2025](https://firstup.io/blog/digital-employee-experience-explained/)
 
 ---
@@ -125,6 +131,7 @@ The workforce is changing, and the tolerance for poor digital experiences is dec
 By 2030, Gen Z and Millennials will comprise over 75% of the global workforce. Building portals for the next decade with the interaction patterns of the last decade is a strategic mistake.
 
 **Source:** [FluentSupport — Millennials vs Gen Z Customer Service Expectations](https://fluentsupport.com/millennials-vs-gen-z-compare-customer-service-expectations/)
+
 **Source:** [TeamDynamix — Rise of Self-Service Among Gen Z and Millennials](https://www.teamdynamix.com/blog/reimagining-it-service-the-rise-of-self-service-among-gen-z-and-millennials/)
 
 ---
@@ -144,6 +151,7 @@ Organizations adopting AI-first support are seeing:
 - **ROI within 6 months** for most implementations
 
 **Source:** [Freshworks — How AI Is Unlocking ROI in Customer Service](https://www.freshworks.com/How-AI-is-unlocking-ROI-in-customer-service/)
+
 **Source:** [Pylon — AI Ticket Deflection 2025](https://www.usepylon.com/blog/ai-ticket-deflection-reduce-support-volume-2025)
 
 ---

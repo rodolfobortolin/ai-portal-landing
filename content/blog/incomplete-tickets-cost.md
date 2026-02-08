@@ -25,6 +25,7 @@ The data converges around a consistent range:
 That means roughly **one in three tickets** arrives without the information an agent needs to resolve it. For every 1,000 tickets, 300 trigger a back-and-forth that wastes both agent and end-user time.
 
 **Source:** [Fullview — Customer Support Statistics 2025](https://www.fullview.io/blog/support-stats)
+
 **Source:** [LiveAgent — Call Center Statistics 2025](https://www.liveagent.com/blog/call-center-statistics/)
 
 ---
@@ -80,7 +81,9 @@ The cost of incomplete tickets extends far beyond the service desk.
 - Miscommunication costs U.S. businesses **$1.2 trillion annually** according to workplace communication research. IT ticket communication is a microcosm of this broader problem: ambiguous requests, incomplete context, and the back-and-forth that fills the gap.
 
 **Source:** [HappySignals — IT Leaders Guide to Employee Productivity](https://www.happysignals.com/it-leaders-guide-to-employee-productivity)
+
 **Source:** [Service Desk Show — 80% of Lost Productivity from 12.6% of Tickets](https://www.servicedeskshow.com/blog-spot/80-of-the-employee-lost-productivity-caused-by-it-support-comes-from-just-12-6-of-tickets/)
+
 **Source:** [Notta — Workplace Communication Statistics 2025](https://www.notta.ai/en/blog/workplace-communication-statistics)
 
 ---
@@ -121,6 +124,7 @@ The result: tickets that arrive with **complete, accurate, structured informatio
 Organizations deploying AI-first support see **52% faster resolution times** and **25–45% ticket deflection rates**, with ROI multipliers of **2–5x within the first year**.
 
 **Source:** [Fullview — Customer Support Statistics 2025](https://www.fullview.io/blog/support-stats)
+
 **Source:** [Freshworks — How AI Is Unlocking ROI in Customer Service](https://www.freshworks.com/How-AI-is-unlocking-ROI-in-customer-service/)
 
 ---

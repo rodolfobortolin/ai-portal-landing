@@ -222,7 +222,7 @@ export default function Home() {
                   <h3 className="pain-card__title mt-3 mb-2 font-bold">{card.title}</h3>
                   <p className="pain-card__stat text-sm font-semibold mb-3">{card.stat}</p>
                   <p className="pain-card__desc text-sm leading-relaxed">{card.desc}</p>
-                  <a href={card.blogUrl} className="pain-card__link inline-flex items-center gap-1.5 mt-5 text-xs font-semibold uppercase tracking-wider transition-colors" style={{ color: card.tagColor }}>
+                  <a href={card.blogUrl} className="pain-card__link inline-flex items-center gap-1.5 mt-5 text-xs font-semibold uppercase tracking-wider transition-colors">
                     Learn more
                     <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
                   </a>
