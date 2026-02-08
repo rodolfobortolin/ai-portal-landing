@@ -16,7 +16,7 @@ This isn't a hypothetical. This is happening in your organization right now, acr
 
 ## The $8–11 Million Number
 
-The Slator Language Industry Market Report found that **49% of global executives reported annual financial losses of $8–11 million due to language barriers**. Not communication inefficiency. Not cultural misunderstanding. Language barriers — the inability to exchange information accurately across languages.
+The Slator Language Industry Market Report found that **49% of global executives reported annual financial losses of $8–11 million due to language barriers**. Not communication inefficiency. Not cultural misunderstanding. Language barriers, meaning the inability to exchange information accurately across languages.
 
 Additional research reinforces the scale:
 
@@ -24,11 +24,11 @@ Additional research reinforces the scale:
 - **Larger companies with global operations** report losses of **€7–10 million annually** from project delays, misunderstood requirements, and failed negotiations caused by language gaps
 - Companies lose up to **7 hours per week per employee** due to miscommunication in multicultural teams
 
-These are not IT-specific numbers. They reflect the total organizational cost. But IT support is one of the highest-frequency touchpoints where language barriers manifest daily — in every ticket, every interaction, every form field.
+These are not IT-specific numbers. They reflect the total organizational cost. But IT support is one of the highest-frequency touchpoints where language barriers manifest daily: in every ticket, every interaction, every form field.
 
 **Source:** [Slator 2023 Language Industry Market Report / Intellectyx](https://www.intellectyx.com/multilingual-customer-support-ai-agents-breaking-the-language-barrier/)
 
-**Source:** [Learnship — The Hidden Costs of Language Barriers in Business](https://learnship.com/the-hidden-costs-of-language-barriers-in-business/)
+**Source:** [Learnship: The Hidden Costs of Language Barriers in Business](https://learnship.com/the-hidden-costs-of-language-barriers-in-business/)
 
 ---
 
@@ -39,12 +39,12 @@ Language barriers in IT support have a specific, measurable impact on ticket qua
 ### Ticket Quality Degrades
 
 When a non-native English speaker creates a ticket in English:
-- **Summaries are vague** — "laptop slow" instead of "laptop freezes during video calls when connected to external monitor"
-- **Descriptions lack technical context** — users can't articulate the sequence of events, error messages, or troubleshooting steps they've already tried
-- **Priority and urgency are misrepresented** — the user can't convey that a client demo is in two hours
-- **Required fields are filled with guesses** — technical dropdown menus become a random selection exercise
+- **Summaries are vague.** "laptop slow" instead of "laptop freezes during video calls when connected to external monitor"
+- **Descriptions lack technical context.** Users can't articulate the sequence of events, error messages, or troubleshooting steps they've already tried
+- **Priority and urgency are misrepresented.** The user can't convey that a client demo is in two hours
+- **Required fields are filled with guesses.** Technical dropdown menus become a random selection exercise
 
-The result is a ticket that tells the agent almost nothing. Resolution requires clarification — across time zones, across languages, often through multiple rounds of communication that each introduce more ambiguity.
+The result is a ticket that tells the agent almost nothing. Resolution requires clarification, across time zones, across languages, often through multiple rounds of communication that each introduce more ambiguity.
 
 ### Resolution Time Doubles
 
@@ -54,7 +54,7 @@ Research from ITSM Tools identifies language barriers as a significant factor in
 - Escalations increase (agents escalate when they can't understand the request)
 - User satisfaction drops, leading to channel switching (phone, walk-up, shadow IT)
 
-**Source:** [ITSM Tools — Language Barriers in IT Service Desks](https://itsm.tools/language-barriers-it-service-desks/)
+**Source:** [ITSM Tools: Language Barriers in IT Service Desks](https://itsm.tools/language-barriers-it-service-desks/)
 
 ---
 
@@ -62,24 +62,24 @@ Research from ITSM Tools identifies language barriers as a significant factor in
 
 The scope of this problem is larger than most organizations recognize:
 
-- **75% of English speakers globally are non-native speakers** — approximately 980 million out of 1.35 billion English speakers
+- **75% of English speakers globally are non-native speakers**, approximately 980 million out of 1.35 billion English speakers
 - **96% of conversations involving English** include at least one non-native speaker
 - **43% of the global population** (3.3 billion people) speaks two or more languages
 - **Over 60% of multinational employees** report that language barriers negatively affect collaboration and productivity
 
-In any multinational organization, the majority of your portal users are not native English speakers — even if your portal is in English. They're writing tickets in their second or third language, losing precision with every sentence.
+In any multinational organization, the majority of your portal users are not native English speakers, even if your portal is in English. They're writing tickets in their second or third language, losing precision with every sentence.
 
-**Source:** [Kylian.ai — English Language Statistics](https://www.kylian.ai/blog/en/english-language-statistics)
+**Source:** [Kylian.ai: English Language Statistics](https://www.kylian.ai/blog/en/english-language-statistics)
 
-**Source:** [EC English — Statistics About the English Language](https://ecenglish.com/en/blog/news/70-statistics-about-the-english-language/)
+**Source:** [EC English: Statistics About the English Language](https://ecenglish.com/en/blog/news/70-statistics-about-the-english-language/)
 
-**Source:** [Macati Recruitment — Communication in Multinational Teams / Harvard Business Review](https://macatirecruitment.com/blog/overcoming-language-barriers-effective-communication-in-multinational-teams/)
+**Source:** [Macati Recruitment: Communication in Multinational Teams / Harvard Business Review](https://macatirecruitment.com/blog/overcoming-language-barriers-effective-communication-in-multinational-teams/)
 
 ---
 
 ## Why Hiring Multilingual Agents Doesn't Scale
 
-The traditional solution — hire agents who speak multiple languages — faces three structural problems:
+The traditional approach of hiring agents who speak multiple languages faces three structural problems:
 
 ### 1. Cost Premium
 Bilingual agents command **5–20% higher salaries** than monolingual counterparts. For a 50-person service desk covering 6 languages, the salary premium alone adds **$150K–$500K annually**.
@@ -90,9 +90,9 @@ Bilingual agents command **5–20% higher salaries** than monolingual counterpar
 ### 3. Coverage Gaps
 Even with multilingual agents, coverage is never complete. A Portuguese speaker may be available on the day shift but not the night shift. A Japanese speaker might cover IT but not HR. Language coverage becomes a scheduling nightmare that grows exponentially with each additional language.
 
-**Source:** [CSA Research / Intercom — Multilingual Support Statistics](https://www.intercom.com/blog/multilingual-support-stats/)
+**Source:** [CSA Research / Intercom: Multilingual Support Statistics](https://www.intercom.com/blog/multilingual-support-stats/)
 
-**Source:** [ZipDo — Bilingual Employment Statistics](https://zipdo.co/statistics/bilingual-employment/)
+**Source:** [ZipDo: Bilingual Employment Statistics](https://zipdo.co/statistics/bilingual-employment/)
 
 ---
 
@@ -112,9 +112,9 @@ For IT service management, this translates directly:
 
 The case studies are compelling. Wargaming saw an **82% increase in CSAT scores** by eliminating language barriers for Chinese, Japanese, and Korean speakers. Logitech achieved a **58-point NPS increase** for translated support conversations.
 
-**Source:** [Bureau Works — Translation Industry Statistics](https://www.bureauworks.com/blog/latest-insights-and-statistics-on-translation-industry-trends)
+**Source:** [Bureau Works: Translation Industry Statistics](https://www.bureauworks.com/blog/latest-insights-and-statistics-on-translation-industry-trends)
 
-**Source:** [Unbabel — Impact of Language Operations on CSAT](https://unbabel.com/the-impact-of-language-operations-on-improving-csat-scores-and-other-customer-support-kpis)
+**Source:** [Unbabel: Impact of Language Operations on CSAT](https://unbabel.com/the-impact-of-language-operations-on-improving-csat-scores-and-other-customer-support-kpis)
 
 ---
 
@@ -128,9 +128,9 @@ The adoption is early but accelerating:
 - Businesses investing in translation are **1.5x more likely** to see revenue increases
 - The global language services market is projected to reach **$127 billion by 2032**, growing at 7.6% CAGR
 
-**Source:** [1440.io / Gartner — AI-Powered Translation in 2025](https://www.1440.io/blog/ai-powered-translation-in-2025-4-ways-its-supercharging-enterprise-customer-service/)
+**Source:** [1440.io / Gartner: AI-Powered Translation in 2025](https://www.1440.io/blog/ai-powered-translation-in-2025-4-ways-its-supercharging-enterprise-customer-service/)
 
-**Source:** [Bureau Works — Translation Industry Statistics](https://www.bureauworks.com/blog/latest-insights-and-statistics-on-translation-industry-trends)
+**Source:** [Bureau Works: Translation Industry Statistics](https://www.bureauworks.com/blog/latest-insights-and-statistics-on-translation-industry-trends)
 
 ---
 
@@ -138,17 +138,17 @@ The adoption is early but accelerating:
 
 Consider the same scenario from the introduction, but with a conversational AI layer:
 
-The Brazilian engineer opens the chat on the JSM portal and speaks — in Portuguese:
+The Brazilian engineer opens the chat on the JSM portal and speaks, in Portuguese:
 
 > "Minha VPN parou de funcionar desde ontem. Ja tentei reiniciar o notebook e nada. Preciso urgente porque tenho uma reuniao com cliente amanha."
 
 The AI:
-- **Understands Portuguese** natively — no translation layer, no keyword matching
-- **Responds in Portuguese** — the user sees their language, feels understood
+- **Understands Portuguese** natively, with no translation layer, no keyword matching
+- **Responds in Portuguese**, so the user sees their language, feels understood
 - Identifies the request as a VPN/Network issue
 - Matches the correct request type in the IT service desk
 - Creates the ticket with:
-  - **Summary:** "VPN connection failure — not resolved after device restart" (in the company's preferred language)
+  - **Summary:** "VPN connection failure, not resolved after device restart" (in the company's preferred language)
   - **Description:** Full context from the user's message, properly structured
   - **Priority:** High (user mentioned urgency and a client meeting)
   - All required fields populated correctly
@@ -181,7 +181,7 @@ Language barriers in IT support are not a cultural issue or a training issue. Th
 
 Every ticket written in broken English is a ticket with incomplete data. Every clarification cycle is wasted labor. Every abandoned portal session is a failure you never see in your metrics.
 
-The technology to solve this exists today. AI models that understand 100+ languages, create structured output in any language, and operate at $0.02–$0.08 per interaction. The question isn't whether to invest — it's how much you're willing to keep paying by not investing.
+The technology to solve this exists today. AI models that understand 100+ languages, create structured output in any language, and operate at $0.02–$0.08 per interaction. The question isn't whether to invest. It's how much you're willing to keep paying by not investing.
 
 ---
 
