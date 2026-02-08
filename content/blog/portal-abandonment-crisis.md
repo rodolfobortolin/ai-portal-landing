@@ -36,15 +36,13 @@ They don't submit a ticket. They don't try a different approach. They leave.
 
 Additional data reinforces this pattern:
 
-- **71% of users abandon complex self-service portals** within the first interaction
+- **71% of customers** prefer to solve issues independently, and consider having to contact a human as a sign of failure
 - **Nearly 40% of Gen Z and Millennials abandon entirely** if self-service can't resolve the issue
 - **50% of respondents** would prefer no self-service option at all if the experience is poor
 
 For the generation now entering the workforce in the largest numbers, a broken portal isn't a minor inconvenience. It's a reason to disengage entirely.
 
 **Source:** [KnowledgeOwl: Self-Service Support Statistics](https://blog.knowledgeowl.com/blog/posts/self-service-support-statistics/)
-
-**Source:** [Desku: Help Desk Statistics 2025](https://desku.io/stats-hub/help-desk-statistics/)
 
 **Source:** [Gartner / CustomerThink: Gen Z and Millennial Self-Service Expectations](https://customerthink.com/how-organizations-can-adapt-to-meet-gen-z-millennial-self-service-expectations/)
 
@@ -77,7 +75,7 @@ Every abandoned portal session is a potential shadow IT adoption event. The user
 
 **Source:** [CIO Magazine: IT Frustration Costs Companies More Than $100 Million a Year (2024)](https://www.cio.com/article/3841636/it-frustration-costs-companies-more-than-100-million-a-year-with-shadow-it-the-only-user-solution.html)
 
-**Source:** [Zluri: Shadow IT Statistics 2025](https://www.zluri.com/blog/shadow-it-statistics-key-facts-to-learn-in-2024)
+**Source:** [Zluri: Shadow IT Statistics 2025](https://www.zluri.com/blog/shadow-it-statistics)
 
 **Source:** [Auvik: Shadow IT Statistics](https://www.auvik.com/franklyit/blog/shadow-it-stats/)
 
@@ -173,9 +171,8 @@ The trajectory is clear: from 14% self-service resolution today to 80% within fo
 | Gartner (2024) | 14% self-service resolution rate | [Press Release](https://www.gartner.com/en/newsroom/press-releases/2024-08-19-gartner-survey-finds-only-14-percent-of-customer-service-issues-are-fully-resolved-in-self-service) |
 | KnowledgeOwl | 52% abandon after 10 minutes | [Self-Service Statistics](https://blog.knowledgeowl.com/blog/posts/self-service-support-statistics/) |
 | CIO Magazine | $104M avg enterprise loss to digital inefficiency | [Article](https://www.cio.com/article/3841636/it-frustration-costs-companies-more-than-100-million-a-year-with-shadow-it-the-only-user-solution.html) |
-| Zluri | 42% of apps are shadow IT | [Shadow IT Statistics](https://www.zluri.com/blog/shadow-it-statistics-key-facts-to-learn-in-2024) |
+| Zluri | 42% of apps are shadow IT | [Shadow IT Statistics](https://www.zluri.com/blog/shadow-it-statistics) |
 | Auvik | 38% turn to shadow IT due to slow IT response | [Shadow IT Stats](https://www.auvik.com/franklyit/blog/shadow-it-stats/) |
-| Desku | 71% abandon complex portals in first interaction | [Help Desk Statistics](https://desku.io/stats-hub/help-desk-statistics/) |
 | Document360 | Self-service costs $1.84 vs $13.50 assisted | [Self-Service Statistics](https://document360.com/blog/self-service-statistics/) |
 | Cerkl | 52% of frontline employees would leave over poor tech | [Employee Experience](https://cerkl.com/blog/employee-experience-statistics/) |
 | Gartner (2025) | 80% autonomous resolution by 2029 | [Agentic AI Prediction](https://www.gartner.com/en/newsroom/press-releases/2025-03-05-gartner-predicts-agentic-ai-will-autonomously-resolve-80-percent-of-common-customer-service-issues-without-human-intervention-by-20290) |

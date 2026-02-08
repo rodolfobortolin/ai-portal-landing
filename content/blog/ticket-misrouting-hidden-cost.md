@@ -20,7 +20,7 @@ According to BMC's analysis of service desk operations, **23% of tickets get ass
 
 Manual dispatch systems (where a human reads the ticket and decides where it goes) consistently produce **15–25% misrouting rates**. The reason is straightforward: manual categorization requires perfect knowledge of every queue, every team, and every request type. No human dispatcher maintains that level of precision across thousands of tickets.
 
-**Source:** [BMC: Cost Per Ticket, The Ultimate Service Desk Metric](https://www.bmc.com/blogs/cost-per-ticket/)
+**Source:** [BMC: Cost Per Ticket, The Ultimate Service Desk Metric](https://web.archive.org/web/20250126014131/https://www.bmc.com/blogs/cost-per-ticket/)
 
 **Source:** [Mizo Tech: Why Ticket Misrouting Is Killing Your SLA Compliance](https://mizo.tech/blog/why-ticket-misrouting-is-killing-your-sla-compliance-and-how-to-fix-it/)
 
@@ -148,7 +148,7 @@ For most organizations, the annual cost of misrouting alone justifies investing 
 
 | Source | Data Point | Link |
 |--------|-----------|------|
-| BMC | 23% misrouting rate, 2.3 transfers average | [Cost Per Ticket](https://www.bmc.com/blogs/cost-per-ticket/) |
+| BMC | 23% misrouting rate, 2.3 transfers average | [Cost Per Ticket](https://web.archive.org/web/20250126014131/https://www.bmc.com/blogs/cost-per-ticket/) |
 | MetricNet | $22 avg Tier 1 cost, $104+ Tier 3 cost | [Service Desk Cost Per Ticket](https://www.metricnet.com/service-desk-cost-per-ticket-motm/) |
 | HappySignals | 109 min productivity loss per reassignment | [Cost of Reassigning Tickets](https://www.happysignals.com/blog/reassigning-it-service-desk-tickets) |
 | HappySignals | 7-point happiness drop per reassignment | [Ticket Bouncing](https://www.happysignals.com/blog/ticket-bouncing-frustrated-end-users-what-can-it-do) |

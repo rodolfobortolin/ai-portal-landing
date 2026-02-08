@@ -100,9 +100,9 @@ You're not choosing between good tickets and bad tickets. You're choosing betwee
 2. **Use workarounds:** type "N/A", "unknown", or "please see description" in every required field
 3. **Abandon:** close the form and call, email, or use shadow IT instead
 
-71% of users abandon complex self-service portals within the first interaction, according to 2025 help desk statistics. The form that was supposed to capture better data is instead capturing no data at all.
+Research shows that 71% of customers prefer to solve issues independently, yet when self-service is too complex, they give up. The form that was supposed to capture better data is instead capturing no data at all.
 
-**Source:** [Desku: Help Desk Statistics 2025](https://desku.io/stats-hub/help-desk-statistics/)
+**Source:** [KnowledgeOwl: Self-Service Support Statistics](https://blog.knowledgeowl.com/blog/posts/self-service-support-statistics/)
 
 ---
 
