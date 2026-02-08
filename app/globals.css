@@ -79,6 +79,7 @@ h3 {
   letter-spacing: -0.02em;
 }
 
+
 /* ── Animations ── */
 
 @keyframes fadeInUp {
@@ -316,6 +317,8 @@ input[type="range"]::-moz-range-thumb {
 .pain-card:hover .pain-card__title { color: white; }
 .pain-card:hover .pain-card__stat { color: rgba(255,255,255,0.9); }
 .pain-card:hover .pain-card__desc { color: rgba(255,255,255,0.75); }
+.pain-card__link { color: var(--card-color); transition: color 0.4s ease; }
+.pain-card:hover .pain-card__link { color: rgba(255,255,255,0.9); }
 
 /* ── Scrollbar ── */
 

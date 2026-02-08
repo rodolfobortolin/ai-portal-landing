@@ -47,6 +47,7 @@ export default function Home() {
               ["Features", "#features"],
               ["ROI Calculator", "#roi-calculator"],
               ["Compare", "#comparison"],
+              ["Blog", "/blog"],
             ].map(([label, href]) => (
               <a key={href} href={href} className="text-sm font-semibold uppercase tracking-wider transition-colors hover:text-white" style={{ color: "rgba(255,255,255,0.85)" }}>
                 {label}
@@ -166,6 +167,7 @@ export default function Home() {
                 title: "Wrong Team, Every Time",
                 stat: "$27K/yr wasted",
                 desc: "23% of tickets land in the wrong queue. Each one wastes 45 minutes of agent time on rerouting, reclassification, and rework.",
+                blogUrl: "/blog/ticket-misrouting-hidden-cost",
               },
               {
                 icon: (
@@ -179,6 +181,7 @@ export default function Home() {
                 title: "Garbage In, Delays Out",
                 stat: "30% need clarification",
                 desc: "Agents spend 15+ minutes per ticket chasing users for missing information. 80% of lost productivity comes from just 12.6% of tickets.",
+                blogUrl: "/blog/incomplete-tickets-cost",
               },
               {
                 icon: (
@@ -192,6 +195,7 @@ export default function Home() {
                 title: "52% Just Give Up",
                 stat: "Only 14% resolved",
                 desc: "After 10 minutes of searching, half your users abandon the portal. They call, email, or use shadow IT — none of which you can track.",
+                blogUrl: "/blog/portal-abandonment-crisis",
               },
               {
                 icon: (
@@ -207,6 +211,7 @@ export default function Home() {
                 title: "$11M Lost to Barriers",
                 stat: "49% of executives affected",
                 desc: "Multilingual teams write tickets in broken English. Critical context is lost. Agents guess. Resolution times double.",
+                blogUrl: "/blog/language-barriers-enterprise-cost",
               },
             ].map((card, i) => (
               <ScrollReveal key={card.tag} delay={i * 100}>
@@ -217,6 +222,10 @@ export default function Home() {
                   <h3 className="pain-card__title mt-3 mb-2 font-bold">{card.title}</h3>
                   <p className="pain-card__stat text-sm font-semibold mb-3">{card.stat}</p>
                   <p className="pain-card__desc text-sm leading-relaxed">{card.desc}</p>
+                  <a href={card.blogUrl} className="pain-card__link inline-flex items-center gap-1.5 mt-5 text-xs font-semibold uppercase tracking-wider transition-colors" style={{ color: card.tagColor }}>
+                    Learn more
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                  </a>
                 </div>
               </ScrollReveal>
             ))}
