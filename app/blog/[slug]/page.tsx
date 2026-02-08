@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAllPosts, getPostBySlug, getPostSlugs } from "../data";
 import BlogContent from "./BlogContent";
+import basePath from "../../../lib/basePath";
 
 const ArrowIcon = () => (
   <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
@@ -34,7 +35,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       <nav className="fixed top-0 left-0 right-0 z-50" style={{ background: "rgba(23, 24, 87, 0.95)", backdropFilter: "blur(12px)" }}>
         <div className="max-w-[1280px] mx-auto flex items-center justify-between px-6 md:px-12 py-4">
           <Link href="/" className="flex items-center gap-3">
-            <img src="/valiantys-logo-white.svg" alt="Valiantys" style={{ height: 22 }} />
+            <img src={`${basePath}/valiantys-logo-white.svg`} alt="Valiantys" style={{ height: 22 }} />
             <span style={{ color: "rgba(255,255,255,0.3)", fontSize: 18, fontWeight: 300 }}>|</span>
             <span className="text-white font-bold text-sm uppercase tracking-wider">AI Portal</span>
           </Link>
@@ -104,7 +105,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       <footer style={{ background: "var(--navy-deep)" }}>
         <div className="max-w-[1280px] mx-auto px-6 md:px-12 py-10 flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-2">
-            <img src="/valiantys-logo-white.svg" alt="Valiantys" style={{ height: 16, opacity: 0.5 }} />
+            <img src={`${basePath}/valiantys-logo-white.svg`} alt="Valiantys" style={{ height: 16, opacity: 0.5 }} />
             <span style={{ color: "rgba(255,255,255,0.2)", fontSize: 14, fontWeight: 300 }}>|</span>
             <span className="font-bold text-white text-xs uppercase tracking-wider" style={{ opacity: 0.7 }}>AI Portal</span>
           </div>

@@ -1,5 +1,7 @@
+import Link from "next/link";
 import ROICalculator from "./components/ROICalculator";
 import ScrollReveal from "./components/ScrollReveal";
+import basePath from "../lib/basePath";
 
 /* ── SVG Icons ── */
 const ArrowIcon = () => (
@@ -36,7 +38,7 @@ export default function Home() {
       <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-300" style={{ background: "rgba(23, 24, 87, 0.95)", backdropFilter: "blur(12px)" }}>
         <div className="max-w-[1280px] mx-auto flex items-center justify-between px-6 md:px-12 py-4">
           <div className="flex items-center gap-3">
-            <img src="/valiantys-logo-white.svg" alt="Valiantys" style={{ height: 22 }} />
+            <img src={`${basePath}/valiantys-logo-white.svg`} alt="Valiantys" style={{ height: 22 }} />
             <span style={{ color: "rgba(255,255,255,0.3)", fontSize: 18, fontWeight: 300 }}>|</span>
             <span className="text-white font-bold text-sm uppercase tracking-wider">AI Portal</span>
           </div>
@@ -47,12 +49,14 @@ export default function Home() {
               ["Features", "#features"],
               ["ROI Calculator", "#roi-calculator"],
               ["Compare", "#comparison"],
-              ["Blog", "/blog"],
             ].map(([label, href]) => (
               <a key={href} href={href} className="text-sm font-semibold uppercase tracking-wider transition-colors hover:text-white" style={{ color: "rgba(255,255,255,0.85)" }}>
                 {label}
               </a>
             ))}
+            <Link href="/blog" className="text-sm font-semibold uppercase tracking-wider transition-colors hover:text-white" style={{ color: "rgba(255,255,255,0.85)" }}>
+              Blog
+            </Link>
           </div>
           <a href="#contact" className="cta-button !py-2.5 !px-5 !text-xs">
             Contact Us <ArrowIcon />
@@ -222,10 +226,10 @@ export default function Home() {
                   <h3 className="pain-card__title mt-3 mb-2 font-bold">{card.title}</h3>
                   <p className="pain-card__stat text-sm font-semibold mb-3">{card.stat}</p>
                   <p className="pain-card__desc text-sm leading-relaxed">{card.desc}</p>
-                  <a href={card.blogUrl} className="pain-card__link inline-flex items-center gap-1.5 mt-5 text-xs font-semibold uppercase tracking-wider transition-colors">
+                  <Link href={card.blogUrl} className="pain-card__link inline-flex items-center gap-1.5 mt-5 text-xs font-semibold uppercase tracking-wider transition-colors">
                     Learn more
                     <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                  </a>
+                  </Link>
                 </div>
               </ScrollReveal>
             ))}
@@ -355,7 +359,7 @@ export default function Home() {
                       <div className="px-4 py-2.5 flex items-center gap-2.5" style={{ background: "#2B2ED8" }}>
                         <div className="w-7 h-7 rounded-full flex-shrink-0 overflow-hidden" style={{ border: "1.5px solid rgba(255,255,255,0.4)", background: "linear-gradient(135deg, #7E7CDE, #51A2E7)" }}>
                           {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img src="/avatar-valy.jpg" alt="Valy" width={28} height={28} className="w-full h-full object-cover" style={{ borderRadius: "50%" }} />
+                          <img src={`${basePath}/avatar-valy.jpg`} alt="Valy" width={28} height={28} className="w-full h-full object-cover" style={{ borderRadius: "50%" }} />
                         </div>
                         <span className="text-white text-sm font-bold flex-1">Valy</span>
                         <div className="flex items-center gap-2">
@@ -633,7 +637,7 @@ export default function Home() {
           <div className="grid md:grid-cols-4 gap-10 pb-12" style={{ borderBottom: "1px dashed rgba(255,255,255,0.1)" }}>
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <img src="/valiantys-logo-white.svg" alt="Valiantys" style={{ height: 18, opacity: 0.6 }} />
+                <img src={`${basePath}/valiantys-logo-white.svg`} alt="Valiantys" style={{ height: 18, opacity: 0.6 }} />
                 <span style={{ color: "rgba(255,255,255,0.2)", fontSize: 16, fontWeight: 300 }}>|</span>
                 <span className="font-bold text-white text-xs uppercase tracking-wider">AI Portal</span>
               </div>
