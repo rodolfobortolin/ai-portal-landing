@@ -2,6 +2,7 @@ import Link from "next/link";
 import ROICalculator from "./components/ROICalculator";
 import ScrollReveal from "./components/ScrollReveal";
 import NavBar from "./components/NavBar";
+import HeroSection from "./components/HeroSection";
 import basePath from "../lib/basePath";
 
 /* ── SVG Icons ── */
@@ -50,61 +51,7 @@ export default function Home() {
       />
 
       {/* ══════════════════ HERO ══════════════════ */}
-      <section className="relative min-h-screen flex items-center overflow-hidden" style={{ background: "var(--hero-gradient)" }}>
-        <div className="absolute inset-0 mx-auto max-w-[1280px]" style={{ borderLeft: "1px dashed rgba(255,255,255,0.12)", borderRight: "1px dashed rgba(255,255,255,0.12)" }} />
-        <div className="absolute inset-0 opacity-[0.03]" style={{
-          backgroundImage: "linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)",
-          backgroundSize: "80px 80px"
-        }}/>
-        <div className="absolute top-1/4 right-[10%] w-64 h-64 rounded-full opacity-10" style={{ background: "radial-gradient(circle, #7E7CDE, transparent)", animation: "float 6s ease-in-out infinite" }} />
-        <div className="absolute bottom-1/4 left-[5%] w-48 h-48 rounded-full opacity-10" style={{ background: "radial-gradient(circle, #EC8546, transparent)", animation: "float 8s ease-in-out infinite 1s" }} />
-
-        <div className="relative z-10 max-w-[1280px] mx-auto px-6 md:px-12 pt-32 pb-20">
-          <div className="max-w-4xl">
-            <div className="animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
-              <span className="inline-flex items-center gap-2 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest rounded-full mb-8"
-                    style={{ background: "rgba(236,133,70,0.15)", color: "#EC8546", border: "1px solid rgba(236,133,70,0.3)" }}>
-                <span className="w-1.5 h-1.5 rounded-full bg-current animate-pulse" />
-                For Jira Service Management
-              </span>
-            </div>
-
-            <h1 className="text-white mb-6 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
-              Stop Losing Money
-              <br />
-              <span style={{ color: "rgba(255,255,255,0.4)" }}>on Bad Tickets.</span>
-            </h1>
-
-            <p className="text-lg md:text-xl max-w-2xl mb-10 animate-fade-in-up" style={{ color: "rgba(255,255,255,0.55)", animationDelay: "0.6s", lineHeight: 1.7 }}>
-              Misrouted tickets, incomplete forms, and abandoned submissions are silently draining your support team.
-              AI Portal lets users describe what they need in <strong className="text-white">any language</strong> and creates perfectly structured tickets, every time.
-            </p>
-
-            <div className="flex flex-wrap gap-4 animate-fade-in-up" style={{ animationDelay: "0.8s" }}>
-              <a href="#roi-calculator" className="cta-button">
-                Calculate Your ROI <ArrowIcon />
-              </a>
-              <a href="#how-it-works" className="cta-button cta-button-outline">
-                See How It Works <ArrowIcon />
-              </a>
-            </div>
-
-            <div className="flex flex-wrap items-center gap-6 mt-14 pt-8 animate-fade-in-up" style={{ borderTop: "1px dashed rgba(255,255,255,0.12)", animationDelay: "1s" }}>
-              {[
-                "Runs on Atlassian Forge",
-                "100+ Languages",
-                "Voice & Text Input",
-                "5-Minute Install",
-              ].map((badge) => (
-                <span key={badge} className="flex items-center gap-2 text-xs font-medium" style={{ color: "rgba(255,255,255,0.4)" }}>
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3 6-6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                  {badge}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <HeroSection />
 
       {/* ══════════════════ SOCIAL PROOF STATS ══════════════════ */}
       <section className="relative py-0" style={{ background: "var(--navy)" }}>
