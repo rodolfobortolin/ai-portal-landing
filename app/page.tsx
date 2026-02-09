@@ -727,11 +727,7 @@ export default function Home() {
             <p className="text-xs" style={{ color: "rgba(255,255,255,0.2)" }}>
               &copy; 2026 Valiantys. All rights reserved.
             </p>
-            <div className="flex gap-6">
-              {["Privacy Policy", "Terms of Service", "Cookie Settings"].map(l => (
-                <a key={l} href="#" className="text-xs hover:text-white transition-colors" style={{ color: "rgba(255,255,255,0.2)" }}>{l}</a>
-              ))}
-            </div>
+            {/* Privacy Policy, Terms of Service, Cookie Settings - hidden for now */}
           </div>
         </div>
       </footer>
