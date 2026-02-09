@@ -697,25 +697,29 @@ export default function Home() {
             <div>
               <h4 className="text-xs font-semibold uppercase tracking-widest mb-4" style={{ color: "rgba(255,255,255,0.5)" }}>Product</h4>
               <div className="space-y-2.5">
-                {["Features", "ROI Calculator", "Pricing", "Documentation"].map(l => (
-                  <a key={l} href="#" className="block text-xs hover:text-white transition-colors" style={{ color: "rgba(255,255,255,0.35)" }}>{l}</a>
+                {[
+                  { label: "Features", href: "#features" },
+                  { label: "ROI Calculator", href: "#roi-calculator" },
+                ].map(l => (
+                  <a key={l.label} href={l.href} className="block text-xs hover:text-white transition-colors" style={{ color: "rgba(255,255,255,0.35)" }}>{l.label}</a>
                 ))}
               </div>
             </div>
             <div>
               <h4 className="text-xs font-semibold uppercase tracking-widest mb-4" style={{ color: "rgba(255,255,255,0.5)" }}>Resources</h4>
               <div className="space-y-2.5">
-                {["Atlassian Marketplace", "Case Studies", "Blog", "Support"].map(l => (
-                  <a key={l} href="#" className="block text-xs hover:text-white transition-colors" style={{ color: "rgba(255,255,255,0.35)" }}>{l}</a>
+                {[
+                  { label: "Atlassian Marketplace", href: "#" },
+                  { label: "Blog", href: "/blog" },
+                ].map(l => (
+                  <a key={l.label} href={l.href} className="block text-xs hover:text-white transition-colors" style={{ color: "rgba(255,255,255,0.35)" }}>{l.label}</a>
                 ))}
               </div>
             </div>
             <div>
               <h4 className="text-xs font-semibold uppercase tracking-widest mb-4" style={{ color: "rgba(255,255,255,0.5)" }}>Company</h4>
               <div className="space-y-2.5">
-                {["About Valiantys", "Partners", "Careers", "Contact"].map(l => (
-                  <a key={l} href="#" className="block text-xs hover:text-white transition-colors" style={{ color: "rgba(255,255,255,0.35)" }}>{l}</a>
-                ))}
+                <a href="https://valiantys.com" target="_blank" rel="noopener noreferrer" className="block text-xs hover:text-white transition-colors" style={{ color: "rgba(255,255,255,0.35)" }}>About Valiantys</a>
               </div>
             </div>
           </div>
