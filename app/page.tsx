@@ -54,7 +54,7 @@ export default function Home() {
       <HeroSection />
 
       {/* ══════════════════ SOCIAL PROOF STATS ══════════════════ */}
-      <section className="relative py-0" style={{ background: "var(--navy)" }}>
+      <section className="relative py-0 z-10" style={{ background: "var(--navy)" }}>
         <div className="max-w-[1280px] mx-auto grid grid-cols-2 md:grid-cols-4">
           {[
             { number: "23%", label: "of tickets go to the wrong team, wasting 45 min each", source: "BMC", color: "#EC8546" },

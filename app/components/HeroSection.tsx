@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { HeroWordReveal, HeroBlurIn } from "./HeroReveal";
 import basePath from "../../lib/basePath";
 
@@ -13,10 +13,27 @@ const ArrowIcon = () => (
 export default function HeroSection() {
   const [headingDone, setHeadingDone] = useState(false);
   const [subheadDone, setSubheadDone] = useState(false);
+  const imgRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const img = imgRef.current;
+    if (!img) return;
+
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      // The image starts lower and rises as user scrolls
+      const translateY = Math.max(0, 100 - scrollY * 0.25);
+      img.style.transform = `translateY(${translateY}px)`;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <section
-      className="relative min-h-screen flex items-center overflow-hidden"
+      className="relative flex flex-col overflow-hidden"
       style={{ background: "var(--hero-gradient)" }}
     >
       {/* Dashed vertical borders */}
@@ -42,7 +59,8 @@ export default function HeroSection() {
         style={{ background: "radial-gradient(circle, #EC8546, transparent)", animation: "float 8s ease-in-out infinite 1s" }}
       />
 
-      <div className="relative z-10 max-w-[1280px] mx-auto px-6 md:px-12 pt-32 pb-20">
+      {/* Hero text content */}
+      <div className="relative z-10 max-w-[1280px] mx-auto px-6 md:px-12 pt-32 pb-16 min-h-screen flex items-center">
         <div className="max-w-4xl">
           {/* Badge */}
           <HeroBlurIn delayMs={200}>
@@ -110,6 +128,22 @@ export default function HeroSection() {
               ))}
             </div>
           </HeroBlurIn>
+        </div>
+      </div>
+
+      {/* App screenshot — parallax rising on scroll */}
+      <div className="relative z-10 max-w-[960px] mx-auto px-6 md:px-12 pb-0">
+        <div ref={imgRef} className="will-change-transform" style={{ transform: "translateY(100px)" }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={`${basePath}/app-screenshot.png`}
+            alt="AI Portal - Help Center with AI Assistant"
+            className="w-full block"
+            style={{
+              borderRadius: 16,
+              boxShadow: "0 -8px 60px rgba(0,0,0,0.3)",
+            }}
+          />
         </div>
       </div>
     </section>
