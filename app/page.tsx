@@ -76,8 +76,8 @@ export default function Home() {
             </h1>
 
             <p className="text-lg md:text-xl max-w-2xl mb-10 animate-fade-in-up" style={{ color: "rgba(255,255,255,0.55)", animationDelay: "0.6s", lineHeight: 1.7 }}>
-              Your JSM portal costs <strong className="text-white">$156,000/year</strong> in misrouted tickets, incomplete forms, and abandoned submissions.
-              AI Portal lets users describe what they need in <strong className="text-white">any language</strong> — and creates perfect tickets, every time.
+              Misrouted tickets, incomplete forms, and abandoned submissions are silently draining your support team.
+              AI Portal lets users describe what they need in <strong className="text-white">any language</strong> and creates perfectly structured tickets, every time.
             </p>
 
             <div className="flex flex-wrap gap-4 animate-fade-in-up" style={{ animationDelay: "0.8s" }}>
@@ -328,7 +328,7 @@ export default function Home() {
                   Users tap the microphone and speak in their native language — Portuguese, Japanese, Arabic, anything. The AI transcribes, understands context, and creates structured tickets in whatever language your agents prefer.
                 </p>
                 <div className="grid grid-cols-2 gap-3">
-                  {["100+ languages supported", "Voice-to-ticket in seconds", "Auto-submit or review first", "Works on mobile"].map(h => (
+                  {["100+ languages supported", "Voice-to-ticket in seconds", "Auto-submit or review first"].map(h => (
                     <span key={h} className="flex items-center gap-2 text-sm" style={{ color: "var(--navy)" }}>
                       <CheckIcon /> {h}
                     </span>
@@ -467,28 +467,65 @@ export default function Home() {
               </div>
               <div>
                 <div className="relative w-full min-h-[340px] flex items-center justify-center" style={{ background: "linear-gradient(135deg, rgba(81,162,231,0.06), rgba(81,162,231,0.02))", borderRadius: 12 }}>
-                  <div className="rounded-xl shadow-2xl overflow-hidden" style={{ width: 300, background: "white", border: "1px solid var(--border)" }}>
+                  <div className="rounded-xl shadow-2xl overflow-hidden" style={{ width: 340, background: "white", border: "1px solid var(--border)" }}>
+                    {/* Header */}
                     <div className="px-4 py-2.5 flex items-center gap-2" style={{ borderBottom: "1px solid var(--border)" }}>
-                      <span className="text-[11px] font-bold" style={{ color: "var(--navy)" }}>Analytics</span>
-                      <span className="ml-auto text-[10px] px-2 py-0.5 rounded" style={{ background: "rgba(81,162,231,0.1)", color: "#51A2E7" }}>Live</span>
+                      <span className="text-[11px] font-bold" style={{ color: "var(--navy)" }}>Analytics Dashboard</span>
+                      <span className="ml-auto text-[10px] px-2 py-0.5 rounded cursor-pointer" style={{ background: "var(--offwhite)", color: "var(--grey)" }}>Refresh</span>
                     </div>
-                    <div className="p-4 grid grid-cols-2 gap-3">
+                    {/* Summary cards row 1 */}
+                    <div className="px-4 pt-4 grid grid-cols-3 gap-2">
                       {[
-                        { label: "Conversations", value: "2,847", color: "#51A2E7" },
-                        { label: "Tickets", value: "1,923", color: "#7E7CDE" },
-                        { label: "Satisfaction", value: "94%", color: "#1B4332" },
-                        { label: "Voice Usage", value: "38%", color: "#EC8546" },
+                        { label: "CONVERSATIONS", value: "49", borderColor: "#EC8546" },
+                        { label: "TICKETS CREATED", value: "18", borderColor: "#51A2E7" },
+                        { label: "FEEDBACK", value: "\uD83D\uDC4D 9  \uD83D\uDC4E 2", borderColor: "#7E7CDE" },
                       ].map(m => (
-                        <div key={m.label} className="rounded-lg p-2.5" style={{ background: "var(--offwhite)" }}>
-                          <p className="text-[10px]" style={{ color: "var(--grey)" }}>{m.label}</p>
-                          <p className="text-lg font-bold" style={{ color: m.color }}>{m.value}</p>
+                        <div key={m.label} className="rounded-lg p-2 text-center" style={{ border: "1px solid var(--border)", borderTop: `3px solid ${m.borderColor}` }}>
+                          <p className="text-[8px] font-bold tracking-wider" style={{ color: "var(--grey)" }}>{m.label}</p>
+                          <p className="text-base font-bold mt-0.5" style={{ color: "var(--navy)" }}>{m.value}</p>
                         </div>
                       ))}
                     </div>
-                    <div className="px-4 pb-4 flex items-end gap-1.5 h-12">
-                      {[35, 52, 48, 60, 45, 72, 68].map((h, j) => (
-                        <div key={j} className="flex-1 rounded-t" style={{ height: `${h}%`, background: j === 5 ? "#51A2E7" : "rgba(81,162,231,0.15)" }} />
-                      ))}
+                    {/* Summary cards row 2 */}
+                    <div className="px-4 pt-2 grid grid-cols-2 gap-2">
+                      <div className="rounded-lg p-2 text-center" style={{ border: "1px solid var(--border)" }}>
+                        <p className="text-[8px] font-bold tracking-wider" style={{ color: "var(--grey)" }}>TOTAL TOKENS</p>
+                        <p className="text-base font-bold" style={{ color: "var(--navy)" }}>720.5K</p>
+                        <p className="text-[8px]" style={{ color: "var(--grey)" }}>Input: 697.5K &nbsp; Output: 23.0K</p>
+                      </div>
+                      <div className="rounded-lg p-2 text-center" style={{ border: "1px solid var(--border)" }}>
+                        <p className="text-[8px] font-bold tracking-wider" style={{ color: "var(--grey)" }}>TRANSCRIPTIONS</p>
+                        <p className="text-base font-bold" style={{ color: "var(--navy)" }}>22</p>
+                        <p className="text-[8px]" style={{ color: "var(--grey)" }}>Audio: 2m 24s &nbsp; Words: 363</p>
+                      </div>
+                    </div>
+                    {/* Last 7 Days mini table */}
+                    <div className="px-4 pt-3 pb-4">
+                      <p className="text-[10px] font-bold mb-2" style={{ color: "var(--navy)" }}>Last 7 Days</p>
+                      <table className="w-full text-[8px]" style={{ color: "var(--grey)" }}>
+                        <thead>
+                          <tr style={{ borderBottom: "1px solid var(--border)" }}>
+                            {["Date", "Conv", "Tickets", "Tokens", "Feedback"].map(h => (
+                              <th key={h} className="py-1 font-bold text-left" style={{ color: "var(--navy)" }}>{h}</th>
+                            ))}
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {[
+                            { date: "02-09", conv: "17", tickets: "3", tokens: "230K", fb: "\uD83D\uDC4D1 \uD83D\uDC4E0" },
+                            { date: "02-08", conv: "16", tickets: "7", tokens: "262K", fb: "\uD83D\uDC4D5 \uD83D\uDC4E0" },
+                            { date: "02-07", conv: "16", tickets: "8", tokens: "228K", fb: "\uD83D\uDC4D3 \uD83D\uDC4E2" },
+                          ].map(r => (
+                            <tr key={r.date} style={{ borderBottom: "1px solid var(--border)" }}>
+                              <td className="py-1">{r.date}</td>
+                              <td className="py-1">{r.conv}</td>
+                              <td className="py-1">{r.tickets}</td>
+                              <td className="py-1">{r.tokens}</td>
+                              <td className="py-1">{r.fb}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
                     </div>
                   </div>
                 </div>
