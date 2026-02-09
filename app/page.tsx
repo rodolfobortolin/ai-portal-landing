@@ -1,6 +1,7 @@
 import Link from "next/link";
 import ROICalculator from "./components/ROICalculator";
 import ScrollReveal from "./components/ScrollReveal";
+import NavBar from "./components/NavBar";
 import basePath from "../lib/basePath";
 
 /* ── SVG Icons ── */
@@ -35,34 +36,18 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       {/* ══════════════════ NAVIGATION ══════════════════ */}
-      <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-300" style={{ background: "rgba(23, 24, 87, 0.95)", backdropFilter: "blur(12px)" }}>
-        <div className="max-w-[1280px] mx-auto flex items-center justify-between px-6 md:px-12 py-4">
-          <div className="flex items-center gap-3">
-            <img src={`${basePath}/valiantys-logo-white.svg`} alt="Valiantys" style={{ height: 22 }} />
-            <span style={{ color: "rgba(255,255,255,0.3)", fontSize: 18, fontWeight: 300 }}>|</span>
-            <span className="text-white font-bold text-sm uppercase tracking-wider">AI Portal</span>
-          </div>
-          <div className="hidden md:flex items-center gap-8">
-            {[
-              ["Problem", "#pain-points"],
-              ["How It Works", "#how-it-works"],
-              ["Features", "#features"],
-              ["ROI Calculator", "#roi-calculator"],
-              ["Compare", "#comparison"],
-            ].map(([label, href]) => (
-              <a key={href} href={href} className="text-sm font-semibold uppercase tracking-wider transition-colors hover:text-white" style={{ color: "rgba(255,255,255,0.85)" }}>
-                {label}
-              </a>
-            ))}
-            <Link href="/blog" className="text-sm font-semibold uppercase tracking-wider transition-colors hover:text-white" style={{ color: "rgba(255,255,255,0.85)" }}>
-              Blog
-            </Link>
-          </div>
-          <a href="#contact" className="cta-button !py-2.5 !px-5 !text-xs">
-            Contact Us <ArrowIcon />
-          </a>
-        </div>
-      </nav>
+      <NavBar
+        links={[
+          { label: "Problem", href: "#pain-points" },
+          { label: "How It Works", href: "#how-it-works" },
+          { label: "Features", href: "#features" },
+          { label: "ROI Calculator", href: "#roi-calculator" },
+          { label: "Compare", href: "#comparison" },
+          { label: "Blog", href: "/blog" },
+        ]}
+        ctaHref="#contact"
+        ctaLabel="Contact Us"
+      />
 
       {/* ══════════════════ HERO ══════════════════ */}
       <section className="relative min-h-screen flex items-center overflow-hidden" style={{ background: "var(--hero-gradient)" }}>
@@ -639,6 +624,7 @@ export default function Home() {
               <div className="flex items-center gap-2 mb-4">
                 <img src={`${basePath}/valiantys-logo-white.svg`} alt="Valiantys" style={{ height: 18, opacity: 0.6 }} />
                 <span style={{ color: "rgba(255,255,255,0.2)", fontSize: 16, fontWeight: 300 }}>|</span>
+                <img src={`${basePath}/ai-portal-logo.png`} alt="AI Portal" style={{ height: 22, opacity: 0.8 }} />
                 <span className="font-bold text-white text-xs uppercase tracking-wider">AI Portal</span>
               </div>
               <p className="text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.35)" }}>

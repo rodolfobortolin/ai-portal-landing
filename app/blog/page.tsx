@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getAllPosts } from "./data";
+import NavBar from "../components/NavBar";
 import basePath from "../../lib/basePath";
 
 const ArrowIcon = () => (
@@ -19,22 +20,14 @@ export default function BlogPage() {
   return (
     <main className="min-h-screen">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50" style={{ background: "rgba(23, 24, 87, 0.95)", backdropFilter: "blur(12px)" }}>
-        <div className="max-w-[1280px] mx-auto flex items-center justify-between px-6 md:px-12 py-4">
-          <Link href="/" className="flex items-center gap-3">
-            <img src={`${basePath}/valiantys-logo-white.svg`} alt="Valiantys" style={{ height: 22 }} />
-            <span style={{ color: "rgba(255,255,255,0.3)", fontSize: 18, fontWeight: 300 }}>|</span>
-            <span className="text-white font-bold text-sm uppercase tracking-wider">AI Portal</span>
-          </Link>
-          <div className="hidden md:flex items-center gap-8">
-            <Link href="/#pain-points" className="text-sm font-semibold uppercase tracking-wider transition-colors hover:text-white" style={{ color: "rgba(255,255,255,0.85)" }}>Home</Link>
-            <span className="text-sm font-semibold uppercase tracking-wider text-white">Blog</span>
-          </div>
-          <Link href="/#contact" className="inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-wider text-white px-5 py-2.5 rounded" style={{ background: "var(--blue-cta)" }}>
-            Contact Us <ArrowIcon />
-          </Link>
-        </div>
-      </nav>
+      <NavBar
+        links={[
+          { label: "Home", href: "/" },
+          { label: "Blog", href: "/blog", active: true },
+        ]}
+        ctaHref="/#contact"
+        ctaLabel="Contact Us"
+      />
 
       {/* Hero */}
       <section className="pt-32 pb-16 md:pt-40 md:pb-20" style={{ background: "var(--hero-gradient)" }}>
@@ -110,6 +103,7 @@ export default function BlogPage() {
           <div className="flex items-center gap-2">
             <img src={`${basePath}/valiantys-logo-white.svg`} alt="Valiantys" style={{ height: 16, opacity: 0.5 }} />
             <span style={{ color: "rgba(255,255,255,0.2)", fontSize: 14, fontWeight: 300 }}>|</span>
+            <img src={`${basePath}/ai-portal-logo.png`} alt="AI Portal" style={{ height: 20, opacity: 0.7 }} />
             <span className="font-bold text-white text-xs uppercase tracking-wider" style={{ opacity: 0.7 }}>AI Portal</span>
           </div>
           <p className="text-xs" style={{ color: "rgba(255,255,255,0.2)" }}>
