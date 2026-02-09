@@ -110,16 +110,16 @@ export default function Home() {
       <section className="relative py-0" style={{ background: "var(--navy)" }}>
         <div className="max-w-[1280px] mx-auto grid grid-cols-2 md:grid-cols-4">
           {[
-            { number: "23%", label: "of tickets misrouted", source: "BMC", color: "#EC8546" },
-            { number: "14%", label: "self-service resolved", source: "Gartner", color: "#7E7CDE" },
-            { number: "$22", label: "avg ticket cost", source: "MetricNet", color: "#51A2E7" },
-            { number: "3.5x", label: "ROI on AI investment", source: "Freshworks", color: "#C27EEA" },
+            { number: "23%", label: "of tickets go to the wrong team, wasting 45 min each", source: "BMC", color: "#EC8546" },
+            { number: "86%", label: "of self-service issues fail to resolve without human help", source: "Gartner", color: "#7E7CDE" },
+            { number: "$22", label: "average cost per L1 ticket. Misrouted ones cost 2-3x more", source: "MetricNet", color: "#51A2E7" },
+            { number: "3.5x", label: "return for every $1 invested in AI-powered support", source: "Freshworks", color: "#C27EEA" },
           ].map((stat, i) => (
             <ScrollReveal key={stat.number} delay={i * 100}>
               <div className="py-10 px-6 md:px-8 text-center" style={{ borderRight: i < 3 ? "1px dashed rgba(255,255,255,0.1)" : "none" }}>
                 <p className="text-3xl md:text-4xl font-bold tabular-nums" style={{ color: stat.color }}>{stat.number}</p>
-                <p className="text-xs mt-2" style={{ color: "rgba(255,255,255,0.4)" }}>{stat.label}</p>
-                <p className="text-[10px] mt-1 uppercase tracking-widest" style={{ color: "rgba(255,255,255,0.2)" }}>{stat.source}</p>
+                <p className="text-xs mt-2 leading-relaxed" style={{ color: "rgba(255,255,255,0.5)" }}>{stat.label}</p>
+                <p className="text-[10px] mt-1.5 uppercase tracking-widest" style={{ color: "rgba(255,255,255,0.25)" }}>{stat.source}</p>
               </div>
             </ScrollReveal>
           ))}
