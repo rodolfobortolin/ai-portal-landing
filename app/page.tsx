@@ -328,7 +328,7 @@ export default function Home() {
                   Users tap the microphone and speak in their native language — Portuguese, Japanese, Arabic, anything. The AI transcribes, understands context, and creates structured tickets in whatever language your agents prefer.
                 </p>
                 <div className="grid grid-cols-2 gap-3">
-                  {["100+ languages supported", "Voice-to-ticket in seconds", "Auto-submit or review first"].map(h => (
+                  {["100+ languages supported", "Instant voice-to-ticket", "Auto-submit or review first"].map(h => (
                     <span key={h} className="flex items-center gap-2 text-sm" style={{ color: "var(--navy)" }}>
                       <CheckIcon /> {h}
                     </span>
@@ -410,15 +410,15 @@ export default function Home() {
           <ScrollReveal delay={100}>
             <div className="grid lg:grid-cols-2 gap-12 items-center py-16 mb-8" style={{ borderBottom: "1px dashed var(--border)" }}>
               <div className="lg:order-2">
-                <span className="text-[11px] font-bold uppercase tracking-widest" style={{ color: "#7E7CDE" }}>THREE-LAYER INSTRUCTIONS</span>
+                <span className="text-[11px] font-bold uppercase tracking-widest" style={{ color: "#7E7CDE" }}>MULTI-LAYER INSTRUCTIONS</span>
                 <h2 className="mt-4 mb-5" style={{ color: "var(--navy)", fontSize: "clamp(28px, 3.5vw, 48px)", lineHeight: 1.1, letterSpacing: "-0.03em" }}>
                   {"Granular AI Control.\nYour Rules, Always.".split("\n").map((line, i) => <span key={i}>{line}<br/></span>)}
                 </h2>
                 <p className="text-base leading-relaxed mb-6" style={{ color: "var(--grey)" }}>
-                  Configure AI behavior at three levels: Company-wide rules, per-Service Desk rules, and per-Request Type rules. The AI always follows your organization&apos;s specific processes.
+                  Configure AI behavior at four levels: Company-wide rules, per-Service Desk, per-Request Type, and real-time Agent Prompts. Agents can set operational notices (via UI or API) that the AI uses immediately, with optional auto-expiry.
                 </p>
                 <div className="grid grid-cols-2 gap-3">
-                  {["Global company rules", "Service desk overrides", "Request type specifics", "Priority cascading"].map(h => (
+                  {["Global company rules", "Service desk overrides", "Request type specifics", "Real-time agent prompts"].map(h => (
                     <span key={h} className="flex items-center gap-2 text-sm" style={{ color: "var(--navy)" }}>
                       <CheckIcon /> {h}
                     </span>
@@ -426,19 +426,35 @@ export default function Home() {
                 </div>
               </div>
               <div className="lg:order-1">
-                <div className="relative w-full min-h-[340px] flex items-center justify-center" style={{ background: "linear-gradient(135deg, rgba(126,124,222,0.06), rgba(126,124,222,0.02))", borderRadius: 12 }}>
-                  <div className="relative" style={{ width: 260 }}>
-                    <div className="absolute top-0 left-4 right-4 rounded-lg p-4 shadow-sm" style={{ background: "rgba(126,124,222,0.08)", border: "1px dashed rgba(126,124,222,0.3)", height: 80 }}>
-                      <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: "#7E7CDE" }}>Layer 1 — Company</span>
-                    </div>
-                    <div className="absolute top-12 left-2 right-2 rounded-lg p-4 shadow-md" style={{ background: "rgba(126,124,222,0.12)", border: "1px dashed rgba(126,124,222,0.4)", height: 80 }}>
-                      <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: "#7E7CDE" }}>Layer 2 — Service Desk</span>
-                    </div>
-                    <div className="relative top-24 rounded-lg p-5 shadow-xl" style={{ background: "white", border: "2px solid #7E7CDE" }}>
-                      <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: "#7E7CDE" }}>Layer 3 — Request Type</span>
-                      <p className="text-xs mt-2" style={{ color: "var(--grey)" }}>
-                        &quot;For laptop requests, always ask about preferred OS and RAM.&quot;
-                      </p>
+                <div className="relative w-full flex items-center justify-center py-10" style={{ background: "linear-gradient(135deg, rgba(126,124,222,0.06), rgba(126,124,222,0.02))", borderRadius: 12 }}>
+                  <div style={{ width: 300 }}>
+                    <div className="relative flex flex-col gap-3" style={{ paddingLeft: 32 }}>
+                      {/* Continuous vertical line behind circles */}
+                      <div className="absolute" style={{ left: 9, top: 10, bottom: 10, width: 2, background: "linear-gradient(to bottom, rgba(126,124,222,0.3), rgba(236,133,70,0.4))" }} />
+                      {[
+                        { label: "Company", desc: "Global rules for all conversations", num: 1, circleColor: "#7E7CDE", bgOpacity: 0.08, borderOpacity: 0.25 },
+                        { label: "Service Desk", desc: "Override rules per desk", num: 2, circleColor: "#7E7CDE", bgOpacity: 0.12, borderOpacity: 0.35 },
+                        { label: "Request Type", desc: "Specific field & behavior rules", num: 3, circleColor: "#7E7CDE", bgOpacity: 0.18, borderOpacity: 0.5 },
+                      ].map((layer) => (
+                        <div key={layer.label} className="relative flex items-center gap-3">
+                          <div className="absolute flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-[9px] font-bold text-white" style={{ background: layer.circleColor, left: -32 + 2, zIndex: 1 }}>{layer.num}</div>
+                          <div className="flex-1 rounded-lg px-3 py-2.5" style={{ background: `rgba(126,124,222,${layer.bgOpacity})`, border: `1px solid rgba(126,124,222,${layer.borderOpacity})` }}>
+                            <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: "#7E7CDE" }}>{layer.label}</span>
+                            <p className="text-[11px] mt-0.5" style={{ color: "var(--grey)" }}>{layer.desc}</p>
+                          </div>
+                        </div>
+                      ))}
+                      {/* Layer 4 - Agent Prompt (special) */}
+                      <div className="relative flex items-center gap-3">
+                        <div className="absolute flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-[9px] font-bold text-white" style={{ background: "#EC8546", left: -32 + 2, zIndex: 1 }}>4</div>
+                        <div className="flex-1 rounded-lg px-3 py-3 shadow-md" style={{ background: "white", border: "2px solid #EC8546" }}>
+                          <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: "#EC8546" }}>Agent Prompt</span>
+                          <p className="text-[11px] mt-1" style={{ color: "var(--grey)" }}>
+                            &quot;SAP is down until Feb 10. Inform users about this outage.&quot;
+                          </p>
+                          <span className="inline-block mt-1.5 text-[9px] px-2 py-0.5 rounded-full font-semibold" style={{ background: "rgba(236,133,70,0.12)", color: "#EC8546" }}>Real-time · UI or API · Auto-expires</span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
