@@ -527,26 +527,36 @@ export default function Home() {
                       <th className="text-left p-4 font-semibold text-xs uppercase tracking-wider">Capability</th>
                       <th className="p-4 font-semibold text-xs uppercase tracking-wider text-center">JSM Virtual Agent</th>
                       <th className="p-4 font-semibold text-xs uppercase tracking-wider text-center" style={{ background: "var(--blue-cta)" }}>AI Portal</th>
-                      <th className="p-4 font-semibold text-xs uppercase tracking-wider text-center">Custom Build</th>
                     </tr>
                   </thead>
                   <tbody>
                     {[
-                      { feature: "Natural Language Understanding", jsm: "partial", ai: "check", custom: "check" },
-                      { feature: "Voice Input (any language)", jsm: "cross", ai: "check", custom: "partial" },
-                      { feature: "100+ Languages", jsm: "partial", ai: "check", custom: "partial" },
-                      { feature: "Per-Request-Type Instructions", jsm: "cross", ai: "check", custom: "check" },
-                      { feature: "File Attachments in Chat", jsm: "cross", ai: "check", custom: "partial" },
-                      { feature: "Full White-Label Branding", jsm: "partial", ai: "check", custom: "check" },
-                      { feature: "Model Selection (9 models)", jsm: "cross", ai: "check", custom: "check" },
-                      { feature: "Analytics Dashboard", jsm: "partial", ai: "check", custom: "partial" },
-                      { feature: "Auto-Confirm Mode", jsm: "cross", ai: "check", custom: "check" },
-                      { feature: "Install Time", jsm: "5 min", ai: "5 min", custom: "3-6 mo" },
-                      { feature: "Cost", jsm: "Included*", ai: "Sub", custom: "$150K+" },
+                      /* Both have */
+                      { feature: "Natural Language Understanding", jsm: "check", ai: "check" },
+                      { feature: "100+ Languages", jsm: "check", ai: "check" },
+                      { feature: "Confluence KB Integration", jsm: "check", ai: "check" },
+                      { feature: "Analytics Dashboard", jsm: "check", ai: "check" },
+                      { feature: "Integrated in Jira Search Bar", jsm: "check", ai: "cross" },
+                      /* JSM partial */
+                      { feature: "Full White-Label Branding", jsm: "partial", ai: "check" },
+                      /* Only AI Portal */
+                      { feature: "Ticket Creation Focus", jsm: "cross", ai: "check" },
+                      { feature: "Required Fields Auto-Detection", jsm: "cross", ai: "check" },
+                      { feature: "Voice Input (any language)", jsm: "cross", ai: "check" },
+                      { feature: "File Attachments in Chat", jsm: "cross", ai: "check" },
+                      { feature: "Per-Request-Type Instructions", jsm: "cross", ai: "check" },
+                      { feature: "Full Prompt Control (3 layers)", jsm: "cross", ai: "check" },
+                      { feature: "Real-Time Agent Prompts (UI + API)", jsm: "cross", ai: "check" },
+                      { feature: "LLM Model Selection", jsm: "cross", ai: "check" },
+                      { feature: "Bring Your Own Key (BYOK)", jsm: "cross", ai: "check" },
+                      { feature: "Auto-Confirm Mode", jsm: "cross", ai: "check" },
+                      /* Meta */
+                      { feature: "Install Time", jsm: "5 min", ai: "5 min" },
+                      { feature: "Cost", jsm: "Included*", ai: "Sub" },
                     ].map((row, i) => (
                       <tr key={row.feature} style={{ borderTop: "1px solid var(--border)", background: i % 2 === 0 ? "white" : "var(--offwhite)" }}>
                         <td className="p-4 font-medium" style={{ color: "var(--navy)" }}>{row.feature}</td>
-                        {(["jsm", "ai", "custom"] as const).map((col) => {
+                        {(["jsm", "ai"] as const).map((col) => {
                           const val = row[col];
                           return (
                             <td key={col} className="p-4 text-center" style={col === "ai" ? { background: "rgba(43,46,216,0.03)" } : {}}>
@@ -564,7 +574,7 @@ export default function Home() {
               </div>
             </div>
             <p className="text-xs text-center mt-4" style={{ color: "var(--grey)" }}>
-              * JSM Virtual Agent included in Premium/Enterprise plans with limited capabilities.
+              * JSM Virtual Agent included in Premium/Enterprise plans.
             </p>
           </ScrollReveal>
         </div>
