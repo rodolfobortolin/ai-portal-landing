@@ -297,6 +297,26 @@ input[type="range"]::-moz-range-thumb {
   box-shadow: 0 2px 8px rgba(43, 46, 216, 0.3);
 }
 
+/* ── ROI mini sliders ── */
+
+.roi-mini-slider {
+  height: 3px !important;
+}
+
+.roi-mini-slider::-webkit-slider-thumb {
+  width: 14px !important;
+  height: 14px !important;
+  border-width: 2px !important;
+  box-shadow: 0 1px 4px rgba(43, 46, 216, 0.3) !important;
+}
+
+.roi-mini-slider::-moz-range-thumb {
+  width: 14px !important;
+  height: 14px !important;
+  border-width: 2px !important;
+  box-shadow: 0 1px 4px rgba(43, 46, 216, 0.3) !important;
+}
+
 /* ── Intersection observer reveal ── */
 
 .reveal {

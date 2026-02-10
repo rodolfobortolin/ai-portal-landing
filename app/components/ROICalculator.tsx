@@ -37,10 +37,30 @@ function formatCurrency(n: number): string {
   return `$${n.toLocaleString()}`;
 }
 
+function getMonthlyPricePerUser(teamSize: number): number {
+  if (teamSize <= 10) return 0;
+  if (teamSize <= 100) return 2.00;
+  if (teamSize <= 250) return 1.55;
+  if (teamSize <= 1000) return 0.60;
+  if (teamSize <= 2500) return 0.35;
+  if (teamSize <= 5000) return 0.25;
+  if (teamSize <= 10000) return 0.15;
+  return 0.10;
+}
+
+function getAnnualSubscription(teamSize: number): number {
+  return teamSize * getMonthlyPricePerUser(teamSize) * 12;
+}
+
 export default function ROICalculator() {
   const [tickets, setTickets] = useState(1000);
   const [agentCost, setAgentCost] = useState(45);
   const [misrouteRate, setMisrouteRate] = useState(23);
+  const [teamSize, setTeamSize] = useState(100);
+  const [misrouteReduction, setMisrouteReduction] = useState(90);
+  const [clarificationReduction, setClarificationReduction] = useState(80);
+  const [abandonmentReduction, setAbandonmentReduction] = useState(70);
+  const [trainingReduction, setTrainingReduction] = useState(80);
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -50,15 +70,17 @@ export default function ROICalculator() {
   const abandonmentWaste = (tickets * 0.10 * 25 * (agentCost / 60)) * 12;
   const totalAnnualWaste = misrouteWaste + clarificationWaste + abandonmentWaste;
 
-  const misrouteSaved = misrouteWaste * 0.90;
-  const clarificationSaved = clarificationWaste * 0.80;
-  const abandonmentSaved = abandonmentWaste * 0.70;
-  const trainingSaved = 6000;
+  const misrouteSaved = misrouteWaste * (misrouteReduction / 100);
+  const clarificationSaved = clarificationWaste * (clarificationReduction / 100);
+  const abandonmentSaved = abandonmentWaste * (abandonmentReduction / 100);
+  const trainingHoursPerYear = 133; // ~11h/month on KB updates, comms, retraining
+  const trainingSaved = (trainingHoursPerYear * agentCost) * (trainingReduction / 100);
   const totalSavings = misrouteSaved + clarificationSaved + abandonmentSaved + trainingSaved;
 
-  const subscriptionCost = 5000;
-  const roiMultiplier = totalSavings / subscriptionCost;
-  const paybackDays = Math.round((subscriptionCost / totalSavings) * 365);
+  const subscriptionCost = getAnnualSubscription(teamSize);
+  const roiMultiplier = subscriptionCost > 0 ? totalSavings / subscriptionCost : 0;
+  const paybackDays = subscriptionCost > 0 && totalSavings > 0 ? Math.round((subscriptionCost / totalSavings) * 365) : 0;
+  const monthlyPrice = getMonthlyPricePerUser(teamSize);
 
   const animatedWaste = useAnimatedNumber(Math.round(totalAnnualWaste));
   const animatedSavings = useAnimatedNumber(Math.round(totalSavings));
@@ -157,7 +179,7 @@ export default function ROICalculator() {
               </div>
             </div>
 
-            <div>
+            <div className="mb-10">
               <div className="flex justify-between items-baseline mb-3">
                 <label className="text-sm font-semibold uppercase tracking-wider" style={{ color: "rgba(255,255,255,0.5)" }}>
                   Ticket Misroute Rate
@@ -177,14 +199,47 @@ export default function ROICalculator() {
                 }}
               />
               <div className="flex justify-between text-xs mt-1" style={{ color: "rgba(255,255,255,0.3)" }}>
-                <span>10%</span><span>40% <span className="opacity-50">(industry avg: 23%)</span></span>
+                <span>10%</span><span className="opacity-50">industry avg: 23%</span><span>40%</span>
               </div>
             </div>
 
-            {/* Source note */}
-            <p className="mt-8 text-xs" style={{ color: "rgba(255,255,255,0.3)" }}>
-              Based on benchmarks from BMC, MetricNet, HDI, and HappySignals research.
-            </p>
+            <div>
+              <div className="flex justify-between items-baseline mb-3">
+                <label className="text-sm font-semibold uppercase tracking-wider" style={{ color: "rgba(255,255,255,0.5)" }}>
+                  Team Size
+                </label>
+                <span className="text-2xl font-bold text-white tabular-nums">{teamSize.toLocaleString()} users</span>
+              </div>
+              <input
+                type="range"
+                min={10}
+                max={10000}
+                step={10}
+                value={teamSize}
+                onChange={e => setTeamSize(Number(e.target.value))}
+                className="w-full"
+                style={{
+                  background: `linear-gradient(to right, var(--blue-cta) 0%, var(--blue-cta) ${((teamSize - 10) / (10000 - 10)) * 100}%, rgba(255,255,255,0.15) ${((teamSize - 10) / (10000 - 10)) * 100}%, rgba(255,255,255,0.15) 100%)`
+                }}
+              />
+              <div className="flex justify-between text-xs mt-1" style={{ color: "rgba(255,255,255,0.3)" }}>
+                <span>10</span><span>10,000</span>
+              </div>
+              <p className="text-xs mt-2 tabular-nums" style={{ color: "rgba(255,255,255,0.4)" }}>
+                {teamSize <= 10 ? (
+                  <span style={{ color: "#4ade80" }}>Free plan — $0/year</span>
+                ) : (
+                  <>{formatCurrency(Math.round(monthlyPrice * teamSize))}/mo · <span className="opacity-60">${monthlyPrice.toFixed(2)}/user</span></>
+                )}
+              </p>
+            </div>
+
+            {/* Assumptions note */}
+            <div className="mt-8 text-xs space-y-1" style={{ color: "rgba(255,255,255,0.3)" }}>
+              <p className="font-semibold" style={{ color: "rgba(255,255,255,0.4)" }}>Assumptions used:</p>
+              <p>Misrouting: {misrouteRate}% of tickets, 45 min per transfer · Clarification: 30% of tickets, 15 min each · Abandonment: 10% of tickets, 25 min each · Training: ~11 hrs/month</p>
+              <p className="opacity-70">Sources: BMC, MetricNet, HDI, HappySignals</p>
+            </div>
           </div>
 
           {/* Results Panel */}
@@ -210,30 +265,100 @@ export default function ROICalculator() {
               <p className="text-5xl md:text-6xl font-bold tabular-nums text-white">
                 {formatCurrency(animatedSavings)}
               </p>
-              <div className="grid grid-cols-3 gap-4 mt-5 pt-5" style={{ borderTop: "1px dashed rgba(255,255,255,0.15)" }}>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-5 pt-5" style={{ borderTop: "1px dashed rgba(255,255,255,0.15)" }}>
                 <div>
                   <p className="text-xs uppercase tracking-wider mb-1" style={{ color: "rgba(255,255,255,0.4)" }}>Misrouting</p>
-                  <p className="text-sm font-bold text-white">-90%</p>
+                  <p className="text-sm font-bold text-white mb-1.5">-{misrouteReduction}%</p>
+                  <input
+                    type="range"
+                    min={0}
+                    max={100}
+                    step={5}
+                    value={misrouteReduction}
+                    onChange={e => setMisrouteReduction(Number(e.target.value))}
+                    className="w-full roi-mini-slider"
+                    style={{
+                      background: `linear-gradient(to right, var(--blue-cta) 0%, var(--blue-cta) ${misrouteReduction}%, rgba(255,255,255,0.15) ${misrouteReduction}%, rgba(255,255,255,0.15) 100%)`
+                    }}
+                  />
                 </div>
                 <div>
                   <p className="text-xs uppercase tracking-wider mb-1" style={{ color: "rgba(255,255,255,0.4)" }}>Clarification</p>
-                  <p className="text-sm font-bold text-white">-80%</p>
+                  <p className="text-sm font-bold text-white mb-1.5">-{clarificationReduction}%</p>
+                  <input
+                    type="range"
+                    min={0}
+                    max={100}
+                    step={5}
+                    value={clarificationReduction}
+                    onChange={e => setClarificationReduction(Number(e.target.value))}
+                    className="w-full roi-mini-slider"
+                    style={{
+                      background: `linear-gradient(to right, var(--blue-cta) 0%, var(--blue-cta) ${clarificationReduction}%, rgba(255,255,255,0.15) ${clarificationReduction}%, rgba(255,255,255,0.15) 100%)`
+                    }}
+                  />
                 </div>
                 <div>
                   <p className="text-xs uppercase tracking-wider mb-1" style={{ color: "rgba(255,255,255,0.4)" }}>Abandonment</p>
-                  <p className="text-sm font-bold text-white">-70%</p>
+                  <p className="text-sm font-bold text-white mb-1.5">-{abandonmentReduction}%</p>
+                  <input
+                    type="range"
+                    min={0}
+                    max={100}
+                    step={5}
+                    value={abandonmentReduction}
+                    onChange={e => setAbandonmentReduction(Number(e.target.value))}
+                    className="w-full roi-mini-slider"
+                    style={{
+                      background: `linear-gradient(to right, var(--blue-cta) 0%, var(--blue-cta) ${abandonmentReduction}%, rgba(255,255,255,0.15) ${abandonmentReduction}%, rgba(255,255,255,0.15) 100%)`
+                    }}
+                  />
                 </div>
+                <div>
+                  <p className="text-xs uppercase tracking-wider mb-1" style={{ color: "rgba(255,255,255,0.4)" }}>Training</p>
+                  <p className="text-sm font-bold text-white mb-1.5">-{trainingReduction}%</p>
+                  <input
+                    type="range"
+                    min={0}
+                    max={100}
+                    step={5}
+                    value={trainingReduction}
+                    onChange={e => setTrainingReduction(Number(e.target.value))}
+                    className="w-full roi-mini-slider"
+                    style={{
+                      background: `linear-gradient(to right, var(--blue-cta) 0%, var(--blue-cta) ${trainingReduction}%, rgba(255,255,255,0.15) ${trainingReduction}%, rgba(255,255,255,0.15) 100%)`
+                    }}
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Annual cost card */}
+            <div className="rounded-xl p-6 mb-4 flex items-center justify-between" style={{ background: "rgba(255,255,255,0.04)", border: "1px dashed rgba(255,255,255,0.1)" }}>
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-widest mb-1" style={{ color: "rgba(255,255,255,0.4)" }}>
+                  AI Portal Annual Cost
+                </p>
+                <p className="text-3xl font-bold tabular-nums" style={{ color: teamSize <= 10 ? "#4ade80" : "rgba(255,255,255,0.9)" }}>
+                  {teamSize <= 10 ? "Free" : formatCurrency(Math.round(subscriptionCost))}
+                </p>
+              </div>
+              <div className="text-right">
+                <p className="text-xs uppercase tracking-widest mb-1" style={{ color: "rgba(255,255,255,0.4)" }}>Net Savings</p>
+                <p className="text-3xl font-bold tabular-nums" style={{ color: "#4ade80" }}>
+                  {formatCurrency(Math.round(totalSavings - subscriptionCost))}
+                </p>
               </div>
             </div>
 
             {/* ROI metrics row */}
             <div className="grid grid-cols-2 gap-4">
               <div className="rounded-xl p-6 text-center" style={{ background: "rgba(255,255,255,0.06)", border: "1px dashed rgba(255,255,255,0.1)" }}>
-                <p className="text-4xl font-bold text-white tabular-nums">{(animatedROI / 10).toFixed(1)}x</p>
+                <p className="text-4xl font-bold text-white tabular-nums">{teamSize <= 10 ? "∞" : `${(animatedROI / 10).toFixed(1)}x`}</p>
                 <p className="text-xs uppercase tracking-widest mt-2" style={{ color: "rgba(255,255,255,0.4)" }}>ROI Return</p>
               </div>
               <div className="rounded-xl p-6 text-center" style={{ background: "rgba(255,255,255,0.06)", border: "1px dashed rgba(255,255,255,0.1)" }}>
-                <p className="text-4xl font-bold tabular-nums" style={{ color: "#7E7CDE" }}>{animatedPayback} days</p>
+                <p className="text-4xl font-bold tabular-nums" style={{ color: "#7E7CDE" }}>{teamSize <= 10 ? "0 days" : `${animatedPayback} days`}</p>
                 <p className="text-xs uppercase tracking-widest mt-2" style={{ color: "rgba(255,255,255,0.4)" }}>Payback Period</p>
               </div>
             </div>
