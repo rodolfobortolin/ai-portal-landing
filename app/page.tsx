@@ -589,7 +589,7 @@ export default function Home() {
                         <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: "#7E7CDE" }}>Post Function</span>
                       </div>
                       <p className="text-[12px] italic" style={{ color: "var(--navy)" }}>
-                        &quot;Set priority to Highest and add label urgent-escalation when SLA is breached&quot;
+                        &quot;Summarize all changes and add a comment. If moving to Done, set the resolution field.&quot;
                       </p>
                       <span className="inline-block mt-2 text-[9px] px-2 py-0.5 rounded-full font-semibold" style={{ background: "rgba(126,124,222,0.1)", color: "#7E7CDE" }}>
                         Returns: action executed
