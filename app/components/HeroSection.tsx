@@ -1,8 +1,7 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import { HeroWordReveal, HeroBlurIn } from "./HeroReveal";
-import basePath from "../../lib/basePath";
 
 const ArrowIcon = () => (
   <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -17,34 +16,6 @@ interface HeroSectionProps {
 export default function HeroSection({ onOpenDemo }: HeroSectionProps) {
   const [headingDone, setHeadingDone] = useState(false);
   const [subheadDone, setSubheadDone] = useState(false);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const imgRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const container = containerRef.current;
-    const img = imgRef.current;
-    if (!container || !img) return;
-
-    const handleScroll = () => {
-      const rect = container.getBoundingClientRect();
-      const windowH = window.innerHeight;
-
-      // When container bottom enters viewport → progress starts
-      // progress 0 = image fully hidden below, 1 = image fully revealed
-      const progress = Math.min(
-        Math.max((windowH - rect.top) / (windowH * 0.7), 0),
-        1
-      );
-
-      // Image slides from 100% down to 0%
-      const translateY = (1 - progress) * 100;
-      img.style.transform = `translateY(${translateY}%)`;
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
     <>
@@ -76,7 +47,7 @@ export default function HeroSection({ onOpenDemo }: HeroSectionProps) {
       />
 
       {/* Hero text content */}
-      <div className="relative z-10 max-w-[1280px] mx-auto px-6 md:px-12 pt-32 pb-8">
+      <div className="relative z-10 max-w-[1280px] mx-auto px-6 md:px-12 pt-32 pb-20">
         <div className="max-w-4xl">
           <HeroBlurIn delayMs={200}>
             <span
@@ -179,37 +150,6 @@ export default function HeroSection({ onOpenDemo }: HeroSectionProps) {
               ))}
             </div>
           </HeroBlurIn>
-        </div>
-      </div>
-
-      {/* Screenshot — "card under the door" effect */}
-      <div
-        ref={containerRef}
-        className="relative z-10 max-w-[900px] mx-auto w-full px-6 md:px-12 overflow-hidden"
-        style={{ height: 380 }}
-      >
-        <div
-          ref={imgRef}
-          className="relative will-change-transform"
-          style={{ transform: "translateY(100%)", cursor: onOpenDemo ? "pointer" : undefined }}
-          onClick={onOpenDemo}
-          role={onOpenDemo ? "button" : undefined}
-          tabIndex={onOpenDemo ? 0 : undefined}
-          onKeyDown={onOpenDemo ? (e) => { if (e.key === "Enter" || e.key === " ") onOpenDemo(); } : undefined}
-        >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={`${basePath}/app-screenshot.png`}
-            alt="AI Portal - Help Center with AI Assistant"
-            className="w-full block"
-            style={{
-              borderRadius: "16px 16px 0 0",
-              boxShadow: "0 -4px 40px rgba(0,0,0,0.25)",
-              objectFit: "cover",
-              objectPosition: "top",
-              height: 380,
-            }}
-          />
         </div>
       </div>
 
