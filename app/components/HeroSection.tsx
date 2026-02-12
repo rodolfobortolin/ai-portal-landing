@@ -18,7 +18,6 @@ export default function HeroSection({ onOpenDemo }: HeroSectionProps) {
   const [subheadDone, setSubheadDone] = useState(false);
 
   return (
-    <>
     <section
       className="relative flex flex-col overflow-hidden"
       style={{ background: "var(--hero-gradient)" }}
@@ -154,11 +153,5 @@ export default function HeroSection({ onOpenDemo }: HeroSectionProps) {
       </div>
 
     </section>
-    {/* Full-width border line (edge to edge) */}
-    <div
-      className="w-full"
-      style={{ height: 1, background: "rgba(255,255,255,0.25)" }}
-    />
-    </>
   );
 }
