@@ -46,7 +46,7 @@ export default function HeroSection({ onOpenDemo }: HeroSectionProps) {
       />
 
       {/* Hero text content */}
-      <div className="relative z-10 max-w-[1280px] mx-auto px-6 md:px-12 pt-32 pb-20">
+      <div className="relative z-10 max-w-[1280px] mx-auto px-6 md:px-12 pt-32 pb-32">
         <div className="max-w-4xl">
           <HeroBlurIn delayMs={200}>
             <span
