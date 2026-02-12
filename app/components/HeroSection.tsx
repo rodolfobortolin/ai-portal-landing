@@ -10,7 +10,11 @@ const ArrowIcon = () => (
   </svg>
 );
 
-export default function HeroSection() {
+interface HeroSectionProps {
+  onOpenDemo?: () => void;
+}
+
+export default function HeroSection({ onOpenDemo }: HeroSectionProps) {
   const [headingDone, setHeadingDone] = useState(false);
   const [subheadDone, setSubheadDone] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -114,9 +118,9 @@ export default function HeroSection() {
               <a href="#roi-calculator" className="cta-button">
                 Calculate Your ROI <ArrowIcon />
               </a>
-              <a href="#how-it-works" className="cta-button cta-button-outline">
+              <button type="button" onClick={onOpenDemo} className="cta-button cta-button-outline">
                 See How It Works <ArrowIcon />
-              </a>
+              </button>
             </div>
           </HeroBlurIn>
 
@@ -184,7 +188,15 @@ export default function HeroSection() {
         className="relative z-10 max-w-[900px] mx-auto w-full px-6 md:px-12 overflow-hidden"
         style={{ height: 380 }}
       >
-        <div ref={imgRef} className="relative will-change-transform" style={{ transform: "translateY(100%)" }}>
+        <div
+          ref={imgRef}
+          className="relative will-change-transform"
+          style={{ transform: "translateY(100%)", cursor: onOpenDemo ? "pointer" : undefined }}
+          onClick={onOpenDemo}
+          role={onOpenDemo ? "button" : undefined}
+          tabIndex={onOpenDemo ? 0 : undefined}
+          onKeyDown={onOpenDemo ? (e) => { if (e.key === "Enter" || e.key === " ") onOpenDemo(); } : undefined}
+        >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={`${basePath}/app-screenshot.png`}
@@ -198,7 +210,6 @@ export default function HeroSection() {
               height: 380,
             }}
           />
-          {/* Bottom border line full width */}
         </div>
       </div>
 

@@ -2,7 +2,7 @@ import Link from "next/link";
 import ROICalculator from "./components/ROICalculator";
 import ScrollReveal from "./components/ScrollReveal";
 import NavBar from "./components/NavBar";
-import HeroSection from "./components/HeroSection";
+import DemoModalTrigger from "./components/DemoModalTrigger";
 import basePath from "../lib/basePath";
 
 /* ── SVG Icons ── */
@@ -51,7 +51,7 @@ export default function Home() {
       />
 
       {/* ══════════════════ HERO ══════════════════ */}
-      <HeroSection />
+      <DemoModalTrigger />
 
       {/* ══════════════════ SOCIAL PROOF STATS ══════════════════ */}
       <section className="relative py-0 z-10" style={{ background: "var(--navy)" }}>
