@@ -105,7 +105,7 @@ export default function HeroSection() {
               style={{ color: "rgba(255,255,255,0.55)", lineHeight: 1.7 }}
             >
               Misrouted tickets, incomplete forms, and abandoned submissions are silently draining your support team.
-              AI Portal lets users describe what they need in <strong className="text-white">any language</strong> and creates perfectly structured tickets, every time.
+              AI Portal <strong className="text-white">creates perfectly structured tickets</strong> and <strong className="text-white">routes them to the right person</strong>, in any language.
             </p>
           </HeroBlurIn>
 
@@ -125,12 +125,52 @@ export default function HeroSection() {
               className="flex flex-wrap items-center gap-6 mt-10 pt-6"
               style={{ borderTop: "1px dashed rgba(255,255,255,0.12)" }}
             >
-              {["Runs on Atlassian Forge", "100+ Languages", "Voice & Text Input", "5-Minute Install"].map((badge) => (
-                <span key={badge} className="flex items-center gap-2 text-xs font-medium" style={{ color: "rgba(255,255,255,0.4)" }}>
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                    <path d="M2.5 7l3 3 6-6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                  {badge}
+              {/* Trust badges */}
+              {[
+                {
+                  label: "Runs on Atlassian",
+                  icon: (
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path fillRule="evenodd" clipRule="evenodd" d="M7.57471 0.781006L14.2041 4.94319L7.57471 9.10538L0.945292 4.94319L7.57471 0.781006Z" fill="currentColor"/>
+                      <path d="M13.1 6.7104L7.5 10.2263L1.9 6.7104L0.500001 7.58937L7.5 11.9842L14.5 7.58937L13.1 6.7104Z" fill="currentColor"/>
+                      <path d="M13.1 9.50715L7.5 13.023L1.9 9.50715L0.500001 10.3861L7.5 14.781L14.5 10.3861L13.1 9.50715Z" fill="currentColor"/>
+                    </svg>
+                  ),
+                },
+                {
+                  label: "Built on Forge",
+                  icon: (
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1L2 4v4c0 3.5 2.5 6.5 6 8 3.5-1.5 6-4.5 6-8V4L8 1z" stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round" fill="none"/>
+                      <path d="M5.5 8l2 2 3.5-4" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  ),
+                },
+                {
+                  label: "Powered by Forge LLM",
+                  icon: (
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <circle cx="8" cy="8" r="6" stroke="currentColor" strokeWidth="1.3" strokeDasharray="3 2"/>
+                      <circle cx="8" cy="8" r="2.5" stroke="currentColor" strokeWidth="1.3"/>
+                      <circle cx="8" cy="8" r="0.8" fill="currentColor"/>
+                    </svg>
+                  ),
+                },
+              ].map((badge, i) => (
+                <span
+                  key={badge.label}
+                  className="hero-trust-badge flex items-center gap-2.5 text-xs font-semibold tracking-wide"
+                  style={{
+                    color: "rgba(255,255,255,0.6)",
+                    padding: "8px 16px",
+                    borderRadius: 6,
+                    background: "rgba(255,255,255,0.04)",
+                    border: "1px solid rgba(255,255,255,0.08)",
+                    animationDelay: `${i * 2}s`,
+                  }}
+                >
+                  {badge.icon}
+                  {badge.label}
                 </span>
               ))}
             </div>

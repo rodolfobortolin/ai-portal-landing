@@ -189,14 +189,15 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-0">
             {[
               {
-                step: "01", color: "#EC8546", title: "User Speaks",
-                desc: "Click the chat button. Type or speak in any language. Describe what you need — naturally, the way you'd tell a colleague.",
+                step: "01", color: "#EC8546", title: "User Chats",
+                desc: "Click the chat button. Type in any language. Describe what you need naturally, the way you'd tell a colleague.",
                 icon: (
                   <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                    <rect x="18" y="6" width="12" height="22" rx="6" stroke="#EC8546" strokeWidth="2.5"/>
-                    <path d="M12 22v4a12 12 0 0024 0v-4" stroke="#EC8546" strokeWidth="2.5" strokeLinecap="round"/>
-                    <line x1="24" y1="36" x2="24" y2="42" stroke="#EC8546" strokeWidth="2.5" strokeLinecap="round"/>
-                    <line x1="18" y1="42" x2="30" y2="42" stroke="#EC8546" strokeWidth="2.5" strokeLinecap="round"/>
+                    <path d="M8 10h24a2 2 0 012 2v16a2 2 0 01-2 2H16l-6 6v-6H8a2 2 0 01-2-2V12a2 2 0 012-2z" stroke="#EC8546" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <circle cx="16" cy="20" r="1.5" fill="#EC8546"/>
+                    <circle cx="24" cy="20" r="1.5" fill="#EC8546"/>
+                    <circle cx="32" cy="20" r="1.5" fill="#EC8546"/>
+                    <path d="M38 18h2a2 2 0 012 2v16a2 2 0 01-2 2h-2v6l-6-6H20a2 2 0 01-2-2v-2" stroke="#EC8546" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" opacity="0.4"/>
                   </svg>
                 ),
               },
@@ -263,19 +264,19 @@ export default function Home() {
             </div>
           </ScrollReveal>
 
-          {/* Feature 1 — Voice */}
+          {/* Feature 1 — AI Dispatcher */}
           <ScrollReveal delay={100}>
             <div className="grid lg:grid-cols-2 gap-12 items-center py-16 mb-8" style={{ borderBottom: "1px dashed var(--border)" }}>
               <div>
-                <span className="text-[11px] font-bold uppercase tracking-widest" style={{ color: "#EC8546" }}>VOICE INPUT</span>
+                <span className="text-[11px] font-bold uppercase tracking-widest" style={{ color: "#EC8546" }}>AI DISPATCHER</span>
                 <h2 className="mt-4 mb-5" style={{ color: "var(--navy)", fontSize: "clamp(28px, 3.5vw, 48px)", lineHeight: 1.1, letterSpacing: "-0.03em" }}>
-                  {"Speak Any Language.\nGet Perfect Tickets.".split("\n").map((line, i) => <span key={i}>{line}<br/></span>)}
+                  {"Right Ticket.\nRight Person. Always.".split("\n").map((line, i) => <span key={i}>{line}<br/></span>)}
                 </h2>
                 <p className="text-base leading-relaxed mb-6" style={{ color: "var(--grey)" }}>
-                  Users tap the microphone and speak in their native language — Portuguese, Japanese, Arabic, anything. The AI transcribes, understands context, and creates structured tickets in whatever language your agents prefer.
+                  AI reads every incoming ticket, matches it against your team structure and member skills, then assigns it to the right person and their team. Every assignment includes a routing comment explaining the decision. No more manual triage.
                 </p>
                 <div className="grid grid-cols-2 gap-3">
-                  {["100+ languages supported", "Instant voice-to-ticket", "Auto-submit or review first"].map(h => (
+                  {["Skill-based routing", "Team + person assignment", "Routing explanation comment", "Fallback to project lead"].map(h => (
                     <span key={h} className="flex items-center gap-2 text-sm" style={{ color: "var(--navy)" }}>
                       <CheckIcon /> {h}
                     </span>
@@ -284,68 +285,64 @@ export default function Home() {
               </div>
               <div>
                 <div className="relative w-full min-h-[420px] flex items-center justify-center" style={{ background: "linear-gradient(135deg, rgba(236,133,70,0.06), rgba(236,133,70,0.02))", borderRadius: 12 }}>
-                  <div className="relative">
-                    {/* Chat widget — matches real product */}
-                    <div className="rounded-xl shadow-2xl overflow-hidden" style={{ width: 320, background: "white", border: "1px solid #E0E0E0" }}>
-                      {/* Header bar */}
-                      <div className="px-4 py-2.5 flex items-center gap-2.5" style={{ background: "#2B2ED8" }}>
-                        <div className="w-7 h-7 rounded-full flex-shrink-0 overflow-hidden" style={{ border: "1.5px solid rgba(255,255,255,0.4)", background: "linear-gradient(135deg, #7E7CDE, #51A2E7)" }}>
-                          {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img src={`${basePath}/avatar-valy.jpg`} alt="Valy" width={28} height={28} className="w-full h-full object-cover" style={{ borderRadius: "50%" }} />
-                        </div>
-                        <span className="text-white text-sm font-bold flex-1">Valy</span>
-                        <div className="flex items-center gap-2">
-                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="rgba(255,255,255,0.7)" strokeWidth="2" strokeLinecap="round"/></svg>
-                          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 2l10 10M12 2L2 12" stroke="rgba(255,255,255,0.7)" strokeWidth="2" strokeLinecap="round"/></svg>
-                        </div>
+                  <div className="flex flex-col gap-3" style={{ width: 320 }}>
+                    {/* Card 1: Incoming Ticket */}
+                    <div className="rounded-xl p-4 shadow-lg" style={{ background: "white", border: "1px solid var(--border)" }}>
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="w-2 h-2 rounded-full" style={{ background: "#EC8546" }} />
+                        <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: "#EC8546" }}>Incoming Ticket</span>
                       </div>
+                      <p className="text-[13px] font-semibold" style={{ color: "var(--navy)" }}>VPN not connecting from home office</p>
+                      <p className="text-[11px] mt-1" style={{ color: "var(--grey)" }}>IT-2847 &bull; IT Support &bull; High Priority</p>
+                    </div>
 
-                      {/* Messages area */}
-                      <div className="px-4 py-4" style={{ background: "white", minHeight: 220 }}>
-                        {/* Assistant welcome message */}
-                        <div className="rounded-lg px-3.5 py-3 text-[13px] leading-relaxed mb-3" style={{ background: "#F0F4FF", color: "#1a1a2e" }}>
-                          <p>Hi! How can I help you today? 😊</p>
-                          <p className="mt-2 text-[12px]" style={{ color: "#555" }}>What area is your request about?</p>
-                          <ul className="mt-1.5 text-[12px] space-y-0.5" style={{ color: "#444" }}>
-                            <li>- IT (access, VPN, email, systems)</li>
-                            <li>- HR (benefits, payroll, PTO)</li>
-                            <li>- Facilities (maintenance, badges)</li>
-                          </ul>
-                        </div>
-                        {/* User voice message */}
-                        <div className="flex justify-end mb-3">
-                          <div className="rounded-lg px-3.5 py-2.5 text-[13px] text-white" style={{ background: "#2B2ED8", maxWidth: "85%" }}>
-                            <div className="flex items-center gap-1.5 mb-1">
-                              <svg width="10" height="10" viewBox="0 0 16 16" fill="none"><rect x="5" y="1" width="6" height="10" rx="3" fill="rgba(255,255,255,0.5)"/><path d="M3 8v1a5 5 0 0010 0V8" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5"/></svg>
-                              <span className="text-[9px]" style={{ color: "rgba(255,255,255,0.5)" }}>Voice</span>
-                            </div>
-                            Minha VPN parou de funcionar desde ontem
-                          </div>
-                        </div>
-                        {/* Assistant response */}
-                        <div className="rounded-lg px-3.5 py-3 text-[13px] leading-relaxed" style={{ background: "#F0F4FF", color: "#1a1a2e" }}>
-                          <span className="font-semibold" style={{ color: "#1B7A3E" }}>Ticket created!</span> VPN Reset → IT Support
-                          <span className="block text-[11px] mt-1" style={{ color: "#888" }}>IT-2847 • Created just now</span>
-                        </div>
-                      </div>
+                    {/* Arrow */}
+                    <div className="flex justify-center">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 5v14M7 14l5 5 5-5" stroke="#EC8546" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </div>
 
-                      {/* Input bar */}
-                      <div className="px-3 py-2.5 flex items-center gap-2" style={{ borderTop: "1px solid #E8E8E8", background: "#FAFAFA" }}>
-                        <svg width="18" height="18" viewBox="0 0 20 20" fill="none" className="flex-shrink-0 cursor-pointer">
-                          <rect x="7" y="2" width="6" height="11" rx="3" stroke="#888" strokeWidth="1.5"/>
-                          <path d="M4 10v1.5a6 6 0 0012 0V10" stroke="#888" strokeWidth="1.5" strokeLinecap="round"/>
-                          <line x1="10" y1="17" x2="10" y2="19" stroke="#888" strokeWidth="1.5" strokeLinecap="round"/>
+                    {/* Card 2: AI Analysis */}
+                    <div className="rounded-xl p-4 shadow-lg" style={{ background: "rgba(236,133,70,0.06)", border: "1px solid rgba(236,133,70,0.2)" }}>
+                      <div className="flex items-center gap-2 mb-2">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                          <circle cx="7" cy="7" r="6" stroke="#EC8546" strokeWidth="1.5" strokeDasharray="3 2"/>
+                          <circle cx="7" cy="7" r="2" fill="#EC8546"/>
                         </svg>
-                        <svg width="18" height="18" viewBox="0 0 20 20" fill="none" className="flex-shrink-0 cursor-pointer">
-                          <path d="M17 10.5V6a3 3 0 00-6 0v7a2 2 0 004 0V6.5" stroke="#888" strokeWidth="1.5" strokeLinecap="round"/>
-                        </svg>
-                        <div className="flex-1 rounded-md px-3 py-1.5 text-[12px]" style={{ background: "white", border: "1px solid #DDD", color: "#AAA" }}>
-                          Type your message...
-                        </div>
-                        <button className="px-3 py-1.5 rounded-md text-[12px] font-semibold text-white flex-shrink-0" style={{ background: "#2B2ED8" }}>
-                          Send
-                        </button>
+                        <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: "#EC8546" }}>AI Analysis</span>
                       </div>
+                      <p className="text-[11px] leading-relaxed" style={{ color: "var(--navy)" }}>
+                        Skills matched: <strong>VPN, Networking, Remote Access</strong>
+                      </p>
+                      <p className="text-[11px] mt-1" style={{ color: "var(--grey)" }}>
+                        Best match: Sarah Chen (92% skill match)
+                      </p>
+                    </div>
+
+                    {/* Arrow */}
+                    <div className="flex justify-center">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 5v14M7 14l5 5 5-5" stroke="#EC8546" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </div>
+
+                    {/* Card 3: Assignment Result */}
+                    <div className="rounded-xl p-4 shadow-lg" style={{ background: "white", border: "2px solid #1B7A3E" }}>
+                      <div className="flex items-center gap-2 mb-2">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                          <circle cx="7" cy="7" r="6" fill="rgba(27,122,62,0.1)"/>
+                          <path d="M4 7l2.5 2.5L10 5" stroke="#1B7A3E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                        <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: "#1B7A3E" }}>Assigned</span>
+                      </div>
+                      <div className="flex items-center gap-2 mb-1">
+                        <p className="text-[13px] font-semibold" style={{ color: "var(--navy)" }}>Sarah Chen</p>
+                        <span className="text-[9px] px-1.5 py-0.5 rounded font-semibold" style={{ background: "rgba(81,162,231,0.12)", color: "#51A2E7" }}>Network Team</span>
+                      </div>
+                      <p className="text-[11px] mt-1 italic" style={{ color: "var(--grey)" }}>
+                        &quot;Assigned to Sarah (Network Team) based on VPN and networking expertise.&quot;
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -359,7 +356,7 @@ export default function Home() {
               <div className="lg:order-2">
                 <span className="text-[11px] font-bold uppercase tracking-widest" style={{ color: "#7E7CDE" }}>MULTI-LAYER INSTRUCTIONS</span>
                 <h2 className="mt-4 mb-5" style={{ color: "var(--navy)", fontSize: "clamp(28px, 3.5vw, 48px)", lineHeight: 1.1, letterSpacing: "-0.03em" }}>
-                  {"Granular AI Control.\nYour Rules, Always.".split("\n").map((line, i) => <span key={i}>{line}<br/></span>)}
+                  {"Granular AI Control.\nYour Rules.".split("\n").map((line, i) => <span key={i}>{line}<br/></span>)}
                 </h2>
                 <p className="text-base leading-relaxed mb-6" style={{ color: "var(--grey)" }}>
                   Configure AI behavior at four levels: Company-wide rules, per-Service Desk, per-Request Type, and real-time Agent Prompts. Agents can set operational notices (via UI or API) that the AI uses immediately, with optional auto-expiry.
@@ -418,7 +415,7 @@ export default function Home() {
                   {"Your Brand.\nYour Insights.".split("\n").map((line, i) => <span key={i}>{line}<br/></span>)}
                 </h2>
                 <p className="text-base leading-relaxed mb-6" style={{ color: "var(--grey)" }}>
-                  Full white-label customization: custom colors, avatar, name. Real-time analytics dashboard tracking conversations, tickets, token usage, voice adoption, and user satisfaction.
+                  Full white-label customization: custom colors, avatar, name. Real-time analytics dashboard tracking conversations, tickets, token usage, routing efficiency, and user satisfaction.
                 </p>
                 <div className="grid grid-cols-2 gap-3">
                   {["Custom colors & branding", "Real-time analytics", "Token cost tracking", "Feedback monitoring"].map(h => (
@@ -429,66 +426,174 @@ export default function Home() {
                 </div>
               </div>
               <div>
-                <div className="relative w-full min-h-[340px] flex items-center justify-center" style={{ background: "linear-gradient(135deg, rgba(81,162,231,0.06), rgba(81,162,231,0.02))", borderRadius: 12 }}>
-                  <div className="rounded-xl shadow-2xl overflow-hidden" style={{ width: 340, background: "white", border: "1px solid var(--border)" }}>
-                    {/* Header */}
+                <div className="relative w-full min-h-[420px] flex items-center justify-center" style={{ background: "linear-gradient(135deg, rgba(81,162,231,0.06), rgba(81,162,231,0.02))", borderRadius: 12 }}>
+                  <div className="rounded-xl shadow-2xl overflow-hidden" style={{ width: 360, background: "white", border: "1px solid var(--border)" }}>
+                    {/* Header with period tabs */}
                     <div className="px-4 py-2.5 flex items-center gap-2" style={{ borderBottom: "1px solid var(--border)" }}>
-                      <span className="text-[11px] font-bold" style={{ color: "var(--navy)" }}>Analytics Dashboard</span>
-                      <span className="ml-auto text-[10px] px-2 py-0.5 rounded cursor-pointer" style={{ background: "var(--offwhite)", color: "var(--grey)" }}>Refresh</span>
+                      <span className="text-[11px] font-bold" style={{ color: "var(--navy)" }}>Statistics</span>
+                      <div className="ml-auto flex items-center gap-1">
+                        {["Today", "Week", "Month"].map((p, i) => (
+                          <span key={p} className="text-[9px] px-2 py-0.5 rounded cursor-pointer font-medium" style={i === 2 ? { background: "var(--blue-cta)", color: "white" } : { background: "var(--offwhite)", color: "var(--grey)" }}>{p}</span>
+                        ))}
+                      </div>
                     </div>
-                    {/* Summary cards row 1 */}
-                    <div className="px-4 pt-4 grid grid-cols-3 gap-2">
+                    {/* KPI cards row */}
+                    <div className="px-3 pt-3 grid grid-cols-5 gap-1.5">
                       {[
-                        { label: "CONVERSATIONS", value: "49", borderColor: "#EC8546" },
-                        { label: "TICKETS CREATED", value: "18", borderColor: "#51A2E7" },
-                        { label: "FEEDBACK", value: "\uD83D\uDC4D 9  \uD83D\uDC4E 2", borderColor: "#7E7CDE" },
+                        { label: "CONV.", value: "1,247", color: "#EC8546" },
+                        { label: "TICKETS", value: "438", color: "#51A2E7" },
+                        { label: "FEEDBACK", value: "\uD83D\uDC4D89 \uD83D\uDC4E4", color: "#2BC48A" },
+                        { label: "TEAM", value: "52", color: "#7E7CDE" },
+                        { label: "USER", value: "31", color: "#C27EEA" },
                       ].map(m => (
-                        <div key={m.label} className="rounded-lg p-2 text-center" style={{ border: "1px solid var(--border)", borderTop: `3px solid ${m.borderColor}` }}>
-                          <p className="text-[8px] font-bold tracking-wider" style={{ color: "var(--grey)" }}>{m.label}</p>
-                          <p className="text-base font-bold mt-0.5" style={{ color: "var(--navy)" }}>{m.value}</p>
+                        <div key={m.label} className="rounded p-1.5 text-center" style={{ border: "1px solid var(--border)", borderTop: `2px solid ${m.color}` }}>
+                          <p className="text-[7px] font-bold tracking-wider leading-tight" style={{ color: "var(--grey)" }}>{m.label}</p>
+                          <p className="text-[12px] font-bold mt-0.5" style={{ color: "var(--navy)" }}>{m.value}</p>
                         </div>
                       ))}
                     </div>
-                    {/* Summary cards row 2 */}
-                    <div className="px-4 pt-2 grid grid-cols-2 gap-2">
-                      <div className="rounded-lg p-2 text-center" style={{ border: "1px solid var(--border)" }}>
-                        <p className="text-[8px] font-bold tracking-wider" style={{ color: "var(--grey)" }}>TOTAL TOKENS</p>
-                        <p className="text-base font-bold" style={{ color: "var(--navy)" }}>720.5K</p>
-                        <p className="text-[8px]" style={{ color: "var(--grey)" }}>Input: 697.5K &nbsp; Output: 23.0K</p>
+                    {/* Charts row: Donut + Top Assignees */}
+                    <div className="px-3 pt-3 grid grid-cols-2 gap-2">
+                      {/* Donut chart */}
+                      <div className="rounded-lg p-2.5" style={{ border: "1px solid var(--border)" }}>
+                        <p className="text-[9px] font-bold mb-2" style={{ color: "var(--navy)" }}>Team Distribution</p>
+                        <div className="flex justify-center">
+                          <svg width="80" height="80" viewBox="0 0 80 80">
+                            <circle cx="40" cy="40" r="30" fill="none" stroke="var(--border)" strokeWidth="10"/>
+                            <circle cx="40" cy="40" r="30" fill="none" stroke="#2B2ED8" strokeWidth="10" strokeDasharray="132 56" strokeDashoffset="0" transform="rotate(-90 40 40)"/>
+                            <circle cx="40" cy="40" r="30" fill="none" stroke="#51A2E7" strokeWidth="10" strokeDasharray="38 150" strokeDashoffset="-132" transform="rotate(-90 40 40)"/>
+                            <circle cx="40" cy="40" r="30" fill="none" stroke="#7E7CDE" strokeWidth="10" strokeDasharray="18 170" strokeDashoffset="-170" transform="rotate(-90 40 40)"/>
+                          </svg>
+                        </div>
+                        <div className="flex justify-center gap-2 mt-2">
+                          {[{ label: "Network", color: "#2B2ED8" }, { label: "DevOps", color: "#51A2E7" }, { label: "Security", color: "#7E7CDE" }].map(l => (
+                            <span key={l.label} className="flex items-center gap-1 text-[7px]" style={{ color: "var(--grey)" }}>
+                              <span className="w-1.5 h-1.5 rounded-full" style={{ background: l.color }} />
+                              {l.label}
+                            </span>
+                          ))}
+                        </div>
                       </div>
-                      <div className="rounded-lg p-2 text-center" style={{ border: "1px solid var(--border)" }}>
-                        <p className="text-[8px] font-bold tracking-wider" style={{ color: "var(--grey)" }}>TRANSCRIPTIONS</p>
-                        <p className="text-base font-bold" style={{ color: "var(--navy)" }}>22</p>
-                        <p className="text-[8px]" style={{ color: "var(--grey)" }}>Audio: 2m 24s &nbsp; Words: 363</p>
+                      {/* Top Assignees */}
+                      <div className="rounded-lg p-2.5" style={{ border: "1px solid var(--border)" }}>
+                        <p className="text-[9px] font-bold mb-2" style={{ color: "var(--navy)" }}>Top Assignees</p>
+                        <div className="space-y-2">
+                          {[
+                            { name: "S. Chen", count: 47, pct: 100 },
+                            { name: "M. Silva", count: 31, pct: 66 },
+                            { name: "R. Bortolin", count: 18, pct: 38 },
+                          ].map(a => (
+                            <div key={a.name}>
+                              <div className="flex items-center justify-between mb-0.5">
+                                <span className="text-[9px] font-medium" style={{ color: "var(--navy)" }}>{a.name}</span>
+                                <span className="text-[9px] font-bold" style={{ color: "var(--navy)" }}>{a.count}</span>
+                              </div>
+                              <div className="w-full h-1.5 rounded-full" style={{ background: "var(--border)" }}>
+                                <div className="h-1.5 rounded-full" style={{ width: `${a.pct}%`, background: "#2B2ED8" }} />
+                              </div>
+                            </div>
+                          ))}
+                        </div>
                       </div>
                     </div>
-                    {/* Last 7 Days mini table */}
-                    <div className="px-4 pt-3 pb-4">
-                      <p className="text-[10px] font-bold mb-2" style={{ color: "var(--navy)" }}>Last 7 Days</p>
-                      <table className="w-full text-[8px]" style={{ color: "var(--grey)" }}>
-                        <thead>
-                          <tr style={{ borderBottom: "1px solid var(--border)" }}>
-                            {["Date", "Conv", "Tickets", "Tokens", "Feedback"].map(h => (
-                              <th key={h} className="py-1 font-bold text-left" style={{ color: "var(--navy)" }}>{h}</th>
-                            ))}
-                          </tr>
-                        </thead>
-                        <tbody>
+                    {/* Tickets Created bar chart */}
+                    <div className="px-3 pt-3 pb-3">
+                      <div className="rounded-lg p-2.5" style={{ border: "1px solid var(--border)" }}>
+                        <p className="text-[9px] font-bold mb-2" style={{ color: "var(--navy)" }}>Tickets Created</p>
+                        <div className="flex items-end gap-2" style={{ height: 56 }}>
                           {[
-                            { date: "02-09", conv: "17", tickets: "3", tokens: "230K", fb: "\uD83D\uDC4D1 \uD83D\uDC4E0" },
-                            { date: "02-08", conv: "16", tickets: "7", tokens: "262K", fb: "\uD83D\uDC4D5 \uD83D\uDC4E0" },
-                            { date: "02-07", conv: "16", tickets: "8", tokens: "228K", fb: "\uD83D\uDC4D3 \uD83D\uDC4E2" },
-                          ].map(r => (
-                            <tr key={r.date} style={{ borderBottom: "1px solid var(--border)" }}>
-                              <td className="py-1">{r.date}</td>
-                              <td className="py-1">{r.conv}</td>
-                              <td className="py-1">{r.tickets}</td>
-                              <td className="py-1">{r.tokens}</td>
-                              <td className="py-1">{r.fb}</td>
-                            </tr>
+                            { week: "W49", h: 4 }, { week: "W51", h: 8 }, { week: "W01", h: 15 },
+                            { week: "W03", h: 22 }, { week: "W04", h: 34 }, { week: "W05", h: 52 }, { week: "W06", h: 48 },
+                          ].map(b => (
+                            <div key={b.week} className="flex-1 flex flex-col items-center">
+                              <div className="w-full rounded-t-sm" style={{ height: b.h, background: "#2B2ED8" }} />
+                              <span className="text-[6px] mt-1" style={{ color: "var(--grey)" }}>{b.week}</span>
+                            </div>
                           ))}
-                        </tbody>
-                      </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          {/* Feature 4 — Workflow Automation */}
+          <ScrollReveal delay={100}>
+            <div className="grid lg:grid-cols-2 gap-12 items-center py-16" style={{ borderTop: "1px dashed var(--border)" }}>
+              <div className="lg:order-2">
+                <span className="text-[11px] font-bold uppercase tracking-widest" style={{ color: "#2BC48A" }}>WORKFLOW AUTOMATION</span>
+                <h2 className="mt-4 mb-5" style={{ color: "var(--navy)", fontSize: "clamp(28px, 3.5vw, 48px)", lineHeight: 1.1, letterSpacing: "-0.03em" }}>
+                  {"Scripts Are Dead.\nNatural Language Lives.".split("\n").map((line, i) => <span key={i}>{line}<br/></span>)}
+                </h2>
+                <p className="text-base leading-relaxed mb-6" style={{ color: "var(--grey)" }}>
+                  Replace complex scripting with plain English. Describe conditions in natural language and AI generates Jira Expressions automatically. Define validators and post-functions the same way. No scripting knowledge required.
+                </p>
+                <div className="grid grid-cols-2 gap-3">
+                  {["Natural language to Jira Expressions", "Transition validators", "Post-function actions", "Zero scripting required"].map(h => (
+                    <span key={h} className="flex items-center gap-2 text-sm" style={{ color: "var(--navy)" }}>
+                      <CheckIcon /> {h}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div className="lg:order-1">
+                <div className="relative w-full flex items-center justify-center py-8" style={{ background: "linear-gradient(135deg, rgba(43,196,138,0.06), rgba(43,196,138,0.02))", borderRadius: 12 }}>
+                  <div className="flex flex-col gap-3" style={{ width: 320 }}>
+                    {/* Condition card */}
+                    <div className="rounded-xl p-4 shadow-lg" style={{ background: "white", border: "1px solid var(--border)", borderLeft: "4px solid #2BC48A" }}>
+                      <div className="flex items-center gap-2 mb-2">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                          <path d="M7 1v4M7 9v4M1 7h4M9 7h4" stroke="#2BC48A" strokeWidth="1.5" strokeLinecap="round"/>
+                          <circle cx="7" cy="7" r="2" stroke="#2BC48A" strokeWidth="1.5"/>
+                        </svg>
+                        <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: "#2BC48A" }}>Condition</span>
+                      </div>
+                      <p className="text-[11px] mb-1.5" style={{ color: "var(--grey)" }}>You describe:</p>
+                      <p className="text-[12px] italic" style={{ color: "var(--navy)" }}>
+                        &quot;Only allow transition if priority is High and component is Backend&quot;
+                      </p>
+                      <p className="text-[11px] mt-2 mb-1" style={{ color: "var(--grey)" }}>AI generates Jira Expression:</p>
+                      <div className="rounded px-2 py-1.5" style={{ background: "rgba(43,196,138,0.06)", border: "1px solid rgba(43,196,138,0.15)" }}>
+                        <code className="text-[10px] leading-relaxed block" style={{ color: "#2BC48A", fontFamily: "'IBM Plex Mono', monospace" }}>
+                          issue.priority.name == &quot;High&quot;<br/>&& issue.labels.includes(&quot;backend&quot;)
+                        </code>
+                      </div>
+                    </div>
+
+                    {/* Validator card */}
+                    <div className="rounded-xl p-4 shadow-lg" style={{ background: "white", border: "1px solid var(--border)", borderLeft: "4px solid #51A2E7" }}>
+                      <div className="flex items-center gap-2 mb-2">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                          <path d="M3 7l3 3 5-5" stroke="#51A2E7" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                          <rect x="1" y="1" width="12" height="12" rx="2" stroke="#51A2E7" strokeWidth="1.5"/>
+                        </svg>
+                        <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: "#51A2E7" }}>Validator</span>
+                      </div>
+                      <p className="text-[12px] italic" style={{ color: "var(--navy)" }}>
+                        &quot;Ensure the description contains reproduction steps and expected behavior&quot;
+                      </p>
+                      <span className="inline-block mt-2 text-[9px] px-2 py-0.5 rounded-full font-semibold" style={{ background: "rgba(81,162,231,0.1)", color: "#51A2E7" }}>
+                        Returns: pass / fail + message
+                      </span>
+                    </div>
+
+                    {/* Post Function card */}
+                    <div className="rounded-xl p-4 shadow-lg" style={{ background: "white", border: "1px solid var(--border)", borderLeft: "4px solid #7E7CDE" }}>
+                      <div className="flex items-center gap-2 mb-2">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                          <path d="M2 3h10M2 7h10M2 11h6" stroke="#7E7CDE" strokeWidth="1.5" strokeLinecap="round"/>
+                          <path d="M10 9l2 2-2 2" stroke="#7E7CDE" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                        <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: "#7E7CDE" }}>Post Function</span>
+                      </div>
+                      <p className="text-[12px] italic" style={{ color: "var(--navy)" }}>
+                        &quot;Set priority to Highest and add label urgent-escalation when SLA is breached&quot;
+                      </p>
+                      <span className="inline-block mt-2 text-[9px] px-2 py-0.5 rounded-full font-semibold" style={{ background: "rgba(126,124,222,0.1)", color: "#7E7CDE" }}>
+                        Returns: action executed
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -542,16 +647,16 @@ export default function Home() {
                       /* Only AI Portal */
                       { feature: "Ticket Creation Focus", jsm: "cross", ai: "check" },
                       { feature: "Required Fields Auto-Detection", jsm: "cross", ai: "check" },
-                      { feature: "Voice Input (any language)", jsm: "cross", ai: "check" },
                       { feature: "File Attachments in Chat", jsm: "cross", ai: "check" },
                       { feature: "Per-Request-Type Instructions", jsm: "cross", ai: "check" },
-                      { feature: "Full Prompt Control (3 layers)", jsm: "cross", ai: "check" },
+                      { feature: "Full Prompt Control (4 layers)", jsm: "cross", ai: "check" },
                       { feature: "Real-Time Agent Prompts (UI + API)", jsm: "cross", ai: "check" },
-                      { feature: "LLM Model Selection", jsm: "cross", ai: "check" },
-                      { feature: "Bring Your Own Key (BYOK)", jsm: "cross", ai: "check" },
                       { feature: "Auto-Confirm Mode", jsm: "cross", ai: "check" },
+                      { feature: "AI Ticket Dispatcher", jsm: "cross", ai: "check" },
+                      { feature: "AI Workflow Conditions", jsm: "cross", ai: "check" },
+                      { feature: "AI Workflow Validators", jsm: "cross", ai: "check" },
+                      { feature: "AI Post-Functions", jsm: "cross", ai: "check" },
                       /* Meta */
-                      { feature: "Install Time", jsm: "5 min", ai: "5 min" },
                       { feature: "Cost", jsm: "Included*", ai: "Sub" },
                     ].map((row, i) => (
                       <tr key={row.feature} style={{ borderTop: "1px solid var(--border)", background: i % 2 === 0 ? "white" : "var(--offwhite)" }}>
@@ -619,7 +724,7 @@ export default function Home() {
                 </button>
               </form>
               <p className="text-xs mt-5" style={{ color: "rgba(255,255,255,0.3)" }}>
-                Free trial available. No credit card required. BYOK (Bring Your Own OpenAI Key).
+                Free trial available. No credit card required. Powered by Atlassian Forge LLM. No API keys needed.
               </p>
             </div>
           </ScrollReveal>
