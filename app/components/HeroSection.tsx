@@ -19,7 +19,7 @@ export default function HeroSection({ onOpenDemo }: HeroSectionProps) {
 
   return (
     <section
-      className="relative flex flex-col overflow-hidden"
+      className="relative min-h-screen flex items-center overflow-hidden"
       style={{ background: "var(--hero-gradient)" }}
     >
       {/* Dashed vertical borders */}
