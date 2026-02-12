@@ -52,7 +52,7 @@
 @media (max-width: 520px) {
   .modal {
     width: calc(100vw - 24px);
-    height: calc(100vh - 48px);
+    height: calc(100dvh - 64px);
     max-height: none;
     border-radius: 12px;
   }
