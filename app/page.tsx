@@ -626,12 +626,12 @@ export default function Home() {
           <ScrollReveal delay={200}>
             <div className="rounded-xl overflow-hidden shadow-lg" style={{ border: "1px solid var(--border)" }}>
               <div className="overflow-x-auto">
-                <table className="w-full text-sm" style={{ background: "white", minWidth: 600 }}>
+                <table className="w-full text-xs md:text-sm" style={{ background: "white" }}>
                   <thead>
                     <tr style={{ background: "var(--navy)", color: "white" }}>
-                      <th className="text-left p-4 font-semibold text-xs uppercase tracking-wider">Capability</th>
-                      <th className="p-4 font-semibold text-xs uppercase tracking-wider text-center">JSM Virtual Agent</th>
-                      <th className="p-4 font-semibold text-xs uppercase tracking-wider text-center" style={{ background: "var(--blue-cta)" }}>AI Portal</th>
+                      <th className="text-left px-2 py-3 md:p-4 font-semibold text-[10px] md:text-xs uppercase tracking-wider">Capability</th>
+                      <th className="px-2 py-3 md:p-4 font-semibold text-[10px] md:text-xs uppercase tracking-wider text-center whitespace-nowrap"><span className="hidden md:inline">JSM Virtual Agent</span><span className="md:hidden">JSM</span></th>
+                      <th className="px-2 py-3 md:p-4 font-semibold text-[10px] md:text-xs uppercase tracking-wider text-center whitespace-nowrap" style={{ background: "var(--blue-cta)" }}>AI Portal</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -660,11 +660,11 @@ export default function Home() {
                       { feature: "Cost", jsm: "Included*", ai: "Sub" },
                     ].map((row, i) => (
                       <tr key={row.feature} style={{ borderTop: "1px solid var(--border)", background: i % 2 === 0 ? "white" : "var(--offwhite)" }}>
-                        <td className="p-4 font-medium" style={{ color: "var(--navy)" }}>{row.feature}</td>
+                        <td className="px-2 py-2.5 md:p-4 font-medium" style={{ color: "var(--navy)" }}>{row.feature}</td>
                         {(["jsm", "ai"] as const).map((col) => {
                           const val = row[col];
                           return (
-                            <td key={col} className="p-4 text-center" style={col === "ai" ? { background: "rgba(43,46,216,0.03)" } : {}}>
+                            <td key={col} className="px-2 py-2.5 md:p-4 text-center" style={col === "ai" ? { background: "rgba(43,46,216,0.03)" } : {}}>
                               {val === "check" ? <span className="inline-flex justify-center"><CheckIcon /></span> :
                                val === "cross" ? <span className="inline-flex justify-center"><CrossIcon /></span> :
                                val === "partial" ? <span className="inline-flex justify-center"><PartialIcon /></span> :
