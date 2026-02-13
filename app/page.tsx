@@ -764,7 +764,7 @@ export default function Home() {
                   { label: "Atlassian Marketplace", href: "#" },
                   { label: "Blog", href: "/blog" },
                 ].map(l => (
-                  <a key={l.label} href={l.href} className="block text-xs hover:text-white transition-colors" style={{ color: "rgba(255,255,255,0.35)" }}>{l.label}</a>
+                  <Link key={l.label} href={l.href} className="block text-xs hover:text-white transition-colors" style={{ color: "rgba(255,255,255,0.35)" }}>{l.label}</Link>
                 ))}
               </div>
             </div>
