@@ -415,7 +415,7 @@ export default function Home() {
                   {"Your Brand.\nYour Insights.".split("\n").map((line, i) => <span key={i}>{line}<br/></span>)}
                 </h2>
                 <p className="text-base leading-relaxed mb-6" style={{ color: "var(--grey)" }}>
-                  Full white-label customization: custom colors, avatar, name. Real-time analytics dashboard tracking conversations, tickets, token usage, routing efficiency, and user satisfaction.
+                  Full white-label customization: custom colors, avatar, name. Real-time analytics dashboard tracking conversations, tickets, routings, and user satisfaction.
                 </p>
                 <div className="grid grid-cols-2 gap-3">
                   {["Custom colors & branding", "Real-time analytics", "Token cost tracking", "Feedback monitoring"].map(h => (
