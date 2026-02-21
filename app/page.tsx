@@ -406,10 +406,111 @@ export default function Home() {
             </div>
           </ScrollReveal>
 
-          {/* Feature 3 — Analytics */}
+          {/* Feature 3 — Smart Escalation */}
           <ScrollReveal delay={100}>
-            <div className="grid lg:grid-cols-2 gap-12 items-center py-16">
+            <div className="grid lg:grid-cols-2 gap-12 items-center py-16 mb-8" style={{ borderBottom: "1px dashed var(--border)" }}>
               <div>
+                <span className="text-[11px] font-bold uppercase tracking-widest" style={{ color: "#E25656" }}>SMART ESCALATION</span>
+                <h2 className="mt-4 mb-5" style={{ color: "var(--navy)", fontSize: "clamp(28px, 3.5vw, 48px)", lineHeight: 1.1, letterSpacing: "-0.03em" }}>
+                  {"Detect Frustration.\nBefore It Escalates.".split("\n").map((line, i) => <span key={i}>{line}<br/></span>)}
+                </h2>
+                <p className="text-base leading-relaxed mb-6" style={{ color: "var(--grey)" }}>
+                  AI analyzes every customer comment in real-time, detecting negative sentiment, urgency cues, and escalation risk. When frustration is detected, automatic actions fire instantly: reassignment to senior agents, team lead notifications, and internal analysis comments. All before the customer sends their next message.
+                </p>
+                <div className="grid grid-cols-2 gap-3">
+                  {["Real-time sentiment analysis", "SLA-aware escalation risk", "Automatic reassignment", "Proactive watcher alerts"].map(h => (
+                    <span key={h} className="flex items-center gap-2 text-sm" style={{ color: "var(--navy)" }}>
+                      <CheckIcon /> {h}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <div className="relative w-full min-h-[420px] flex items-center justify-center" style={{ background: "linear-gradient(135deg, rgba(226,86,86,0.06), rgba(226,86,86,0.02))", borderRadius: 12 }}>
+                  <div className="flex flex-col gap-3" style={{ width: 320 }}>
+                    {/* Card 1: Customer Comment */}
+                    <div className="rounded-xl p-4 shadow-lg" style={{ background: "white", border: "1px solid var(--border)" }}>
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="w-2 h-2 rounded-full" style={{ background: "#E25656" }} />
+                        <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: "#E25656" }}>Customer Comment</span>
+                      </div>
+                      <p className="text-[12px] italic leading-relaxed" style={{ color: "var(--navy)" }}>
+                        &quot;This is the third time I&apos;m reporting this. Nobody has responded in 3 days. Completely unacceptable.&quot;
+                      </p>
+                      <p className="text-[11px] mt-1.5" style={{ color: "var(--grey)" }}>IT-3847 &bull; VPN Issue &bull; SLA: 78% consumed</p>
+                    </div>
+
+                    {/* Arrow */}
+                    <div className="flex justify-center">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 5v14M7 14l5 5 5-5" stroke="#E25656" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </div>
+
+                    {/* Card 2: AI Sentiment Analysis */}
+                    <div className="rounded-xl p-4 shadow-lg" style={{ background: "rgba(226,86,86,0.06)", border: "1px solid rgba(226,86,86,0.2)" }}>
+                      <div className="flex items-center gap-2 mb-2">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                          <circle cx="7" cy="7" r="6" stroke="#E25656" strokeWidth="1.5" strokeDasharray="3 2"/>
+                          <circle cx="7" cy="7" r="2" fill="#E25656"/>
+                        </svg>
+                        <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: "#E25656" }}>Sentiment Analysis</span>
+                      </div>
+                      <div className="flex items-center gap-2 mb-1.5">
+                        <span className="text-[10px] px-2 py-0.5 rounded font-bold" style={{ background: "rgba(226,86,86,0.15)", color: "#E25656" }}>CRITICAL</span>
+                        <span className="text-[10px]" style={{ color: "var(--grey)" }}>Score: 0.15</span>
+                      </div>
+                      <p className="text-[11px] leading-relaxed" style={{ color: "var(--navy)" }}>
+                        Key phrases: <strong>&quot;third time&quot;</strong>, <strong>&quot;nobody responded&quot;</strong>, <strong>&quot;unacceptable&quot;</strong>
+                      </p>
+                      <p className="text-[11px] mt-1" style={{ color: "var(--grey)" }}>
+                        Escalation risk: <strong style={{ color: "#E25656" }}>HIGH</strong> &bull; SLA pressure detected
+                      </p>
+                    </div>
+
+                    {/* Arrow */}
+                    <div className="flex justify-center">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 5v14M7 14l5 5 5-5" stroke="#E25656" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </div>
+
+                    {/* Card 3: Actions Triggered */}
+                    <div className="rounded-xl p-4 shadow-lg" style={{ background: "white", border: "2px solid #1B7A3E" }}>
+                      <div className="flex items-center gap-2 mb-2">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                          <circle cx="7" cy="7" r="6" fill="rgba(27,122,62,0.1)"/>
+                          <path d="M4 7l2.5 2.5L10 5" stroke="#1B7A3E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                        <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: "#1B7A3E" }}>Actions Triggered</span>
+                        <span className="text-[9px] px-1.5 py-0.5 rounded font-semibold ml-auto" style={{ background: "rgba(27,122,62,0.1)", color: "#1B7A3E" }}>3 seconds</span>
+                      </div>
+                      <div className="space-y-1.5">
+                        {[
+                          "Reassigned to Sarah Chen (Senior)",
+                          "Team lead added as watcher",
+                          "Internal analysis comment posted",
+                          "Label: escalation-risk",
+                        ].map((action) => (
+                          <div key={action} className="flex items-center gap-2">
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                              <path d="M3 6l2 2 4-4" stroke="#1B7A3E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
+                            <span className="text-[11px]" style={{ color: "var(--navy)" }}>{action}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          {/* Feature 4 — Analytics */}
+          <ScrollReveal delay={100}>
+            <div className="grid lg:grid-cols-2 gap-12 items-center py-16 mb-8" style={{ borderBottom: "1px dashed var(--border)" }}>
+              <div className="lg:order-2">
                 <span className="text-[11px] font-bold uppercase tracking-widest" style={{ color: "#51A2E7" }}>ANALYTICS & BRANDING</span>
                 <h2 className="mt-4 mb-5" style={{ color: "var(--navy)", fontSize: "clamp(28px, 3.5vw, 48px)", lineHeight: 1.1, letterSpacing: "-0.03em" }}>
                   {"Your Brand.\nYour Insights.".split("\n").map((line, i) => <span key={i}>{line}<br/></span>)}
@@ -425,7 +526,7 @@ export default function Home() {
                   ))}
                 </div>
               </div>
-              <div>
+              <div className="lg:order-1">
                 <div className="relative w-full min-h-[420px] flex items-center justify-center" style={{ background: "linear-gradient(135deg, rgba(81,162,231,0.06), rgba(81,162,231,0.02))", borderRadius: 12 }}>
                   <div className="rounded-xl shadow-2xl overflow-hidden" style={{ width: 360, background: "white", border: "1px solid var(--border)" }}>
                     {/* Header with period tabs */}
@@ -519,10 +620,10 @@ export default function Home() {
             </div>
           </ScrollReveal>
 
-          {/* Feature 4 — Workflow Automation */}
+          {/* Feature 5 — Workflow Automation */}
           <ScrollReveal delay={100}>
-            <div className="grid lg:grid-cols-2 gap-12 items-center py-16" style={{ borderTop: "1px dashed var(--border)" }}>
-              <div className="lg:order-2">
+            <div className="grid lg:grid-cols-2 gap-12 items-center py-16">
+              <div>
                 <span className="text-[11px] font-bold uppercase tracking-widest" style={{ color: "#2BC48A" }}>WORKFLOW AUTOMATION</span>
                 <h2 className="mt-4 mb-5" style={{ color: "var(--navy)", fontSize: "clamp(28px, 3.5vw, 48px)", lineHeight: 1.1, letterSpacing: "-0.03em" }}>
                   {"Scripts Are Dead.\nNatural Language Lives.".split("\n").map((line, i) => <span key={i}>{line}<br/></span>)}
@@ -538,7 +639,7 @@ export default function Home() {
                   ))}
                 </div>
               </div>
-              <div className="lg:order-1">
+              <div>
                 <div className="relative w-full flex items-center justify-center py-8" style={{ background: "linear-gradient(135deg, rgba(43,196,138,0.06), rgba(43,196,138,0.02))", borderRadius: 12 }}>
                   <div className="flex flex-col gap-3" style={{ width: 320 }}>
                     {/* Condition card */}
@@ -653,6 +754,8 @@ export default function Home() {
                       { feature: "Real-Time Agent Prompts (UI + API)", jsm: "cross", ai: "check" },
                       { feature: "Auto-Confirm Mode", jsm: "cross", ai: "check" },
                       { feature: "AI Ticket Dispatcher", jsm: "cross", ai: "check" },
+                      { feature: "Proactive Escalation Prevention", jsm: "cross", ai: "check" },
+                      { feature: "AI Sentiment Analysis", jsm: "cross", ai: "check" },
                       { feature: "AI Workflow Conditions", jsm: "cross", ai: "check" },
                       { feature: "AI Workflow Validators", jsm: "cross", ai: "check" },
                       { feature: "AI Post-Functions", jsm: "cross", ai: "check" },

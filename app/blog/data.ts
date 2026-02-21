@@ -44,6 +44,22 @@ const posts: Omit<BlogPost, "content">[] = [
     tagColor: "#51A2E7",
     readTime: "9 min read",
   },
+  {
+    slug: "escalation-cost-analysis",
+    title: "Every Escalated Ticket Costs 9x More. 67% of Frustrated Customers Just Leave.",
+    subtitle: "The financial case for catching frustration before it becomes an escalation.",
+    tag: "ESCALATION",
+    tagColor: "#E25656",
+    readTime: "10 min read",
+  },
+  {
+    slug: "proactive-escalation-prevention",
+    title: "Your Agents Detect Frustration After the Damage Is Done. AI Detects It in 3 Seconds.",
+    subtitle: "Why proactive sentiment detection is the highest-ROI investment in modern ITSM.",
+    tag: "PROACTIVE SUPPORT",
+    tagColor: "#1B9E6B",
+    readTime: "9 min read",
+  },
 ];
 
 export function getAllPosts(): BlogPost[] {
