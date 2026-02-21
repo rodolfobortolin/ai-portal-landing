@@ -9,13 +9,6 @@ const ArrowIcon = () => (
   </svg>
 );
 
-const CheckIcon = () => (
-  <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-    <circle cx="9" cy="9" r="9" fill="var(--blue-cta)" fillOpacity="0.12"/>
-    <path d="M5.5 9.5l2 2 5-5" stroke="var(--blue-cta)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
-);
-
 export const metadata = {
   title: "About | Nexus AI for Jira Service Management",
   description: "Built by Atlassian consultants with over a decade of real-world ITSM implementations. Every feature in Nexus AI exists because we lived the pain firsthand.",
@@ -143,40 +136,6 @@ export default function AboutPage() {
                   <div className="w-2 h-2 rounded-full mb-4" style={{ background: card.color }} />
                   <h3 className="text-white font-bold text-lg mb-3">{card.title}</h3>
                   <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.5)" }}>{card.desc}</p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════════════ EXPERTISE ══════════════════ */}
-      <section className="py-20 md:py-28 geo-pattern">
-        <div className="max-w-[900px] mx-auto px-6 md:px-12">
-          <ScrollReveal>
-            <span className="text-[11px] font-bold uppercase tracking-widest" style={{ color: "#2BC48A" }}>OUR EXPERTISE</span>
-            <h2 className="mt-4 mb-10" style={{ color: "var(--navy)", fontSize: "clamp(28px, 3.5vw, 44px)", lineHeight: 1.15, letterSpacing: "-0.03em" }}>
-              We Speak ITSM. Fluently.
-            </h2>
-          </ScrollReveal>
-
-          <div className="grid md:grid-cols-2 gap-x-12 gap-y-5">
-            {[
-              "ITIL process design and implementation",
-              "Jira Service Management configuration",
-              "Service catalog design and optimization",
-              "SLA framework architecture",
-              "Workflow automation and scripting",
-              "Atlassian Forge and Connect app development",
-              "Change management and incident response",
-              "Knowledge base strategy and governance",
-              "Multi-language enterprise deployments",
-              "Custom plugin and marketplace development",
-            ].map((item, i) => (
-              <ScrollReveal key={item} delay={i * 50}>
-                <div className="flex items-center gap-3 py-3" style={{ borderBottom: "1px dashed var(--border)" }}>
-                  <CheckIcon />
-                  <span className="text-sm font-medium" style={{ color: "var(--navy)" }}>{item}</span>
                 </div>
               </ScrollReveal>
             ))}
