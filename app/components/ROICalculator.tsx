@@ -39,13 +39,13 @@ function formatCurrency(n: number): string {
 
 function getMonthlyPricePerUser(teamSize: number): number {
   if (teamSize <= 10) return 0;
-  if (teamSize <= 100) return 2.00;
-  if (teamSize <= 250) return 1.55;
-  if (teamSize <= 1000) return 0.60;
-  if (teamSize <= 2500) return 0.35;
-  if (teamSize <= 5000) return 0.25;
-  if (teamSize <= 10000) return 0.15;
-  return 0.10;
+  if (teamSize <= 100) return 2.50;
+  if (teamSize <= 250) return 1.95;
+  if (teamSize <= 1000) return 0.75;
+  if (teamSize <= 2500) return 0.45;
+  if (teamSize <= 5000) return 0.30;
+  if (teamSize <= 10000) return 0.19;
+  return 0.13;
 }
 
 function getAnnualSubscription(teamSize: number): number {
@@ -57,25 +57,28 @@ export default function ROICalculator() {
   const [agentCost, setAgentCost] = useState(45);
   const [misrouteRate, setMisrouteRate] = useState(23);
   const [teamSize, setTeamSize] = useState(100);
-  const [misrouteReduction, setMisrouteReduction] = useState(90);
-  const [clarificationReduction, setClarificationReduction] = useState(80);
-  const [abandonmentReduction, setAbandonmentReduction] = useState(70);
-  const [trainingReduction, setTrainingReduction] = useState(80);
+  const [misrouteReduction, setMisrouteReduction] = useState(60);
+  const [clarificationReduction, setClarificationReduction] = useState(55);
+  const [abandonmentReduction, setAbandonmentReduction] = useState(40);
+  const [escalationReduction, setEscalationReduction] = useState(45);
+  const [trainingReduction, setTrainingReduction] = useState(50);
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
-  // ROI calculations from SALES.md
-  const misrouteWaste = (tickets * (misrouteRate / 100) * 45 * (agentCost / 60)) * 12;
+  // ROI calculations — conservative estimates
+  const misrouteWaste = (tickets * (misrouteRate / 100) * 30 * (agentCost / 60)) * 12;
   const clarificationWaste = (tickets * 0.30 * 15 * (agentCost / 60)) * 12;
-  const abandonmentWaste = (tickets * 0.10 * 25 * (agentCost / 60)) * 12;
-  const totalAnnualWaste = misrouteWaste + clarificationWaste + abandonmentWaste;
+  const abandonmentWaste = (tickets * 0.10 * 20 * (agentCost / 60)) * 12;
+  const escalationWaste = (tickets * 0.15 * 40 * (agentCost / 60)) * 12; // 15% escalate, 40 min extra senior agent time
+  const totalAnnualWaste = misrouteWaste + clarificationWaste + abandonmentWaste + escalationWaste;
 
   const misrouteSaved = misrouteWaste * (misrouteReduction / 100);
   const clarificationSaved = clarificationWaste * (clarificationReduction / 100);
   const abandonmentSaved = abandonmentWaste * (abandonmentReduction / 100);
-  const trainingHoursPerYear = 133; // ~11h/month on KB updates, comms, retraining
+  const escalationSaved = escalationWaste * (escalationReduction / 100);
+  const trainingHoursPerYear = 96; // ~8h/month on KB updates, comms, retraining
   const trainingSaved = (trainingHoursPerYear * agentCost) * (trainingReduction / 100);
-  const totalSavings = misrouteSaved + clarificationSaved + abandonmentSaved + trainingSaved;
+  const totalSavings = misrouteSaved + clarificationSaved + abandonmentSaved + escalationSaved + trainingSaved;
 
   const subscriptionCost = getAnnualSubscription(teamSize);
   const roiMultiplier = subscriptionCost > 0 ? totalSavings / subscriptionCost : 0;
@@ -237,8 +240,8 @@ export default function ROICalculator() {
             {/* Assumptions note */}
             <div className="mt-8 text-xs space-y-1" style={{ color: "rgba(255,255,255,0.3)" }}>
               <p className="font-semibold" style={{ color: "rgba(255,255,255,0.4)" }}>Assumptions used:</p>
-              <p>Misrouting: {misrouteRate}% of tickets, 45 min per transfer · Clarification: 30% of tickets, 15 min each · Abandonment: 10% of tickets, 25 min each · Training: ~11 hrs/month</p>
-              <p className="opacity-70">Sources: BMC, MetricNet, HDI, HappySignals</p>
+              <p>Misrouting: {misrouteRate}% of tickets, 30 min per transfer · Clarification: 30% of tickets, 15 min each · Abandonment: 10% of tickets, 20 min each · Escalation: 15% of tickets, 40 min extra · Training: ~8 hrs/month</p>
+              <p className="opacity-70">Sources: BMC, MetricNet, HDI, HappySignals, Qualtrics</p>
             </div>
           </div>
 
@@ -253,7 +256,7 @@ export default function ROICalculator() {
                 {formatCurrency(animatedWaste)}
               </p>
               <p className="text-sm mt-3" style={{ color: "rgba(255,255,255,0.4)" }}>
-                Lost to misrouting, clarification loops, and portal abandonment every year.
+                Lost to misrouting, clarification loops, portal abandonment, and escalations every year.
               </p>
             </div>
 
@@ -265,7 +268,7 @@ export default function ROICalculator() {
               <p className="text-5xl md:text-6xl font-bold tabular-nums text-white">
                 {formatCurrency(animatedSavings)}
               </p>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-5 pt-5" style={{ borderTop: "1px dashed rgba(255,255,255,0.15)" }}>
+              <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mt-5 pt-5" style={{ borderTop: "1px dashed rgba(255,255,255,0.15)" }}>
                 <div>
                   <p className="text-xs uppercase tracking-wider mb-1" style={{ color: "rgba(255,255,255,0.4)" }}>Misrouting</p>
                   <p className="text-sm font-bold text-white mb-1.5">-{misrouteReduction}%</p>
@@ -311,6 +314,22 @@ export default function ROICalculator() {
                     className="w-full roi-mini-slider"
                     style={{
                       background: `linear-gradient(to right, var(--blue-cta) 0%, var(--blue-cta) ${abandonmentReduction}%, rgba(255,255,255,0.15) ${abandonmentReduction}%, rgba(255,255,255,0.15) 100%)`
+                    }}
+                  />
+                </div>
+                <div>
+                  <p className="text-xs uppercase tracking-wider mb-1" style={{ color: "rgba(255,255,255,0.4)" }}>Escalation</p>
+                  <p className="text-sm font-bold text-white mb-1.5">-{escalationReduction}%</p>
+                  <input
+                    type="range"
+                    min={0}
+                    max={100}
+                    step={5}
+                    value={escalationReduction}
+                    onChange={e => setEscalationReduction(Number(e.target.value))}
+                    className="w-full roi-mini-slider"
+                    style={{
+                      background: `linear-gradient(to right, var(--blue-cta) 0%, var(--blue-cta) ${escalationReduction}%, rgba(255,255,255,0.15) ${escalationReduction}%, rgba(255,255,255,0.15) 100%)`
                     }}
                   />
                 </div>
