@@ -62,9 +62,9 @@ export default function NavBar({ links, ctaHref = "/#contact", ctaLabel = "Conta
             aria-label="Toggle menu"
             style={{ background: "rgba(255,255,255,0.08)" }}
           >
-            <span className="block w-5 h-0.5 bg-white rounded transition-all duration-300" style={{ transform: open ? "rotate(45deg) translateY(3px)" : "none" }} />
+            <span className="block w-5 h-0.5 bg-white rounded transition-all duration-300" style={{ transform: open ? "rotate(45deg) translateY(6px)" : "none" }} />
             <span className="block w-5 h-0.5 bg-white rounded mt-1 transition-all duration-300" style={{ opacity: open ? 0 : 1 }} />
-            <span className="block w-5 h-0.5 bg-white rounded mt-1 transition-all duration-300" style={{ transform: open ? "rotate(-45deg) translateY(-3px)" : "none" }} />
+            <span className="block w-5 h-0.5 bg-white rounded mt-1 transition-all duration-300" style={{ transform: open ? "rotate(-45deg) translateY(-6px)" : "none" }} />
           </button>
         </div>
       </div>
