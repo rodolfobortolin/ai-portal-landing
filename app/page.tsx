@@ -869,6 +869,7 @@ export default function Home() {
             <div>
               <h4 className="text-xs font-semibold uppercase tracking-widest mb-4" style={{ color: "rgba(255,255,255,0.5)" }}>Company</h4>
               <div className="space-y-2.5">
+                <Link href="/about" className="block text-xs hover:text-white transition-colors" style={{ color: "rgba(255,255,255,0.35)" }}>About</Link>
               </div>
             </div>
           </div>
