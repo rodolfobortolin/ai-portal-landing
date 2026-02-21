@@ -122,7 +122,7 @@ export default function ROICalculator() {
             Annual Savings
           </h2>
           <p className="text-lg max-w-xl mx-auto" style={{ color: "rgba(255,255,255,0.6)" }}>
-            Adjust the sliders to match your organization. See exactly what bad tickets cost you — and what AI Portal saves.
+            Adjust the sliders to match your organization. See exactly what bad tickets cost you, and what Nexus AI saves.
           </p>
         </div>
 
@@ -260,7 +260,7 @@ export default function ROICalculator() {
             {/* Savings card */}
             <div className="rounded-xl p-8 mb-4" style={{ background: "rgba(43,46,216,0.2)", border: "1px solid rgba(43,46,216,0.4)" }}>
               <p className="text-xs font-semibold uppercase tracking-widest mb-2" style={{ color: "rgba(255,255,255,0.5)" }}>
-                Annual Savings with AI Portal
+                Annual Savings with Nexus AI
               </p>
               <p className="text-5xl md:text-6xl font-bold tabular-nums text-white">
                 {formatCurrency(animatedSavings)}
@@ -337,7 +337,7 @@ export default function ROICalculator() {
             <div className="rounded-xl p-6 mb-4 flex items-center justify-between" style={{ background: "rgba(255,255,255,0.04)", border: "1px dashed rgba(255,255,255,0.1)" }}>
               <div>
                 <p className="text-xs font-semibold uppercase tracking-widest mb-1" style={{ color: "rgba(255,255,255,0.4)" }}>
-                  AI Portal Annual Cost
+                  Nexus AI Annual Cost
                 </p>
                 <p className="text-3xl font-bold tabular-nums" style={{ color: teamSize <= 10 ? "#4ade80" : "rgba(255,255,255,0.9)" }}>
                   {teamSize <= 10 ? "Free" : formatCurrency(Math.round(subscriptionCost))}
@@ -368,7 +368,7 @@ export default function ROICalculator() {
         {/* CTA */}
         <div className={`text-center mt-16 transition-all duration-700 delay-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           <a href="#contact" className="cta-button" style={{ background: "white", color: "var(--navy)", borderColor: "white" }}>
-            Get AI Portal Now
+            Get Nexus AI Now
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
           </a>
         </div>

@@ -10,7 +10,7 @@ const ArrowIcon = () => (
 );
 
 export const metadata = {
-  title: "Blog | AI Portal for Jira Service Management",
+  title: "Blog | Nexus AI for Jira Service Management",
   description: "Data-driven insights on IT service desk costs, ticket quality, portal abandonment, and language barriers in enterprise support.",
 };
 
@@ -84,7 +84,7 @@ export default function BlogPage() {
             Ready to Eliminate These Costs?
           </h2>
           <p className="text-sm mb-8" style={{ color: "rgba(255,255,255,0.5)" }}>
-            AI Portal fixes misrouting, incomplete tickets, portal abandonment, and language barriers — all from a single conversational interface on your JSM portal.
+            Nexus AI fixes misrouting, incomplete tickets, portal abandonment, and language barriers, all from a single conversational interface on your JSM portal.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link href="/#roi-calculator" className="inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-wider text-white px-7 py-3.5 rounded" style={{ background: "var(--blue-cta)" }}>
@@ -101,13 +101,11 @@ export default function BlogPage() {
       <footer style={{ background: "var(--navy-deep)" }}>
         <div className="max-w-[1280px] mx-auto px-6 md:px-12 py-10 flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-2">
-            <img src={`${basePath}/valiantys-logo-white.svg`} alt="Valiantys" style={{ height: 16, opacity: 0.5 }} />
-            <span style={{ color: "rgba(255,255,255,0.2)", fontSize: 14, fontWeight: 300 }}>|</span>
-            <img src={`${basePath}/ai-portal-logo.png`} alt="AI Portal" style={{ height: 20, opacity: 0.7 }} />
-            <span className="font-bold text-white text-xs uppercase tracking-wider" style={{ opacity: 0.7 }}>AI Portal</span>
+            <img src={`${basePath}/ai-portal-logo-200.png`} alt="Nexus AI" style={{ height: 20, opacity: 0.7 }} />
+            <span className="font-bold text-white text-xs uppercase tracking-wider" style={{ opacity: 0.7 }}>Nexus AI</span>
           </div>
           <p className="text-xs" style={{ color: "rgba(255,255,255,0.2)" }}>
-            &copy; 2026 Valiantys. All rights reserved.
+            &copy; 2026 Nexus AI. All rights reserved.
           </p>
         </div>
       </footer>

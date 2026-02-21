@@ -616,7 +616,7 @@ export default function Home() {
                 Comparison
               </span>
               <h2 style={{ color: "var(--navy)" }}>
-                How AI Portal
+                How Nexus AI
                 <br />
                 Stacks Up.
               </h2>
@@ -631,7 +631,7 @@ export default function Home() {
                     <tr style={{ background: "var(--navy)", color: "white" }}>
                       <th className="text-left px-2 py-3 md:p-4 font-semibold text-[10px] md:text-xs uppercase tracking-wider">Capability</th>
                       <th className="px-2 py-3 md:p-4 font-semibold text-[10px] md:text-xs uppercase tracking-wider text-center whitespace-nowrap"><span className="hidden md:inline">JSM Virtual Agent</span><span className="md:hidden">JSM</span></th>
-                      <th className="px-2 py-3 md:p-4 font-semibold text-[10px] md:text-xs uppercase tracking-wider text-center whitespace-nowrap" style={{ background: "var(--blue-cta)" }}>AI Portal</th>
+                      <th className="px-2 py-3 md:p-4 font-semibold text-[10px] md:text-xs uppercase tracking-wider text-center whitespace-nowrap" style={{ background: "var(--blue-cta)" }}>Nexus AI</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -644,7 +644,7 @@ export default function Home() {
                       { feature: "Integrated in Jira Search Bar", jsm: "check", ai: "cross" },
                       /* JSM partial */
                       { feature: "Full White-Label Branding", jsm: "partial", ai: "check" },
-                      /* Only AI Portal */
+                      /* Only Nexus AI */
                       { feature: "Ticket Creation Focus", jsm: "cross", ai: "check" },
                       { feature: "Required Fields Auto-Detection", jsm: "cross", ai: "check" },
                       { feature: "File Attachments in Chat", jsm: "cross", ai: "check" },
@@ -701,7 +701,7 @@ export default function Home() {
               <span style={{ color: "rgba(255,255,255,0.4)" }}>Deploy in 5 Minutes.</span>
             </h2>
             <p className="text-lg max-w-xl mx-auto mb-10" style={{ color: "rgba(255,255,255,0.5)" }}>
-              Install AI Portal on your JSM instance today. First AI-created ticket in under 2 minutes. ROI in the first week.
+              Install Nexus AI on your JSM instance today. First AI-created ticket in under 2 minutes. ROI in the first week.
             </p>
           </ScrollReveal>
 
@@ -737,10 +737,8 @@ export default function Home() {
           <div className="grid md:grid-cols-4 gap-10 pb-12" style={{ borderBottom: "1px dashed rgba(255,255,255,0.1)" }}>
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <img src={`${basePath}/valiantys-logo-white.svg`} alt="Valiantys" style={{ height: 18, opacity: 0.6 }} />
-                <span style={{ color: "rgba(255,255,255,0.2)", fontSize: 16, fontWeight: 300 }}>|</span>
-                <img src={`${basePath}/ai-portal-logo.png`} alt="AI Portal" style={{ height: 22, opacity: 0.8 }} />
-                <span className="font-bold text-white text-xs uppercase tracking-wider">AI Portal</span>
+                <img src={`${basePath}/ai-portal-logo-200.png`} alt="Nexus AI" style={{ height: 22, opacity: 0.8 }} />
+                <span className="font-bold text-white text-xs uppercase tracking-wider">Nexus AI</span>
               </div>
               <p className="text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.35)" }}>
                 AI-powered conversational interface for Jira Service Management. Built on Atlassian Forge.
@@ -771,13 +769,12 @@ export default function Home() {
             <div>
               <h4 className="text-xs font-semibold uppercase tracking-widest mb-4" style={{ color: "rgba(255,255,255,0.5)" }}>Company</h4>
               <div className="space-y-2.5">
-                <a href="https://valiantys.com" target="_blank" rel="noopener noreferrer" className="block text-xs hover:text-white transition-colors" style={{ color: "rgba(255,255,255,0.35)" }}>About Valiantys</a>
               </div>
             </div>
           </div>
           <div className="flex flex-wrap items-center justify-between gap-4 pt-8">
             <p className="text-xs" style={{ color: "rgba(255,255,255,0.2)" }}>
-              &copy; 2026 Valiantys. All rights reserved.
+              &copy; 2026 Nexus AI. All rights reserved.
             </p>
             {/* Privacy Policy, Terms of Service, Cookie Settings - hidden for now */}
           </div>

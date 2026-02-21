@@ -16,7 +16,7 @@ export default function DemoChatHeader({ onClose, onRestart }: DemoChatHeaderPro
           alt=""
           className={styles.headerAvatarImg}
         />
-        <span>AI Assistant</span>
+        <span>Nexus AI</span>
       </div>
       <div className={styles.headerActions}>
         <button

@@ -30,10 +30,8 @@ export default function NavBar({ links, ctaHref = "/#contact", ctaLabel = "Conta
       <div className="max-w-[1280px] mx-auto flex items-center justify-between px-6 md:px-12 py-4">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3">
-          <img src={`${basePath}/valiantys-logo-white.svg`} alt="Valiantys" className="hidden sm:block" style={{ height: 22 }} />
-          <span className="hidden sm:inline" style={{ color: "rgba(255,255,255,0.3)", fontSize: 18, fontWeight: 300 }}>|</span>
-          <img src={`${basePath}/ai-portal-logo.png`} alt="AI Portal" style={{ height: 28 }} />
-          <span className="text-white font-bold text-sm uppercase tracking-wider">AI Portal</span>
+          <img src={`${basePath}/ai-portal-logo-200.png`} alt="Nexus AI" style={{ height: 28 }} />
+          <span className="text-white font-bold text-sm uppercase tracking-wider">Nexus AI</span>
         </Link>
 
         {/* Desktop links */}

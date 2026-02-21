@@ -19,7 +19,7 @@ export function generateMetadata({ params }: { params: Promise<{ slug: string }>
   // We need to handle the async params for Next.js 16
   // For static generation, this works synchronously in practice
   return {
-    title: "Blog | AI Portal",
+    title: "Blog | Nexus AI",
   };
 }
 
@@ -98,12 +98,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       <footer style={{ background: "var(--navy-deep)" }}>
         <div className="max-w-[1280px] mx-auto px-6 md:px-12 py-10 flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-2">
-            <img src={`${basePath}/valiantys-logo-white.svg`} alt="Valiantys" style={{ height: 16, opacity: 0.5 }} />
-            <span style={{ color: "rgba(255,255,255,0.2)", fontSize: 14, fontWeight: 300 }}>|</span>
-            <img src={`${basePath}/ai-portal-logo.png`} alt="AI Portal" style={{ height: 20, opacity: 0.7 }} />
-            <span className="font-bold text-white text-xs uppercase tracking-wider" style={{ opacity: 0.7 }}>AI Portal</span>
+            <img src={`${basePath}/ai-portal-logo-200.png`} alt="Nexus AI" style={{ height: 20, opacity: 0.7 }} />
+            <span className="font-bold text-white text-xs uppercase tracking-wider" style={{ opacity: 0.7 }}>Nexus AI</span>
           </div>
-          <p className="text-xs" style={{ color: "rgba(255,255,255,0.2)" }}>&copy; 2026 Valiantys. All rights reserved.</p>
+          <p className="text-xs" style={{ color: "rgba(255,255,255,0.2)" }}>&copy; 2026 Nexus AI. All rights reserved.</p>
         </div>
       </footer>
     </main>

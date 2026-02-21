@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState, ReactNode } from "react";
 
 /**
- * Word-by-word blur reveal animation, inspired by Valiantys hero.
+ * Word-by-word blur reveal animation.
  * Words start blurred + transparent and reveal sequentially.
  */
 export function HeroWordReveal({
