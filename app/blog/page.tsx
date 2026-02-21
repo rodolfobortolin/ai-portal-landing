@@ -24,6 +24,7 @@ export default function BlogPage() {
         links={[
           { label: "Home", href: "/" },
           { label: "Blog", href: "/blog", active: true },
+          { label: "About", href: "/about" },
         ]}
         ctaHref="/#contact"
         ctaLabel="Contact Us"

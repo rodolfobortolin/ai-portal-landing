@@ -1,6 +1,7 @@
 import Link from "next/link";
 import NavBar from "../components/NavBar";
 import ScrollReveal from "../components/ScrollReveal";
+import AnimatedStats from "../components/AnimatedStats";
 import basePath from "../../lib/basePath";
 
 const ArrowIcon = () => (
@@ -77,19 +78,11 @@ export default function AboutPage() {
           <ScrollReveal delay={100}>
             <div className="rounded-xl p-8 md:p-10 mb-16" style={{ background: "rgba(43,46,216,0.04)", border: "1px dashed var(--border)" }}>
               <span className="text-[11px] font-bold uppercase tracking-widest" style={{ color: "var(--blue-cta)" }}>OUR TRACK RECORD</span>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-6">
-                {[
-                  { number: "10+", label: "Years of Atlassian consulting" },
-                  { number: "200+", label: "JSM implementations delivered" },
-                  { number: "50+", label: "Enterprise clients served" },
-                  { number: "15+", label: "Forge apps & plugins built" },
-                ].map(s => (
-                  <div key={s.label}>
-                    <p className="text-3xl font-bold" style={{ color: "var(--blue-cta)" }}>{s.number}</p>
-                    <p className="text-xs mt-1 leading-relaxed" style={{ color: "var(--grey)" }}>{s.label}</p>
-                  </div>
-                ))}
-              </div>
+              <AnimatedStats stats={[
+                { target: 10, suffix: "+", label: "Years of Atlassian consulting" },
+                { target: 200, suffix: "+", label: "JSM implementations delivered" },
+                { target: 50, suffix: "+", label: "Enterprise clients served" },
+              ]} />
             </div>
           </ScrollReveal>
         </div>

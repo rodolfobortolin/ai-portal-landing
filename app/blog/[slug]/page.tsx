@@ -37,6 +37,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         links={[
           { label: "Home", href: "/" },
           { label: "Blog", href: "/blog" },
+          { label: "About", href: "/about" },
         ]}
         ctaHref="/#contact"
         ctaLabel="Contact Us"
