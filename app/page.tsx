@@ -40,7 +40,6 @@ export default function Home() {
       <NavBar
         links={[
           { label: "Problem", href: "#pain-points" },
-          { label: "How It Works", href: "#how-it-works" },
           { label: "Features", href: "#features" },
           { label: "ROI Calculator", href: "#roi-calculator" },
           { label: "Compare", href: "#comparison" },
@@ -57,10 +56,10 @@ export default function Home() {
       <section className="relative py-0 z-10" style={{ background: "var(--navy)" }}>
         <div className="max-w-[1280px] mx-auto grid grid-cols-2 md:grid-cols-4">
           {[
-            { number: "23%", label: "of tickets go to the wrong team, wasting 45 min each", source: "BMC", color: "#EC8546" },
-            { number: "86%", label: "of self-service issues fail to resolve without human help", source: "Gartner", color: "#7E7CDE" },
-            { number: "$22", label: "average cost per L1 ticket. Misrouted ones cost 2-3x more", source: "MetricNet", color: "#51A2E7" },
-            { number: "3.5x", label: "return for every $1 invested in AI-powered support", source: "Freshworks", color: "#C27EEA" },
+            { number: "23%", label: "of tickets are routed to the wrong team", source: "BMC", color: "#EC8546" },
+            { number: "86%", label: "of self-service attempts fail without human intervention", source: "Gartner", color: "#7E7CDE" },
+            { number: "9x", label: "the cost of an escalated ticket vs. a normally resolved one", source: "HDI", color: "#51A2E7" },
+            { number: "67%", label: "of frustrated customers leave before their issue is resolved", source: "Qualtrics", color: "#C27EEA" },
           ].map((stat, i) => (
             <ScrollReveal key={stat.number} delay={i * 100}>
               <div className="py-10 px-6 md:px-8 text-center" style={{ borderRight: i < 3 ? "1px dashed rgba(255,255,255,0.1)" : "none" }}>
@@ -90,7 +89,7 @@ export default function Home() {
             </div>
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4" style={{ border: "1px dashed var(--border)" }}>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3" style={{ border: "1px dashed var(--border)" }}>
             {[
               {
                 tag: "MISROUTING", tagColor: "#EC8546", hoverBg: "#EC8546",
@@ -110,7 +109,7 @@ export default function Home() {
                 tag: "ABANDONMENT", tagColor: "#C27EEA", hoverBg: "#C27EEA",
                 title: "52% Just Give Up",
                 stat: "Only 14% resolved",
-                desc: "After 10 minutes of searching, half your users abandon the portal. They call, email, or use shadow IT — none of which you can track.",
+                desc: "After 10 minutes of searching, half your users abandon the portal. They call, email, or use shadow IT, none of which you can track.",
                 blogUrl: "/blog/portal-abandonment-crisis",
               },
               {
@@ -120,10 +119,29 @@ export default function Home() {
                 desc: "Multilingual teams write tickets in broken English. Critical context is lost. Agents guess. Resolution times double.",
                 blogUrl: "/blog/language-barriers-enterprise-cost",
               },
+              {
+                tag: "ESCALATION", tagColor: "#E25656", hoverBg: "#E25656",
+                title: "9x More Expensive",
+                stat: "67% churn silently",
+                desc: "Every escalated ticket costs 9x more than a normally resolved one. Worse, 67% of frustrated customers don't escalate at all. They just leave.",
+                blogUrl: "/blog/escalation-cost-analysis",
+              },
+              {
+                tag: "LATE DETECTION", tagColor: "#1B9E6B", hoverBg: "#1B9E6B",
+                title: "Agents See It Too Late",
+                stat: "3 seconds vs. 3 days",
+                desc: "By the time an agent notices a frustrated customer, the damage is done. AI can detect negative sentiment in 3 seconds. Most teams take 3 days.",
+                blogUrl: "/blog/proactive-escalation-prevention",
+              },
             ].map((card, i) => (
               <ScrollReveal key={card.tag} delay={i * 100}>
                 <div className="pain-card p-8 md:p-10 h-full group"
-                  style={{ borderRight: i < 3 ? "1px dashed var(--border)" : "none", "--card-color": card.tagColor, "--card-hover-bg": card.hoverBg } as React.CSSProperties}>
+                  style={{
+                    borderRight: (i % 3 !== 2) ? "1px dashed var(--border)" : "none",
+                    borderBottom: i < 3 ? "1px dashed var(--border)" : "none",
+                    "--card-color": card.tagColor,
+                    "--card-hover-bg": card.hoverBg,
+                  } as React.CSSProperties}>
                   <span className="pain-card__tag text-[11px] font-bold uppercase tracking-widest">{card.tag}</span>
                   <h3 className="pain-card__title mt-3 mb-2 font-bold">{card.title}</h3>
                   <p className="pain-card__stat text-sm font-semibold mb-3">{card.stat}</p>
@@ -132,84 +150,6 @@ export default function Home() {
                     Learn more
                     <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
                   </Link>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════════════ HOW IT WORKS ══════════════════ */}
-      <section id="how-it-works" className="py-20 md:py-28" style={{ background: "var(--navy)" }}>
-        <div className="max-w-[1280px] mx-auto px-6 md:px-12">
-          <ScrollReveal>
-            <div className="text-center mb-20">
-              <span className="inline-block px-4 py-1.5 text-xs font-semibold uppercase tracking-widest rounded-full mb-6"
-                    style={{ background: "rgba(126,124,222,0.15)", color: "#7E7CDE", border: "1px solid rgba(126,124,222,0.3)" }}>
-                How It Works
-              </span>
-              <h2 className="text-white">
-                Three Steps.
-                <br />
-                <span style={{ color: "rgba(255,255,255,0.35)" }}>Zero Training.</span>
-              </h2>
-            </div>
-          </ScrollReveal>
-
-          <div className="grid md:grid-cols-3 gap-0">
-            {[
-              {
-                step: "01", color: "#EC8546", title: "User Chats",
-                desc: "Click the chat button. Type in any language. Describe what you need naturally, the way you'd tell a colleague.",
-                icon: (
-                  <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                    <path d="M8 10h24a2 2 0 012 2v16a2 2 0 01-2 2H16l-6 6v-6H8a2 2 0 01-2-2V12a2 2 0 012-2z" stroke="#EC8546" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-                    <circle cx="16" cy="20" r="1.5" fill="#EC8546"/>
-                    <circle cx="24" cy="20" r="1.5" fill="#EC8546"/>
-                    <circle cx="32" cy="20" r="1.5" fill="#EC8546"/>
-                    <path d="M38 18h2a2 2 0 012 2v16a2 2 0 01-2 2h-2v6l-6-6H20a2 2 0 01-2-2v-2" stroke="#EC8546" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" opacity="0.4"/>
-                  </svg>
-                ),
-              },
-              {
-                step: "02", color: "#7E7CDE", title: "AI Understands",
-                desc: "The AI identifies the right service desk, matches the request type, reads the exact field schema, and auto-fills everything it can.",
-                icon: (
-                  <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                    <circle cx="24" cy="24" r="16" stroke="#7E7CDE" strokeWidth="2.5" strokeDasharray="4 3"/>
-                    <circle cx="24" cy="24" r="8" stroke="#7E7CDE" strokeWidth="2"/>
-                    <circle cx="24" cy="24" r="2" fill="#7E7CDE"/>
-                    <path d="M24 8v4M24 36v4M8 24h4M36 24h4" stroke="#7E7CDE" strokeWidth="2" strokeLinecap="round"/>
-                  </svg>
-                ),
-              },
-              {
-                step: "03", color: "#51A2E7", title: "Perfect Ticket",
-                desc: "A perfectly structured ticket appears — correct desk, correct type, all required fields populated. Written like a trained agent did it.",
-                icon: (
-                  <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                    <rect x="10" y="8" width="28" height="32" rx="3" stroke="#51A2E7" strokeWidth="2.5"/>
-                    <path d="M16 18h16M16 24h12M16 30h8" stroke="#51A2E7" strokeWidth="2" strokeLinecap="round" opacity="0.5"/>
-                    <path d="M30 28l4 4 8-10" stroke="#51A2E7" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                ),
-              },
-            ].map((item, i) => (
-              <ScrollReveal key={item.step} delay={i * 150}>
-                <div className="relative p-10 md:p-12" style={{ borderRight: i < 2 ? "1px dashed rgba(255,255,255,0.1)" : "none" }}>
-                  <span className="text-7xl font-bold absolute top-6 right-8 tabular-nums" style={{ color: "rgba(255,255,255,0.04)", fontFamily: "'IBM Plex Mono', monospace" }}>
-                    {item.step}
-                  </span>
-                  <div className="relative z-10">
-                    <div className="mb-6">{item.icon}</div>
-                    <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
-                    <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.5)" }}>{item.desc}</p>
-                  </div>
-                  {i < 2 && (
-                    <div className="hidden md:block absolute top-1/2 -right-3 z-20" style={{ color: item.color }}>
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M14 7l5 5-5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                    </div>
-                  )}
                 </div>
               </ScrollReveal>
             ))}
@@ -234,11 +174,98 @@ export default function Home() {
             </div>
           </ScrollReveal>
 
-          {/* Feature 1 — AI Dispatcher */}
+          {/* Feature 1 — Portal Assistant */}
           <ScrollReveal delay={100}>
             <div className="grid lg:grid-cols-2 gap-12 items-center py-16 mb-8" style={{ borderBottom: "1px dashed var(--border)" }}>
               <div>
-                <span className="text-[11px] font-bold uppercase tracking-widest" style={{ color: "#EC8546" }}>AI DISPATCHER</span>
+                <span className="text-[11px] font-bold uppercase tracking-widest" style={{ color: "#7E7CDE" }}>PORTAL ASSISTANT</span>
+                <h2 className="mt-4 mb-5" style={{ color: "var(--navy)", fontSize: "clamp(28px, 3.5vw, 48px)", lineHeight: 1.1, letterSpacing: "-0.03em" }}>
+                  {"Chat. Describe.\nDone.".split("\n").map((line, i) => <span key={i}>{line}<br/></span>)}
+                </h2>
+                <p className="text-base leading-relaxed mb-6" style={{ color: "var(--grey)" }}>
+                  Users click the chat button and describe what they need in plain language. The AI identifies the right service desk, matches the request type, reads the exact field schema, and auto-fills everything. A perfectly structured ticket appears, ready to confirm.
+                </p>
+                <div className="grid grid-cols-2 gap-3">
+                  {["Natural language in any language", "Auto-detects service desk & type", "Auto-fills required fields", "Confirm before creation"].map(h => (
+                    <span key={h} className="flex items-center gap-2 text-sm" style={{ color: "var(--navy)" }}>
+                      <CheckIcon /> {h}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <div className="relative w-full min-h-[420px] flex items-center justify-center" style={{ background: "linear-gradient(135deg, rgba(126,124,222,0.06), rgba(126,124,222,0.02))", borderRadius: 12 }}>
+                  <div className="flex flex-col gap-3" style={{ width: 320 }}>
+                    {/* Card 1: User Chats */}
+                    <div className="rounded-xl p-4 shadow-lg" style={{ background: "white", border: "1px solid var(--border)" }}>
+                      <div className="flex items-center gap-2 mb-2">
+                        <svg width="16" height="16" viewBox="0 0 48 48" fill="none">
+                          <path d="M8 10h24a2 2 0 012 2v16a2 2 0 01-2 2H16l-6 6v-6H8a2 2 0 01-2-2V12a2 2 0 012-2z" stroke="#7E7CDE" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                        <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: "#7E7CDE" }}>User Chats</span>
+                      </div>
+                      <p className="text-[12px] italic leading-relaxed" style={{ color: "var(--navy)" }}>
+                        &quot;My laptop can&apos;t connect to the VPN from home. I&apos;ve tried restarting.&quot;
+                      </p>
+                      <p className="text-[11px] mt-1" style={{ color: "var(--grey)" }}>Any language, any device</p>
+                    </div>
+
+                    {/* Arrow */}
+                    <div className="flex justify-center">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 5v14M7 14l5 5 5-5" stroke="#7E7CDE" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </div>
+
+                    {/* Card 2: AI Understands */}
+                    <div className="rounded-xl p-4 shadow-lg" style={{ background: "rgba(126,124,222,0.06)", border: "1px solid rgba(126,124,222,0.2)" }}>
+                      <div className="flex items-center gap-2 mb-2">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                          <circle cx="7" cy="7" r="6" stroke="#7E7CDE" strokeWidth="1.5" strokeDasharray="3 2"/>
+                          <circle cx="7" cy="7" r="2" fill="#7E7CDE"/>
+                        </svg>
+                        <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: "#7E7CDE" }}>AI Understands</span>
+                      </div>
+                      <p className="text-[11px] leading-relaxed" style={{ color: "var(--navy)" }}>
+                        Desk: <strong>IT Support</strong> &bull; Type: <strong>VPN Issue</strong>
+                      </p>
+                      <p className="text-[11px] mt-1" style={{ color: "var(--grey)" }}>
+                        Auto-filled: Summary, Description, Priority, Component
+                      </p>
+                    </div>
+
+                    {/* Arrow */}
+                    <div className="flex justify-center">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 5v14M7 14l5 5 5-5" stroke="#7E7CDE" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </div>
+
+                    {/* Card 3: Perfect Ticket */}
+                    <div className="rounded-xl p-4 shadow-lg" style={{ background: "white", border: "2px solid #1B7A3E" }}>
+                      <div className="flex items-center gap-2 mb-2">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                          <circle cx="7" cy="7" r="6" fill="rgba(27,122,62,0.1)"/>
+                          <path d="M4 7l2.5 2.5L10 5" stroke="#1B7A3E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                        <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: "#1B7A3E" }}>Perfect Ticket</span>
+                      </div>
+                      <p className="text-[13px] font-semibold" style={{ color: "var(--navy)" }}>IT-2847 Created</p>
+                      <p className="text-[11px] mt-1" style={{ color: "var(--grey)" }}>
+                        Correct desk, correct type, all required fields populated.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          {/* Feature 2 — Dispatcher Agent */}
+          <ScrollReveal delay={100}>
+            <div className="grid lg:grid-cols-2 gap-12 items-center py-16 mb-8" style={{ borderBottom: "1px dashed var(--border)" }}>
+              <div className="lg:order-2">
+                <span className="text-[11px] font-bold uppercase tracking-widest" style={{ color: "#EC8546" }}>DISPATCHER AGENT</span>
                 <h2 className="mt-4 mb-5" style={{ color: "var(--navy)", fontSize: "clamp(28px, 3.5vw, 48px)", lineHeight: 1.1, letterSpacing: "-0.03em" }}>
                   {"Right Ticket.\nRight Person. Always.".split("\n").map((line, i) => <span key={i}>{line}<br/></span>)}
                 </h2>
@@ -253,7 +280,7 @@ export default function Home() {
                   ))}
                 </div>
               </div>
-              <div>
+              <div className="lg:order-1">
                 <div className="relative w-full min-h-[420px] flex items-center justify-center" style={{ background: "linear-gradient(135deg, rgba(236,133,70,0.06), rgba(236,133,70,0.02))", borderRadius: 12 }}>
                   <div className="flex flex-col gap-3" style={{ width: 320 }}>
                     {/* Card 1: Incoming Ticket */}
@@ -313,62 +340,6 @@ export default function Home() {
                       <p className="text-[11px] mt-1 italic" style={{ color: "var(--grey)" }}>
                         &quot;Assigned to Sarah (Network Team) based on VPN and networking expertise.&quot;
                       </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </ScrollReveal>
-
-          {/* Feature 2 — Instructions */}
-          <ScrollReveal delay={100}>
-            <div className="grid lg:grid-cols-2 gap-12 items-center py-16 mb-8" style={{ borderBottom: "1px dashed var(--border)" }}>
-              <div className="lg:order-2">
-                <span className="text-[11px] font-bold uppercase tracking-widest" style={{ color: "#7E7CDE" }}>MULTI-LAYER INSTRUCTIONS</span>
-                <h2 className="mt-4 mb-5" style={{ color: "var(--navy)", fontSize: "clamp(28px, 3.5vw, 48px)", lineHeight: 1.1, letterSpacing: "-0.03em" }}>
-                  {"Granular AI Control.\nYour Rules.".split("\n").map((line, i) => <span key={i}>{line}<br/></span>)}
-                </h2>
-                <p className="text-base leading-relaxed mb-6" style={{ color: "var(--grey)" }}>
-                  Configure AI behavior at four levels: Company-wide rules, per-Service Desk, per-Request Type, and real-time Agent Prompts. Agents can set operational notices (via UI or API) that the AI uses immediately, with optional auto-expiry.
-                </p>
-                <div className="grid grid-cols-2 gap-3">
-                  {["Global company rules", "Service desk overrides", "Request type specifics", "Real-time agent prompts"].map(h => (
-                    <span key={h} className="flex items-center gap-2 text-sm" style={{ color: "var(--navy)" }}>
-                      <CheckIcon /> {h}
-                    </span>
-                  ))}
-                </div>
-              </div>
-              <div className="lg:order-1">
-                <div className="relative w-full flex items-center justify-center py-10" style={{ background: "linear-gradient(135deg, rgba(126,124,222,0.06), rgba(126,124,222,0.02))", borderRadius: 12 }}>
-                  <div style={{ width: 300 }}>
-                    <div className="relative flex flex-col gap-3" style={{ paddingLeft: 32 }}>
-                      {/* Continuous vertical line behind circles */}
-                      <div className="absolute" style={{ left: 9, top: 10, bottom: 10, width: 2, background: "linear-gradient(to bottom, rgba(126,124,222,0.3), rgba(236,133,70,0.4))" }} />
-                      {[
-                        { label: "Company", desc: "Global rules for all conversations", num: 1, circleColor: "#7E7CDE", bgOpacity: 0.08, borderOpacity: 0.25 },
-                        { label: "Service Desk", desc: "Override rules per desk", num: 2, circleColor: "#7E7CDE", bgOpacity: 0.12, borderOpacity: 0.35 },
-                        { label: "Request Type", desc: "Specific field & behavior rules", num: 3, circleColor: "#7E7CDE", bgOpacity: 0.18, borderOpacity: 0.5 },
-                      ].map((layer) => (
-                        <div key={layer.label} className="relative flex items-center gap-3">
-                          <div className="absolute flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-[9px] font-bold text-white" style={{ background: layer.circleColor, left: -32 + 2, zIndex: 1 }}>{layer.num}</div>
-                          <div className="flex-1 rounded-lg px-3 py-2.5" style={{ background: `rgba(126,124,222,${layer.bgOpacity})`, border: `1px solid rgba(126,124,222,${layer.borderOpacity})` }}>
-                            <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: "#7E7CDE" }}>{layer.label}</span>
-                            <p className="text-[11px] mt-0.5" style={{ color: "var(--grey)" }}>{layer.desc}</p>
-                          </div>
-                        </div>
-                      ))}
-                      {/* Layer 4 - Agent Prompt (special) */}
-                      <div className="relative flex items-center gap-3">
-                        <div className="absolute flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-[9px] font-bold text-white" style={{ background: "#EC8546", left: -32 + 2, zIndex: 1 }}>4</div>
-                        <div className="flex-1 rounded-lg px-3 py-3 shadow-md" style={{ background: "white", border: "2px solid #EC8546" }}>
-                          <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: "#EC8546" }}>Agent Prompt</span>
-                          <p className="text-[11px] mt-1" style={{ color: "var(--grey)" }}>
-                            &quot;SAP is down until Feb 10. Inform users about this outage.&quot;
-                          </p>
-                          <span className="inline-block mt-1.5 text-[9px] px-2 py-0.5 rounded-full font-semibold" style={{ background: "rgba(236,133,70,0.12)", color: "#EC8546" }}>Real-time · UI or API · Auto-expires</span>
-                        </div>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -590,7 +561,63 @@ export default function Home() {
             </div>
           </ScrollReveal>
 
-          {/* Feature 5 — Workflow Automation */}
+          {/* Feature 5 — Multi-Layer Instructions */}
+          <ScrollReveal delay={100}>
+            <div className="grid lg:grid-cols-2 gap-12 items-center py-16 mb-8" style={{ borderBottom: "1px dashed var(--border)" }}>
+              <div>
+                <span className="text-[11px] font-bold uppercase tracking-widest" style={{ color: "#7E7CDE" }}>MULTI-LAYER INSTRUCTIONS</span>
+                <h2 className="mt-4 mb-5" style={{ color: "var(--navy)", fontSize: "clamp(28px, 3.5vw, 48px)", lineHeight: 1.1, letterSpacing: "-0.03em" }}>
+                  {"Granular AI Control.\nYour Rules.".split("\n").map((line, i) => <span key={i}>{line}<br/></span>)}
+                </h2>
+                <p className="text-base leading-relaxed mb-6" style={{ color: "var(--grey)" }}>
+                  Configure AI behavior at four levels: Company-wide rules, per-Service Desk, per-Request Type, and real-time Agent Prompts. Agents can set operational notices (via UI or API) that the AI uses immediately, with optional auto-expiry.
+                </p>
+                <div className="grid grid-cols-2 gap-3">
+                  {["Global company rules", "Service desk overrides", "Request type specifics", "Real-time agent prompts"].map(h => (
+                    <span key={h} className="flex items-center gap-2 text-sm" style={{ color: "var(--navy)" }}>
+                      <CheckIcon /> {h}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <div className="relative w-full flex items-center justify-center py-10" style={{ background: "linear-gradient(135deg, rgba(126,124,222,0.06), rgba(126,124,222,0.02))", borderRadius: 12 }}>
+                  <div style={{ width: 300 }}>
+                    <div className="relative flex flex-col gap-3" style={{ paddingLeft: 32 }}>
+                      {/* Continuous vertical line behind circles */}
+                      <div className="absolute" style={{ left: 9, top: 10, bottom: 10, width: 2, background: "linear-gradient(to bottom, rgba(126,124,222,0.3), rgba(236,133,70,0.4))" }} />
+                      {[
+                        { label: "Company", desc: "Global rules for all conversations", num: 1, circleColor: "#7E7CDE", bgOpacity: 0.08, borderOpacity: 0.25 },
+                        { label: "Service Desk", desc: "Override rules per desk", num: 2, circleColor: "#7E7CDE", bgOpacity: 0.12, borderOpacity: 0.35 },
+                        { label: "Request Type", desc: "Specific field & behavior rules", num: 3, circleColor: "#7E7CDE", bgOpacity: 0.18, borderOpacity: 0.5 },
+                      ].map((layer) => (
+                        <div key={layer.label} className="relative flex items-center gap-3">
+                          <div className="absolute flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-[9px] font-bold text-white" style={{ background: layer.circleColor, left: -32 + 2, zIndex: 1 }}>{layer.num}</div>
+                          <div className="flex-1 rounded-lg px-3 py-2.5" style={{ background: `rgba(126,124,222,${layer.bgOpacity})`, border: `1px solid rgba(126,124,222,${layer.borderOpacity})` }}>
+                            <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: "#7E7CDE" }}>{layer.label}</span>
+                            <p className="text-[11px] mt-0.5" style={{ color: "var(--grey)" }}>{layer.desc}</p>
+                          </div>
+                        </div>
+                      ))}
+                      {/* Layer 4 - Agent Prompt (special) */}
+                      <div className="relative flex items-center gap-3">
+                        <div className="absolute flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-[9px] font-bold text-white" style={{ background: "#EC8546", left: -32 + 2, zIndex: 1 }}>4</div>
+                        <div className="flex-1 rounded-lg px-3 py-3 shadow-md" style={{ background: "white", border: "2px solid #EC8546" }}>
+                          <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: "#EC8546" }}>Agent Prompt</span>
+                          <p className="text-[11px] mt-1" style={{ color: "var(--grey)" }}>
+                            &quot;SAP is down until Feb 10. Inform users about this outage.&quot;
+                          </p>
+                          <span className="inline-block mt-1.5 text-[9px] px-2 py-0.5 rounded-full font-semibold" style={{ background: "rgba(236,133,70,0.12)", color: "#EC8546" }}>Real-time · UI or API · Auto-expires</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          {/* Feature 6 — Workflow Automation */}
           <ScrollReveal delay={100}>
             <div className="grid lg:grid-cols-2 gap-12 items-center py-16">
               <div>
@@ -723,7 +750,7 @@ export default function Home() {
                       { feature: "Full Prompt Control (4 layers)", jsm: "cross", ai: "check" },
                       { feature: "Real-Time Agent Prompts (UI + API)", jsm: "cross", ai: "check" },
                       { feature: "Auto-Confirm Mode", jsm: "cross", ai: "check" },
-                      { feature: "AI Ticket Dispatcher", jsm: "cross", ai: "check" },
+                      { feature: "Dispatcher Agent", jsm: "cross", ai: "check" },
                       { feature: "Proactive Escalation Prevention", jsm: "cross", ai: "check" },
                       { feature: "AI Sentiment Analysis", jsm: "cross", ai: "check" },
                       { feature: "AI Workflow Conditions", jsm: "cross", ai: "check" },
