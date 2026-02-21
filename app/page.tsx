@@ -93,12 +93,6 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4" style={{ border: "1px dashed var(--border)" }}>
             {[
               {
-                icon: (
-                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" className="transition-colors duration-300">
-                    <path d="M6 16h20M16 6v20" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
-                    <path d="M8 8l16 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity="0.4"/>
-                  </svg>
-                ),
                 tag: "MISROUTING", tagColor: "#EC8546", hoverBg: "#EC8546",
                 title: "Wrong Team, Every Time",
                 stat: "$27K/yr wasted",
@@ -106,13 +100,6 @@ export default function Home() {
                 blogUrl: "/blog/ticket-misrouting-hidden-cost",
               },
               {
-                icon: (
-                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" className="transition-colors duration-300">
-                    <rect x="6" y="8" width="20" height="16" rx="2" stroke="currentColor" strokeWidth="2"/>
-                    <path d="M10 14h12M10 18h8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity="0.5"/>
-                    <path d="M22 12l-4 4 4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                ),
                 tag: "INCOMPLETE", tagColor: "#7E7CDE", hoverBg: "#7E7CDE",
                 title: "Garbage In, Delays Out",
                 stat: "30% need clarification",
@@ -120,13 +107,6 @@ export default function Home() {
                 blogUrl: "/blog/incomplete-tickets-cost",
               },
               {
-                icon: (
-                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" className="transition-colors duration-300">
-                    <path d="M16 6v12l8 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                    <circle cx="16" cy="16" r="11" stroke="currentColor" strokeWidth="2" opacity="0.4"/>
-                    <path d="M20 22l4 4" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
-                  </svg>
-                ),
                 tag: "ABANDONMENT", tagColor: "#C27EEA", hoverBg: "#C27EEA",
                 title: "52% Just Give Up",
                 stat: "Only 14% resolved",
@@ -134,15 +114,6 @@ export default function Home() {
                 blogUrl: "/blog/portal-abandonment-crisis",
               },
               {
-                icon: (
-                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" className="transition-colors duration-300">
-                    <circle cx="16" cy="16" r="11" stroke="currentColor" strokeWidth="2" opacity="0.4"/>
-                    <path d="M10 16a6 6 0 0112 0" stroke="currentColor" strokeWidth="2"/>
-                    <circle cx="13" cy="14" r="1" fill="currentColor"/>
-                    <circle cx="19" cy="14" r="1" fill="currentColor"/>
-                    <path d="M12 20h8" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                  </svg>
-                ),
                 tag: "LANGUAGE", tagColor: "#51A2E7", hoverBg: "#51A2E7",
                 title: "$11M Lost to Barriers",
                 stat: "49% of executives affected",
@@ -153,7 +124,6 @@ export default function Home() {
               <ScrollReveal key={card.tag} delay={i * 100}>
                 <div className="pain-card p-8 md:p-10 h-full group"
                   style={{ borderRight: i < 3 ? "1px dashed var(--border)" : "none", "--card-color": card.tagColor, "--card-hover-bg": card.hoverBg } as React.CSSProperties}>
-                  <div className="mb-5 pain-card__icon">{card.icon}</div>
                   <span className="pain-card__tag text-[11px] font-bold uppercase tracking-widest">{card.tag}</span>
                   <h3 className="pain-card__title mt-3 mb-2 font-bold">{card.title}</h3>
                   <p className="pain-card__stat text-sm font-semibold mb-3">{card.stat}</p>
