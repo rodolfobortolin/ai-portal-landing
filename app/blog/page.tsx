@@ -53,23 +53,35 @@ export default function BlogPage() {
           <div className="grid md:grid-cols-2 gap-8">
             {posts.map((post) => (
               <Link key={post.slug} href={`/blog/${post.slug}`} className="group block">
-                <article className="h-full rounded-xl p-8 md:p-10 transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-xl"
+                <article className="h-full rounded-xl overflow-hidden transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-xl"
                   style={{ background: "white", border: "1px dashed var(--border)" }}>
-                  <div className="flex items-center gap-3 mb-5">
-                    <span className="text-[11px] font-bold uppercase tracking-widest" style={{ color: post.tagColor }}>
-                      {post.tag}
+                  {post.thumbnail && (
+                    <div className="w-full overflow-hidden" style={{ aspectRatio: "800/533" }}>
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={`${basePath}${post.thumbnail}`}
+                        alt=""
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      />
+                    </div>
+                  )}
+                  <div className="p-8 md:p-10">
+                    <div className="flex items-center gap-3 mb-5">
+                      <span className="text-[11px] font-bold uppercase tracking-widest" style={{ color: post.tagColor }}>
+                        {post.tag}
+                      </span>
+                      <span className="text-[11px]" style={{ color: "var(--grey)" }}>{post.readTime}</span>
+                    </div>
+                    <h3 className="font-bold mb-3 transition-colors group-hover:text-[var(--blue-cta)]" style={{ color: "var(--navy)", fontSize: "clamp(18px, 2vw, 22px)", lineHeight: 1.25, letterSpacing: "-0.02em" }}>
+                      {post.title}
+                    </h3>
+                    <p className="text-sm leading-relaxed mb-6" style={{ color: "var(--grey)" }}>
+                      {post.subtitle}
+                    </p>
+                    <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider transition-colors group-hover:gap-2.5" style={{ color: post.tagColor }}>
+                      Read article <ArrowIcon />
                     </span>
-                    <span className="text-[11px]" style={{ color: "var(--grey)" }}>{post.readTime}</span>
                   </div>
-                  <h3 className="font-bold mb-3 transition-colors group-hover:text-[var(--blue-cta)]" style={{ color: "var(--navy)", fontSize: "clamp(18px, 2vw, 22px)", lineHeight: 1.25, letterSpacing: "-0.02em" }}>
-                    {post.title}
-                  </h3>
-                  <p className="text-sm leading-relaxed mb-6" style={{ color: "var(--grey)" }}>
-                    {post.subtitle}
-                  </p>
-                  <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider transition-colors group-hover:gap-2.5" style={{ color: post.tagColor }}>
-                    Read article <ArrowIcon />
-                  </span>
                 </article>
               </Link>
             ))}

@@ -8,6 +8,7 @@ export interface BlogPost {
   tag: string;
   tagColor: string;
   readTime: string;
+  thumbnail?: string;
   content: string;
 }
 
@@ -19,6 +20,7 @@ const posts: Omit<BlogPost, "content">[] = [
     tag: "MISROUTING",
     tagColor: "#EC8546",
     readTime: "8 min read",
+    thumbnail: "/blog/ticket-misrouting-hidden-cost.jpg",
   },
   {
     slug: "incomplete-tickets-cost",
@@ -27,6 +29,7 @@ const posts: Omit<BlogPost, "content">[] = [
     tag: "INCOMPLETE",
     tagColor: "#7E7CDE",
     readTime: "7 min read",
+    thumbnail: "/blog/incomplete-tickets-cost.jpg",
   },
   {
     slug: "portal-abandonment-crisis",
@@ -35,6 +38,7 @@ const posts: Omit<BlogPost, "content">[] = [
     tag: "ABANDONMENT",
     tagColor: "#C27EEA",
     readTime: "9 min read",
+    thumbnail: "/blog/portal-abandonment-crisis.jpg",
   },
   {
     slug: "language-barriers-enterprise-cost",
@@ -43,6 +47,7 @@ const posts: Omit<BlogPost, "content">[] = [
     tag: "LANGUAGE",
     tagColor: "#51A2E7",
     readTime: "9 min read",
+    thumbnail: "/blog/language-barriers-enterprise-cost.jpg",
   },
   {
     slug: "escalation-cost-analysis",
@@ -51,6 +56,7 @@ const posts: Omit<BlogPost, "content">[] = [
     tag: "ESCALATION",
     tagColor: "#E25656",
     readTime: "10 min read",
+    thumbnail: "/blog/escalation-cost-analysis.jpg",
   },
   {
     slug: "proactive-escalation-prevention",
@@ -59,6 +65,7 @@ const posts: Omit<BlogPost, "content">[] = [
     tag: "PROACTIVE SUPPORT",
     tagColor: "#1B9E6B",
     readTime: "9 min read",
+    thumbnail: "/blog/proactive-escalation-prevention.jpg",
   },
 ];
 

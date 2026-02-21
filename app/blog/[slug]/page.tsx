@@ -62,6 +62,18 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             {post.subtitle}
           </p>
         </div>
+        {post.thumbnail && (
+          <div className="max-w-[800px] mx-auto px-6 md:px-12 mt-8">
+            <div className="rounded-xl overflow-hidden shadow-2xl" style={{ border: "1px solid rgba(255,255,255,0.1)" }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={`${basePath}${post.thumbnail}`}
+                alt=""
+                className="w-full h-auto"
+              />
+            </div>
+          </div>
+        )}
       </section>
 
       {/* Article body */}
