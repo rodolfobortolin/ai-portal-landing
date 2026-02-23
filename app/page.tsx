@@ -3,6 +3,7 @@ import ROICalculator from "./components/ROICalculator";
 import ScrollReveal from "./components/ScrollReveal";
 import NavBar from "./components/NavBar";
 import DemoModalTrigger from "./components/DemoModalTrigger";
+import FeatureNav from "./components/FeatureNav";
 import basePath from "../lib/basePath";
 
 /* ── SVG Icons ── */
@@ -174,9 +175,14 @@ export default function Home() {
             </div>
           </ScrollReveal>
 
+          {/* Feature quick-nav pills */}
+          <ScrollReveal delay={50}>
+            <FeatureNav />
+          </ScrollReveal>
+
           {/* Feature 1 — Portal Assistant */}
           <ScrollReveal delay={100}>
-            <div className="grid lg:grid-cols-2 gap-12 items-center py-16 mb-8" style={{ borderBottom: "1px dashed var(--border)" }}>
+            <div id="feat-portal" className="grid lg:grid-cols-2 gap-12 items-center py-16 mb-8 scroll-mt-24" style={{ borderBottom: "1px dashed var(--border)" }}>
               <div>
                 <span className="text-[11px] font-bold uppercase tracking-widest" style={{ color: "#7E7CDE" }}>PORTAL ASSISTANT</span>
                 <h2 className="mt-4 mb-5" style={{ color: "var(--navy)", fontSize: "clamp(28px, 3.5vw, 48px)", lineHeight: 1.1, letterSpacing: "-0.03em" }}>
@@ -263,7 +269,7 @@ export default function Home() {
 
           {/* Feature 2 — Dispatcher Agent */}
           <ScrollReveal delay={100}>
-            <div className="grid lg:grid-cols-2 gap-12 items-center py-16 mb-8" style={{ borderBottom: "1px dashed var(--border)" }}>
+            <div id="feat-dispatcher" className="grid lg:grid-cols-2 gap-12 items-center py-16 mb-8 scroll-mt-24" style={{ borderBottom: "1px dashed var(--border)" }}>
               <div className="lg:order-2">
                 <span className="text-[11px] font-bold uppercase tracking-widest" style={{ color: "#EC8546" }}>DISPATCHER AGENT</span>
                 <h2 className="mt-4 mb-5" style={{ color: "var(--navy)", fontSize: "clamp(28px, 3.5vw, 48px)", lineHeight: 1.1, letterSpacing: "-0.03em" }}>
@@ -349,7 +355,7 @@ export default function Home() {
 
           {/* Feature 3 — Smart Escalation */}
           <ScrollReveal delay={100}>
-            <div className="grid lg:grid-cols-2 gap-12 items-center py-16 mb-8" style={{ borderBottom: "1px dashed var(--border)" }}>
+            <div id="feat-escalation" className="grid lg:grid-cols-2 gap-12 items-center py-16 mb-8 scroll-mt-24" style={{ borderBottom: "1px dashed var(--border)" }}>
               <div>
                 <span className="text-[11px] font-bold uppercase tracking-widest" style={{ color: "#E25656" }}>SMART ESCALATION</span>
                 <h2 className="mt-4 mb-5" style={{ color: "var(--navy)", fontSize: "clamp(28px, 3.5vw, 48px)", lineHeight: 1.1, letterSpacing: "-0.03em" }}>
@@ -448,9 +454,120 @@ export default function Home() {
             </div>
           </ScrollReveal>
 
+          {/* Feature 3b — Incident Detection */}
+          <ScrollReveal delay={100}>
+            <div id="feat-incident" className="grid lg:grid-cols-2 gap-12 items-center py-16 mb-8 scroll-mt-24" style={{ borderBottom: "1px dashed var(--border)" }}>
+              <div className="lg:order-2">
+                <span className="text-[11px] font-bold uppercase tracking-widest" style={{ color: "#F59E0B" }}>INCIDENT DETECTION</span>
+                <h2 className="mt-4 mb-5" style={{ color: "var(--navy)", fontSize: "clamp(28px, 3.5vw, 48px)", lineHeight: 1.1, letterSpacing: "-0.03em" }}>
+                  {"Spot the Pattern.\nBefore It Becomes a Crisis.".split("\n").map((line, i) => <span key={i}>{line}<br/></span>)}
+                </h2>
+                <p className="text-base leading-relaxed mb-6" style={{ color: "var(--grey)" }}>
+                  AI continuously scans incoming tickets, clustering similar reports in real-time. When a surge of related issues is detected, it automatically creates a Major Incident, links all affected tickets, and flags the pattern. New tickets matching the incident are linked instantly as they arrive.
+                </p>
+                <div className="grid grid-cols-2 gap-3">
+                  {["Automatic cluster detection", "Real-time issue linking", "Major Incident creation", "Per-desk configuration"].map(h => (
+                    <span key={h} className="flex items-center gap-2 text-sm" style={{ color: "var(--navy)" }}>
+                      <CheckIcon /> {h}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div className="lg:order-1">
+                <div className="relative w-full min-h-[420px] flex items-center justify-center" style={{ background: "linear-gradient(135deg, rgba(245,158,11,0.06), rgba(245,158,11,0.02))", borderRadius: 12 }}>
+                  <div className="flex flex-col gap-3" style={{ width: 320 }}>
+                    {/* Card 1: Incoming Tickets */}
+                    <div className="rounded-xl p-4 shadow-lg" style={{ background: "white", border: "1px solid var(--border)" }}>
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="w-2 h-2 rounded-full" style={{ background: "#F59E0B" }} />
+                        <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: "#F59E0B" }}>Incoming Tickets</span>
+                        <span className="text-[9px] px-1.5 py-0.5 rounded font-semibold ml-auto" style={{ background: "rgba(245,158,11,0.12)", color: "#F59E0B" }}>12 tickets</span>
+                      </div>
+                      <div className="space-y-1">
+                        {[
+                          "VPN keeps disconnecting every 5 min",
+                          "Cannot connect to corporate VPN",
+                          "VPN drops during video calls",
+                          "VPN outage affecting entire office",
+                        ].map((t, i) => (
+                          <div key={i} className="flex items-center gap-2">
+                            <span className="text-[10px] font-mono px-1 rounded" style={{ background: "var(--offwhite)", color: "var(--grey)" }}>FSM-{22 + i}</span>
+                            <span className="text-[11px] truncate" style={{ color: "var(--navy)" }}>{t}</span>
+                          </div>
+                        ))}
+                        <p className="text-[10px] italic" style={{ color: "var(--grey)" }}>+ 8 more similar tickets...</p>
+                      </div>
+                    </div>
+
+                    {/* Arrow */}
+                    <div className="flex justify-center">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 5v14M7 14l5 5 5-5" stroke="#F59E0B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </div>
+
+                    {/* Card 2: AI Clustering */}
+                    <div className="rounded-xl p-4 shadow-lg" style={{ background: "rgba(245,158,11,0.06)", border: "1px solid rgba(245,158,11,0.2)" }}>
+                      <div className="flex items-center gap-2 mb-2">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                          <circle cx="7" cy="7" r="6" stroke="#F59E0B" strokeWidth="1.5" strokeDasharray="3 2"/>
+                          <circle cx="7" cy="7" r="2" fill="#F59E0B"/>
+                        </svg>
+                        <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: "#F59E0B" }}>Cluster Detected</span>
+                      </div>
+                      <p className="text-[11px] leading-relaxed mb-1.5" style={{ color: "var(--navy)" }}>
+                        Topic: <strong>&quot;VPN connection dropping repeatedly&quot;</strong>
+                      </p>
+                      <div className="flex items-center gap-2">
+                        <span className="text-[10px] px-2 py-0.5 rounded font-bold" style={{ background: "rgba(245,158,11,0.15)", color: "#F59E0B" }}>7 TICKETS</span>
+                        <span className="text-[10px]" style={{ color: "var(--grey)" }}>Threshold: 5 met</span>
+                      </div>
+                      <p className="text-[10px] mt-1.5" style={{ color: "var(--grey)" }}>
+                        Principal: <strong style={{ color: "var(--navy)" }}>FSM-32</strong> &bull; Best description
+                      </p>
+                    </div>
+
+                    {/* Arrow */}
+                    <div className="flex justify-center">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 5v14M7 14l5 5 5-5" stroke="#F59E0B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </div>
+
+                    {/* Card 3: Major Incident Created */}
+                    <div className="rounded-xl p-4 shadow-lg" style={{ background: "white", border: "2px solid #1B7A3E" }}>
+                      <div className="flex items-center gap-2 mb-2">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                          <circle cx="7" cy="7" r="6" fill="rgba(27,122,62,0.1)"/>
+                          <path d="M4 7l2.5 2.5L10 5" stroke="#1B7A3E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                        <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: "#1B7A3E" }}>Major Incident Created</span>
+                      </div>
+                      <div className="space-y-1.5">
+                        {[
+                          "FSM-32 flagged as Major Incident",
+                          "6 related tickets linked automatically",
+                          "New tickets auto-linked in real-time",
+                          "Full audit trail logged",
+                        ].map((action) => (
+                          <div key={action} className="flex items-center gap-2">
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                              <path d="M3 6l2 2 4-4" stroke="#1B7A3E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
+                            <span className="text-[11px]" style={{ color: "var(--navy)" }}>{action}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
+
           {/* Feature 4 — Analytics */}
           <ScrollReveal delay={100}>
-            <div className="grid lg:grid-cols-2 gap-12 items-center py-16 mb-8" style={{ borderBottom: "1px dashed var(--border)" }}>
+            <div id="feat-analytics" className="grid lg:grid-cols-2 gap-12 items-center py-16 mb-8 scroll-mt-24" style={{ borderBottom: "1px dashed var(--border)" }}>
               <div className="lg:order-2">
                 <span className="text-[11px] font-bold uppercase tracking-widest" style={{ color: "#51A2E7" }}>ANALYTICS & BRANDING</span>
                 <h2 className="mt-4 mb-5" style={{ color: "var(--navy)", fontSize: "clamp(28px, 3.5vw, 48px)", lineHeight: 1.1, letterSpacing: "-0.03em" }}>
@@ -563,7 +680,7 @@ export default function Home() {
 
           {/* Feature 5 — Multi-Layer Instructions */}
           <ScrollReveal delay={100}>
-            <div className="grid lg:grid-cols-2 gap-12 items-center py-16 mb-8" style={{ borderBottom: "1px dashed var(--border)" }}>
+            <div id="feat-instructions" className="grid lg:grid-cols-2 gap-12 items-center py-16 mb-8 scroll-mt-24" style={{ borderBottom: "1px dashed var(--border)" }}>
               <div>
                 <span className="text-[11px] font-bold uppercase tracking-widest" style={{ color: "#7E7CDE" }}>MULTI-LAYER INSTRUCTIONS</span>
                 <h2 className="mt-4 mb-5" style={{ color: "var(--navy)", fontSize: "clamp(28px, 3.5vw, 48px)", lineHeight: 1.1, letterSpacing: "-0.03em" }}>
@@ -619,7 +736,7 @@ export default function Home() {
 
           {/* Feature 6 — Workflow Automation */}
           <ScrollReveal delay={100}>
-            <div className="grid lg:grid-cols-2 gap-12 items-center py-16">
+            <div id="feat-workflow" className="grid lg:grid-cols-2 gap-12 items-center py-16 scroll-mt-24">
               <div>
                 <span className="text-[11px] font-bold uppercase tracking-widest" style={{ color: "#2BC48A" }}>WORKFLOW AUTOMATION</span>
                 <h2 className="mt-4 mb-5" style={{ color: "var(--navy)", fontSize: "clamp(28px, 3.5vw, 48px)", lineHeight: 1.1, letterSpacing: "-0.03em" }}>
