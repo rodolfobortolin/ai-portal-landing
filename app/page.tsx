@@ -534,18 +534,18 @@ export default function Home() {
                       </svg>
                     </div>
 
-                    {/* Card 3: Major Incident Created */}
+                    {/* Card 3: Major Incident Selected */}
                     <div className="rounded-xl p-4 shadow-lg" style={{ background: "white", border: "2px solid #1B7A3E" }}>
                       <div className="flex items-center gap-2 mb-2">
                         <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                           <circle cx="7" cy="7" r="6" fill="rgba(27,122,62,0.1)"/>
                           <path d="M4 7l2.5 2.5L10 5" stroke="#1B7A3E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
-                        <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: "#1B7A3E" }}>Major Incident Created</span>
+                        <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: "#1B7A3E" }}>Major Incident Selected</span>
                       </div>
                       <div className="space-y-1.5">
                         {[
-                          "FSM-32 flagged as Major Incident",
+                          "FSM-32 selected as Major Incident",
                           "6 related tickets linked automatically",
                           "New tickets auto-linked in real-time",
                           "Full audit trail logged",
