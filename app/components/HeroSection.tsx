@@ -78,8 +78,8 @@ export default function HeroSection({ onOpenDemo }: HeroSectionProps) {
               className="text-lg md:text-xl max-w-2xl mb-10"
               style={{ color: "rgba(255,255,255,0.55)", lineHeight: 1.7 }}
             >
-              Misrouted tickets, frustrated customers, and overwhelmed agents are silently draining your service desk.
-              Nexus AI <strong className="text-white">automates ticket creation, intelligent routing, and escalation prevention</strong>, turning your JSM into a <strong className="text-white">proactive support engine</strong>.
+              Misrouted tickets and overwhelmed agents are silently draining your service desk.
+              Nexus AI turns your JSM into a <strong className="text-white">proactive, AI-powered support engine</strong>.
             </p>
           </HeroBlurIn>
 
