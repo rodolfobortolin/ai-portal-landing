@@ -454,19 +454,19 @@ export default function Home() {
             </div>
           </ScrollReveal>
 
-          {/* Feature 3b — Incident Detection */}
+          {/* Feature 3b — Anomaly-Based Incident Linking */}
           <ScrollReveal delay={100}>
             <div id="feat-incident" className="grid lg:grid-cols-2 gap-12 items-center py-16 mb-8 scroll-mt-24" style={{ borderBottom: "1px dashed var(--border)" }}>
               <div className="lg:order-2">
-                <span className="text-[11px] font-bold uppercase tracking-widest" style={{ color: "#F59E0B" }}>INCIDENT DETECTION</span>
+                <span className="text-[11px] font-bold uppercase tracking-widest" style={{ color: "#F59E0B" }}>INCIDENT LINKING</span>
                 <h2 className="mt-4 mb-5" style={{ color: "var(--navy)", fontSize: "clamp(28px, 3.5vw, 48px)", lineHeight: 1.1, letterSpacing: "-0.03em" }}>
                   {"Spot the Pattern.\nBefore It Becomes a Crisis.".split("\n").map((line, i) => <span key={i}>{line}<br/></span>)}
                 </h2>
                 <p className="text-base leading-relaxed mb-6" style={{ color: "var(--grey)" }}>
-                  AI continuously scans incoming tickets, clustering similar reports in real-time. When a surge of related issues is detected, it automatically creates a Major Incident, links all affected tickets, and flags the pattern. New tickets matching the incident are linked instantly as they arrive.
+                  AI continuously scans incoming tickets, clustering similar reports in real-time. When a surge of related issues is detected, it automatically selects a Major Incident, links all affected tickets, and flags the pattern. New tickets matching the incident are linked instantly as they arrive.
                 </p>
                 <div className="grid grid-cols-2 gap-3">
-                  {["Automatic cluster detection", "Real-time issue linking", "Major Incident creation", "Per-desk configuration"].map(h => (
+                  {["Automatic cluster detection", "Real-time issue linking", "Major Incident selection", "Per-desk configuration"].map(h => (
                     <span key={h} className="flex items-center gap-2 text-sm" style={{ color: "var(--navy)" }}>
                       <CheckIcon /> {h}
                     </span>
@@ -853,12 +853,12 @@ export default function Home() {
                     {[
                       /* Both have */
                       { feature: "Natural Language Understanding", jsm: "check", ai: "check" },
-                      { feature: "100+ Languages", jsm: "check", ai: "check" },
                       { feature: "Confluence KB Integration", jsm: "check", ai: "check" },
                       { feature: "Analytics Dashboard", jsm: "check", ai: "check" },
                       { feature: "Integrated in Jira Search Bar", jsm: "check", ai: "cross" },
                       /* JSM partial */
                       { feature: "Full White-Label Branding", jsm: "partial", ai: "check" },
+                      { feature: "Anomaly-Based Incident Linking", jsm: "Similar Incidents", ai: "check" },
                       /* Only Nexus AI */
                       { feature: "Ticket Creation Focus", jsm: "cross", ai: "check" },
                       { feature: "Required Fields Auto-Detection", jsm: "cross", ai: "check" },
@@ -866,7 +866,6 @@ export default function Home() {
                       { feature: "Per-Request-Type Instructions", jsm: "cross", ai: "check" },
                       { feature: "Full Prompt Control (4 layers)", jsm: "cross", ai: "check" },
                       { feature: "Real-Time Agent Prompts (UI + API)", jsm: "cross", ai: "check" },
-                      { feature: "Auto-Confirm Mode", jsm: "cross", ai: "check" },
                       { feature: "Dispatcher Agent", jsm: "cross", ai: "check" },
                       { feature: "Proactive Escalation Prevention", jsm: "cross", ai: "check" },
                       { feature: "AI Sentiment Analysis", jsm: "cross", ai: "check" },

@@ -4,7 +4,7 @@ const features = [
   { label: "Portal Assistant", href: "#feat-portal", color: "#7E7CDE" },
   { label: "Dispatcher", href: "#feat-dispatcher", color: "#EC8546" },
   { label: "Escalation", href: "#feat-escalation", color: "#E25656" },
-  { label: "Incident Detection", href: "#feat-incident", color: "#F59E0B" },
+  { label: "Incident Linking", href: "#feat-incident", color: "#F59E0B" },
   { label: "Analytics", href: "#feat-analytics", color: "#51A2E7" },
   { label: "Instructions", href: "#feat-instructions", color: "#7E7CDE" },
   { label: "Workflow", href: "#feat-workflow", color: "#2BC48A" },
